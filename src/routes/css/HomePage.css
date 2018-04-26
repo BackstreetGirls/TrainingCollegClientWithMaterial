@@ -1,0 +1,11 @@
+:global .ant-carousel .slick-slide {
+  text-align: center;
+  height: 500px;
+  line-height: 500px;
+  background: #364d79;
+  overflow: hidden;
+}
+
+:global .ant-carousel .slick-slide h3 {
+  color: #fff;
+}
