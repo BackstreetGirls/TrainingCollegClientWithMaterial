@@ -1,0 +1,10 @@
+/*修改chrome自动填充表单样式*/
+:global input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  border: none;
+}
+
+:global input:focus:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  border: none;
+}
