@@ -4,7 +4,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
-import TextField from 'material-ui/TextField';
+import Input, {InputLabel} from 'material-ui/Input';
+import {FormControl} from 'material-ui/Form';
 
 import './css/Form.css';
 
@@ -14,13 +15,11 @@ const styles = theme => ({
     display: 'flex',
     flexWrap: 'wrap',
   },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-    width: 200,
-  },
-  menu: {
-    width: 200,
+  margin: {
+    marginLeft: theme.spacing.unit * 4,
+    marginRight: theme.spacing.unit * 4,
+    marginTop: theme.spacing.unit * 2,
+    marginBottom: theme.spacing.unit * 2,
   },
 });
 
@@ -31,28 +30,21 @@ class LoginForm extends React.Component {
 
     return (
       <form className={classes.container} noValidate autoComplete="off">
-        <TextField
-          id="email"
-          label="Email"
-          // placeholder="e.g. abc@gmail.com"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          fullWidth
-          margin="normal"
-        />
-        <br/>
-        <TextField
-          id="password"
-          label="Password"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          type="password"
-          autoComplete="current-password"
-          fullWidth
-          margin="normal"
-        />
+        <FormControl fullWidth className={classes.margin}>
+          <InputLabel htmlFor="adornment-password">Email</InputLabel>
+          <Input
+            id="email_login"
+            placeholder="e.g. abc@gmail.com"
+          />
+        </FormControl>
+
+        <FormControl fullWidth className={classes.margin}>
+          <InputLabel htmlFor="adornment-password">Password</InputLabel>
+          <Input
+            id="password_login"
+            type='password'
+          />
+        </FormControl>
       </form>
     )
   }
@@ -61,7 +53,5 @@ class LoginForm extends React.Component {
 LoginForm.propTypes = {
   classes: PropTypes.object.isRequired,
 };
-
-
 
 export default withStyles(styles)(LoginForm);

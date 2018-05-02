@@ -21,6 +21,8 @@ import Dialog, {
 
 import './css/Navigation.css';
 import LoginForm from '../components/LoginForm';
+import RegisterForm from '../components/RegisterForm';
+
 
 const styles = {
   root: {
@@ -46,6 +48,7 @@ class NavigationPage extends React.Component {
   state = {
     open_drawer: false,
     open_loginForm: false,
+    open_registerForm: false,
   };
 
   toggleDrawer = (state) => () => {
@@ -62,13 +65,26 @@ class NavigationPage extends React.Component {
     this.setState({open_loginForm: false});
   };
 
+  openRegisterForm = () => {
+    this.setState({open_registerForm: true});
+  };
+
+  closeRegisterForm = () => {
+    this.setState({open_registerForm: false});
+  };
+
+  // 提交登录方法
   handleLogin = (e) => {
     e.preventDefault();
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+    let email = document.getElementById("email_login").value;
+    let password = document.getElementById("password_login").value;
 
-    if (email === "" || password === "") {
-      message.warning("Please type in your email and password!");
+    if (email === "") {
+      message.warning("Please type in your email!");
+    }
+
+    if (password === "") {
+      message.warning("Please type in your password!");
     }
 
     const param = {
@@ -96,6 +112,51 @@ class NavigationPage extends React.Component {
     }
   };
 
+  // 提交注册方法
+  handleRegister = (e) => {
+    e.preventDefault();
+
+    let email = document.getElementById("email_register").value;
+    let password = document.getElementById("password_register").value;
+    let name = document.getElementById("name").value;
+    let verification_code = document.getElementById("verification_code").value;
+
+    if (email === "") {
+      message.warning("Please type in your email!");
+    }
+    if (password === "") {
+      message.warning("Please type in your password!");
+    }
+    if (name === "") {
+      message.warning("Please type in your name!");
+    }
+    if (verification_code === "") {
+      message.warning("Please type in your verification code!");
+    }
+
+    const param = {
+      email: email,
+      password: password,
+      name: name,
+      verificationCode: verification_code
+    };
+
+    if (param.email.toString().length > 40) {
+      message.warning("Email address cannot be longer than 40 characters!");
+    }
+    else if (param.password.toString().length > 40) {
+      message.warning("Password cannot be longer than 40 characters!");
+    }
+    else {
+      this.props.dispatch({
+        type: 'trainee/register',
+        payload: {
+          ...param,
+        },
+      });
+    }
+  };
+
 
   render() {
 
@@ -110,7 +171,7 @@ class NavigationPage extends React.Component {
 
     return (
       <div>
-        <AppBar position="static" color="white">
+        <AppBar position="static" color="inherit">
           <Toolbar>
             <IconButton
               className={classes.menuButton}
@@ -124,7 +185,7 @@ class NavigationPage extends React.Component {
               TrainingCollege
             </Typography>
             <Button color="inherit" onClick={this.openLoginForm}>Login</Button>
-            <Button color="inherit">Register</Button>
+            <Button color="inherit" onClick={this.openRegisterForm}>Register</Button>
           </Toolbar>
         </AppBar>
 
@@ -153,7 +214,9 @@ class NavigationPage extends React.Component {
           maxWidth="sm"
           fullWidth
         >
-          <DialogTitle id="form-dialog-title">Login</DialogTitle>
+          <DialogTitle id="form-dialog-title">
+            Login
+          </DialogTitle>
           <DialogContent>
             <LoginForm/>
           </DialogContent>
@@ -162,6 +225,30 @@ class NavigationPage extends React.Component {
               Cancel
             </Button>
             <Button onClick={this.handleLogin} color="primary">
+              Subscribe
+            </Button>
+          </DialogActions>
+        </Dialog>
+
+        <Dialog
+          open={this.state.open_registerForm}
+          onClose={this.closeRegisterForm}
+          aria-labelledby="form-dialog-title"
+          style={{textAlign: 'center'}}
+          maxWidth="sm"
+          fullWidth
+        >
+          <DialogTitle id="form-dialog-title">
+            Register
+          </DialogTitle>
+          <DialogContent>
+            <RegisterForm/>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.closeRegisterForm} color="primary">
+              Cancel
+            </Button>
+            <Button onClick={this.closeRegisterForm} color="primary">
               Subscribe
             </Button>
           </DialogActions>

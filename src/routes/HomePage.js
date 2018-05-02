@@ -27,22 +27,12 @@ const styles = {
 
 class HomePage extends React.Component {
 
-  state = {
-    open_drawer: false,
-  };
-
-  toggleDrawer = (state) => () => {
-    this.setState({
-      open_drawer: state,
-    });
-  };
-
   render() {
 
     const { classes } = this.props;
 
     return (
-      <div>
+      <div className={classes.root}>
         <Navigation/>
 
         <Carousel autoplay>
