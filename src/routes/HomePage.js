@@ -1,29 +1,23 @@
+/**
+ * Created by hyx on 2018/4/27.
+ */
 import React from 'react';
 import { Carousel } from 'antd';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 
 import Navigation from '../components/Navigation';
+import ClassesGrid from '../components/ClassesGrid';
+import tileData from '../utils/FixedData';
 
-
-const styles = {
+const styles = theme => ({
   root: {
     flexGrow: 1,
   },
-  flex: {
-    flex: 1,
+  margin: {
+    margin: theme.spacing.unit * 4,
   },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
-};
+});
 
 class HomePage extends React.Component {
 
@@ -41,6 +35,14 @@ class HomePage extends React.Component {
           <div><h3>3</h3></div>
           <div><h3>4</h3></div>
         </Carousel>
+
+        <div className={classes.margin}>
+          <ClassesGrid title="Recommendation" tileData={tileData.recommendedClasses}/>
+        </div>
+
+        <div className={classes.margin}>
+          <ClassesGrid title="Newest" tileData={tileData.recommendedClasses}/>
+        </div>
 
       </div>
     )
