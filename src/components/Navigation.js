@@ -22,6 +22,7 @@ import Dialog, {
 import './css/Navigation.css';
 import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
+import SearchField from '../components/SearchField';
 
 
 const styles = {
@@ -184,6 +185,7 @@ class NavigationPage extends React.Component {
             <Typography variant="title" color="inherit" className={classes.flex}>
               TrainingCollege
             </Typography>
+            <SearchField/>
             <Button color="inherit" onClick={this.openLoginForm}>Login</Button>
             <Button color="inherit" onClick={this.openRegisterForm}>Register</Button>
           </Toolbar>
