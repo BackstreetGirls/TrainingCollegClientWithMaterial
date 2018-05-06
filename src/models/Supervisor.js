@@ -82,6 +82,9 @@ export default {
         else if (pathToRegexp('/TraineeLogin').exec(location.pathname)) {
           document.title = '学员-登陆';
         }
+        else if (pathToRegexp('/detail').exec(location.pathname)) {
+          document.title = 'CourseInfo';
+        }
         else if (pathToRegexp('/Trainee/ChooseCourseWithClass').exec(location.pathname)) {
           document.title = '学员-预定课程(选班)';
         }

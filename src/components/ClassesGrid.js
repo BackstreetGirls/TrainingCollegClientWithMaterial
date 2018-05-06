@@ -7,6 +7,7 @@ import {withStyles} from 'material-ui/styles';
 import GridList from 'material-ui/GridList';
 import Card, {CardActions, CardContent, CardMedia} from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
+import {Rate} from 'antd';
 
 
 const styles = theme => ({
@@ -36,6 +37,9 @@ const styles = theme => ({
     height: 0,
     paddingTop: '56.25%', // 16:9
   },
+  rate: {
+    margin: '0 10px',
+  }
 });
 
 
@@ -66,14 +70,9 @@ class ClassesGrid extends React.Component {
                     {tile.description}
                   </Typography>
                 </CardContent>
-                {/*<CardActions>*/}
-                  {/*<Button size="small" color="primary">*/}
-                    {/*Share*/}
-                  {/*</Button>*/}
-                  {/*<Button size="small" color="primary">*/}
-                    {/*Learn More*/}
-                  {/*</Button>*/}
-                {/*</CardActions>*/}
+                <CardActions>
+                  <Rate className={classes.rate} disabled allowHalf defaultValue={tile.rate}/>
+                </CardActions>
               </Card>
             </div>
           ))}
