@@ -5,7 +5,7 @@ import Page404 from './routes/404Page';
 import PlaceOrderMainPage from './routes/placeorder/PlaceOrderMainPage'
 import TraineeInfoPage from './routes/traineeinfo/TraineeInfoPage'
 import ChangePasswordPage from './routes/traineeinfo/ChangePasswordPage'
-
+import OrderListPage from './routes/myorder/OrderListPage'
 
 function RouterConfig({history}) {
   return (
@@ -22,6 +22,7 @@ function RouterConfig({history}) {
         <Route path='/placeorder' exact component={PlaceOrderMainPage}/>
         <Route path='/traineecenter' exact component={TraineeInfoPage}/>
         <Route path='/changepassword' exact component={ChangePasswordPage}/>
+        <Route path='/myorder' exact component={OrderListPage}/>
 
         <Route path='*' exact component={Page404}/>
       </Switch>
