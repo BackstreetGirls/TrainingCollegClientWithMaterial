@@ -57,13 +57,13 @@ class OrderSuccessPage extends React.Component{
         <ExpansionPanel defaultExpanded>
           <ExpansionPanelSummary>
             <div className={classes.column}>
-              <Typography className={classes.heading}>订单号</Typography>
+              <Typography className={classes.heading}>Order ID</Typography>
             </div>
             <div className={classes.column}>
-              <Typography className={classes.heading}>课程信息</Typography>
+              <Typography className={classes.heading}>Training Info</Typography>
             </div>
             <div className={classes.column}>
-              <Typography className={classes.heading}>预定人信息</Typography>
+              <Typography className={classes.heading}>Order Info</Typography>
             </div>
 
           </ExpansionPanelSummary>
@@ -73,17 +73,17 @@ class OrderSuccessPage extends React.Component{
               000001
             </div>
             <div className={classes.column}>
-              TensorFlow文本分类<br/>
+              TensorFlow<br/>
               2018/5/1-2018/7/1
             </div>
             <div className={classes.column}>
-              陈俐俐<br/>
+              Chen Lily<br/>
               12345678912
             </div>
             <div className={classNames(classes.column, classes.helper)}>
               <Typography variant="caption">
-                小计 : 299*2<br />
-                状态 : 已支付
+                Total : 299*2<br />
+                State : Have Paid
               </Typography>
             </div>
           </ExpansionPanelDetails>

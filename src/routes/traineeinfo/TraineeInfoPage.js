@@ -6,9 +6,11 @@ import {connect} from 'dva';
 import {Card, Icon, Modal, Form, Input, Button} from 'antd';
 import styles from '../css/TraineeInfoPage.css';
 import Navigation from '../../components/Navigation';
+import {Avatar } from 'antd';
+import avatar from '../../assets/avatar.png';
+const { Meta } = Card;
 
 
-const {Meta} = Card;
 const FormItem = Form.Item;
 
 function level_info() {
@@ -32,13 +34,13 @@ function level_info() {
     ),
     onOk() {
     },
-    okText: "我知道了",
+    okText: "I know",
   });
 }
 
 function discount_info() {
   Modal.info({
-    title: '优惠折扣规则',
+    title: 'Discount Rule',
     content: (
       <div>
         <p>
@@ -172,9 +174,12 @@ class TraineeInfoPage extends React.Component {
       <div className={styles.wrapper}>
         <Navigation/>
         <div className={styles.inner_wrapper}>
-          <p className={styles.welcome}>
-            会员中心
-          </p>
+          <div className={styles.welcome}>
+            <div>
+              <Avatar src={avatar} style={{width:100,height:100}}/>
+
+            </div>
+          </div>
           <Card
             title="我的会员信息"
             className={styles.card}
@@ -195,7 +200,7 @@ class TraineeInfoPage extends React.Component {
             ]}
             extra={
               <div>
-                <p>陈俐俐</p>
+                <p>Chen Lily</p>
                 <p>1179028267@qq.com</p>
 
               </div>
