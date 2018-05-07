@@ -6,10 +6,6 @@ import {connect} from 'dva';
 import {Form, Icon, Input, Button, Tooltip, Select, message} from 'antd';
 import styles from '../css/ChangePasswordPage.css';
 import Navigation from '../../components/Navigation';
-import ChangePasswordForm from '../../components/ChangePasswordForm';
-import {Avatar } from 'antd';
-import avatar from '../../assets/avatar.png';
-import Typography from 'material-ui/Typography';
 
 
 const FormItem = Form.Item;
@@ -127,18 +123,65 @@ class TraineeEditInfoForm extends React.Component {
     return (
       <div className={styles.wrapper} style={{height: '80%'}}>
         <Navigation/>
-        <div className={styles.welcome}>
-          <div>
-            <Avatar src={avatar} style={{width:100,height:100}}/>
-            <Typography component="p" style={{marginLeft:'-2%',marginTop:'2%'}}>
-              1179028267@qq.com
-            </Typography>
-          </div>
-        </div>
-        <div className={styles.edit_form}>
-          <ChangePasswordForm/>
-        </div>
-
+        <Form onSubmit={this.handleSubmit} className={styles.edit_form}>
+          <p className={styles.welcome}>
+            修改密码
+          </p>
+          <FormItem
+            {...formItemLayout}
+            label="电子邮箱"
+          >
+            <Tooltip
+              trigger={['hover']}
+              title="邮箱一经设置无法修改"
+              placement="topLeft"
+              overlayClassName="numeric-input"
+            >
+              <Input
+                prefix={<Icon type="mail" style={{color: 'rgba(0,0,0,.25)'}}/>}
+                disabled={true}
+                defaultValue={"1179028267@qq.com"}
+              />
+            </Tooltip>
+          </FormItem>
+          <FormItem
+            {...formItemLayout}
+            label="原密码"
+          >
+            {getFieldDecorator('password_previous', {
+              // rules: [{required: true, message: '请输入您的原密码'}],
+            })(
+              <Input prefix={<Icon type="lock" style={{color: 'rgba(0,0,0,.25)'}}/>} type="password"/>
+            )}
+          </FormItem>
+          <FormItem
+            {...formItemLayout}
+            label="新密码"
+          >
+            {getFieldDecorator('password_new', {
+              // rules: [{required: true, message: '请输入您的新密码'}],
+            })(
+              <Input prefix={<Icon type="lock" style={{color: 'rgba(0,0,0,.25)'}}/>} type="password"/>
+            )}
+          </FormItem>
+          <FormItem
+            {...formItemLayout}
+            label="确认新密码"
+          >
+            {getFieldDecorator('password_new_repeat', {
+              // rules: [{required: true, message: '请输入您的新密码'}],
+            })(
+              <Input prefix={<Icon type="lock" style={{color: 'rgba(0,0,0,.25)'}}/>} type="password"/>
+            )}
+          </FormItem>
+          <FormItem
+            {...buttonLayout}
+          >
+            <Button type="primary" htmlType="submit" className={styles.button}>
+              提交
+            </Button>
+          </FormItem>
+        </Form>
       </div>
     );
   }
