@@ -7,7 +7,6 @@ import ChoosePayWay from '../placeorder/ChoosePayWay'
 import OrderSuccess from '../placeorder/OrderSuccess'
 
 import React from 'react';
-import {connect} from 'dva';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Stepper, { Step, StepButton } from 'material-ui/Stepper';
@@ -220,7 +219,7 @@ class PlaceOrderMainPage extends React.Component {
                 <div style={{width: '100%', marginTop: '5%', marginLeft:'65%'}}>
                   <Button
                     disabled={activeStep === 0||activeStep===2}
-                    display={activeStep==2?'none':'block'}
+                    display={activeStep===2?'none':'block'}
                     onClick={this.handleBack}
                     className={classes.button}
                   >

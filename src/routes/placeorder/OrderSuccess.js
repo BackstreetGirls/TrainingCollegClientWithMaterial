@@ -8,7 +8,6 @@ import classNames from 'classnames';
 import ExpansionPanel, {
   ExpansionPanelDetails,
   ExpansionPanelSummary,
-  ExpansionPanelActions,
 } from 'material-ui/ExpansionPanel';
 import Typography from 'material-ui/Typography';
 import Divider from 'material-ui/Divider';

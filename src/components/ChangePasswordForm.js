@@ -5,7 +5,6 @@ import React from 'react';
 import {connect} from 'dva';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
-import {message} from 'antd';
 import IconButton from 'material-ui/IconButton';
 import Input, {InputLabel, InputAdornment} from 'material-ui/Input';
 import {FormControl} from 'material-ui/Form';
