@@ -2,13 +2,12 @@
  * Created by CLL on 18/4/27.
  */
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import Button from 'material-ui/Button'
 import Divider from 'material-ui/Divider';
-import Input, {InputLabel, InputAdornment} from 'material-ui/Input';
-import {FormControl, FormHelperText} from 'material-ui/Form';
+import Input, {InputAdornment} from 'material-ui/Input';
+import {FormControl} from 'material-ui/Form';
 import TextField from 'material-ui/TextField';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
@@ -70,8 +69,8 @@ class ChoosePayWay extends React.Component {
                 shrink: true,
               }}
               id="name"
-              label="银行账户"
-              placeholder="18位数字"
+              label="Bank account"
+              placeholder="length 18"
               className={classes.textField}
               margin="normal"
             />
@@ -79,7 +78,7 @@ class ChoosePayWay extends React.Component {
             <Input
               label="password"
               id="bank_password"
-              placeholder="6位密码"
+              placeholder="length 6"
               type={this.state.showPassword ? 'text' : 'password'}
               value={this.state.password}
               onChange={this.handleChange('password')}
@@ -105,15 +104,15 @@ class ChoosePayWay extends React.Component {
                 shrink: true,
               }}
               id="alipay_name"
-              label="支付宝账户"
-              placeholder="邮箱或手机号码"
+              label="Alipay"
+              placeholder="mail or telephone"
               className={classes.textField}
               margin="normal"
             />
             <br/>
             <Input
               id="alipay_password"
-              placeholder="密码"
+              placeholder="password"
               type={this.state.showPassword ? 'text' : 'password'}
               value={this.state.password}
               onChange={this.handleChange('password')}
@@ -139,8 +138,8 @@ class ChoosePayWay extends React.Component {
                 shrink: true,
               }}
               id="wechat_name"
-              label="微信账户"
-              placeholder="微信号或手机号码"
+              label="Wechat"
+              placeholder="wechat or telephone"
               className={classes.textField}
               margin="normal"
             />
@@ -148,7 +147,7 @@ class ChoosePayWay extends React.Component {
             <Input
               label="password"
               id="wechat_password"
-              placeholder="密码"
+              placeholder="password"
               type={this.state.showPassword ? 'text' : 'password'}
               value={this.state.password}
               onChange={this.handleChange('password')}
