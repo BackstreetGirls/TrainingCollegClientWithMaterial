@@ -42,7 +42,7 @@ const styles = ({
 
 
 function getSteps() {
-  return ['确认订单信息', '选择支付方式', '支付成功'];
+  return ['Confirm Order Info', 'Choose Pay Way', 'Pay Success'];
 }
 
 function getStepContent(step) {
@@ -224,10 +224,10 @@ class PlaceOrderMainPage extends React.Component {
                     onClick={this.handleBack}
                     className={classes.button}
                   >
-                    上一步
+                    Pre
                   </Button>
                   <Button variant="raised" color="primary" onClick={this.handleComplete}>
-                    {this.completedSteps() === this.totalSteps() - 1 ? '完成' : '继续'}
+                    {this.completedSteps() === this.totalSteps() - 1 ? 'Finish' : 'Continue'}
                   </Button>
 
 

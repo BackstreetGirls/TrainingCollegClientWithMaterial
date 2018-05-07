@@ -4,13 +4,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
-import Input, {InputLabel} from 'material-ui/Input';
 import {FormControl} from 'material-ui/Form';
 import TextField from 'material-ui/TextField';
-import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
+import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 
-import courseImage from '../../assets/文本分类课程.png'
+import courseImage from '../../assets/Bussiness.png'
 
 const styles = theme => ({
   root: {
@@ -80,13 +79,13 @@ class ConfirmOrderInfo extends React.Component {
           />
           <CardContent>
             <Typography gutterBottom variant="headline">
-              TensorFlow文本分类
+              Skills for business
             </Typography>
             <Typography component="p">
-              时间：2018/5/1-2018/7/1
+              Date：2018/5/1-2018/7/1
             </Typography>
             <Typography component="p">
-              单价：299元
+              Price：299元
             </Typography>
           </CardContent>
         </Card>
@@ -98,8 +97,8 @@ class ConfirmOrderInfo extends React.Component {
                 shrink: true,
               }}
               id="name"
-              label="学员真实姓名"
-              placeholder="陈俐俐"
+              label="Name"
+              placeholder="ChenLily"
               className={classes.textField}
               margin="normal"
             />
@@ -110,7 +109,7 @@ class ConfirmOrderInfo extends React.Component {
                 shrink: true,
               }}
               id="phone"
-              label="联系方式"
+              label="phone"
               placeholder="12345678912"
               className={classes.textField}
               margin="normal"
@@ -122,7 +121,7 @@ class ConfirmOrderInfo extends React.Component {
                 shrink: true,
               }}
               id="num"
-              label="学员数量"
+              label="num"
               type="number"
               placeholder="1"
               className={classes.textField}
@@ -130,7 +129,7 @@ class ConfirmOrderInfo extends React.Component {
             />
 
             <Typography className={classes.total}>
-              应付金额 : 299元
+              Price : ¥299
             </Typography>
 
 
