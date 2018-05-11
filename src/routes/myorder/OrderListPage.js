@@ -1,127 +1,68 @@
 import Navigation from '../../components/Navigation';
-
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import Badge from 'material-ui/Badge';
-import IconButton from 'material-ui/IconButton';
-import MailIcon from '@material-ui/icons/Mail';
-import AppBar from 'material-ui/AppBar';
-import Tabs, { Tab } from 'material-ui/Tabs';
-import Typography from 'material-ui/Typography';
-import Button from 'material-ui/Button';
+import ReactDOM from 'react-dom';
+import { Tabs, Button, Input, Table } from 'antd';
+import {withStyles} from "material-ui/styles/index";
 
+const TabPane = Tabs.TabPane;
+const Search = Input.Search;
+
+const operations = <Search
+  placeholder="input CourseName/OrderId to search"
+  onSearch={value => console.log(value)}
+  style={{ width: 400 }}
+/>;
 
 const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+  margin: {
+    margin: theme.spacing.unit * 4,
   },
-  tabsRoot: {
-    borderBottom: '1px solid #e8e8e8',
+  card: {
+    minWidth: 275,
   },
-  tabsIndicator: {
-    backgroundColor: '#1890ff',
+  title: {
+    fontSize: 24,
   },
-  tabRoot: {
-    textTransform: 'initial',
-    minWidth: 72,
-    fontWeight: theme.typography.fontWeightRegular,
-    marginRight: theme.spacing.unit * 4,
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
-    '&:hover': {
-      color: '#40a9ff',
-      opacity: 1,
-    },
-    '&$tabSelected': {
-      color: '#1890ff',
-      fontWeight: theme.typography.fontWeightMedium,
-    },
-    '&:focus': {
-      color: '#40a9ff',
-    },
+  subtitle: {
+    marginBottom: 24,
   },
-  tabSelected: {},
-  typography: {
-    padding: theme.spacing.unit * 3,
-  },
+  price: {
+    fontSize: 24,
+  }
 });
 
-class CustomizedTabs extends React.Component {
-  state = {
-    value: 0,
-  };
+class OrderListPage extends React.Component {
 
-  handleChange = (event, value) => {
-  this.setState({ value });
-};
 
-render() {
-  const { classes } = this.props;
-  const { value } = this.state;
+  constructor(props) {
+    super(props);
+    this.state = {
+      date: '',
+    };
+  }
+  
+  render() {
+    const {classes} = this.props;
 
-  return (
-    <div className={classes.root}>
-<Tabs
-  value={value}
-  onChange={this.handleChange}
-  classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
->
-<Tab
-  disableRipple
-  classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-  label="全部订单"
-    />
-    <Tab
-  disableRipple
-  classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-  label="等待支付"
-    />
-    <Tab
-  disableRipple
-  classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-  label="支付成功"
-    />
-    <Tab
-  disableRipple
-  classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-  label="支付关闭"
-    />
-    <Tab
-  disableRipple
-  classes={{ root: classes.tabRoot, selected: classes.tabSelected }}
-  label="等待付款"
-    />
-    </Tabs>
+    return (
+      <div>
+        <Navigation/>
 
-    <Typography className={classes.typography}>Ant Design UI powered by Material-UI</Typography>
-  </div>
-);
-}
+        <div className={classes.margin}>
+          My Orders
+
+          <Tabs tabBarExtraContent={operations}>
+            <TabPane tab="All" key="1">Content of tab 1</TabPane>
+            <TabPane tab="Unpaid" key="2">Content of tab 2</TabPane>
+            <TabPane tab="Paid" key="3">Content of tab 3</TabPane>
+            <TabPane tab="Closed" key="4">Content of tab 4</TabPane>
+          </Tabs>
+        </div>
+
+      </div>
+    );
+  }
 }
 
-CustomizedTabs.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
-export default withStyles(styles)(CustomizedTabs);
-// export default class OrderListPage extends React.Component{
-//
-//
-//   render(){
-//     return (
-//       <Navigation/>
-//     )
-//   }
-// }
+export default withStyles(styles)(OrderListPage);
