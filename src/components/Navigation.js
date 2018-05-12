@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import {connect} from 'dva';
+import {Link} from 'dva/router';
 import {message} from 'antd';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
@@ -10,14 +11,15 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
-// import IconButton from 'material-ui/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
-// import SwipeableDrawer from 'material-ui/SwipeableDrawer';
 import Dialog, {
   DialogActions,
   DialogContent,
   DialogTitle,
 } from 'material-ui/Dialog';
+// import IconButton from 'material-ui/IconButton';
+// import MenuIcon from '@material-ui/icons/Menu';
+// import SwipeableDrawer from 'material-ui/SwipeableDrawer';
+
 
 import './css/Navigation.css';
 import LoginForm from '../components/LoginForm';
@@ -158,11 +160,10 @@ class NavigationPage extends React.Component {
     }
   };
 
-
   render() {
 
     const {classes} = this.props;
-    const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
+    // const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
     // const sideList = (
     //   <div className={classes.list}>
@@ -175,38 +176,40 @@ class NavigationPage extends React.Component {
         <AppBar position="static" color="inherit">
           <Toolbar>
             {/*<IconButton*/}
-              {/*className={classes.menuButton}*/}
-              {/*color="inherit"*/}
-              {/*aria-label="Menu"*/}
-              {/*onClick={this.toggleDrawer(true)}*/}
+            {/*className={classes.menuButton}*/}
+            {/*color="inherit"*/}
+            {/*aria-label="Menu"*/}
+            {/*onClick={this.toggleDrawer(true)}*/}
             {/*>*/}
-              {/*<MenuIcon/>*/}
+            {/*<MenuIcon/>*/}
             {/*</IconButton>*/}
             <Typography variant="title" color="inherit" className={classes.flex}>
               TrainingCollege
             </Typography>
             <SearchField/>
-            <Button color="inherit">Category</Button>
+            <Link to="/allcourses" style={{color: 'inherit'}}>
+              <Button color="inherit">Category</Button>
+            </Link>
             <Button color="inherit" onClick={this.openLoginForm}>Login</Button>
             <Button color="inherit" onClick={this.openRegisterForm}>Register</Button>
           </Toolbar>
         </AppBar>
 
         {/*<SwipeableDrawer*/}
-          {/*open={this.state.open_drawer}*/}
-          {/*onClose={this.toggleDrawer(false)}*/}
-          {/*onOpen={this.toggleDrawer(true)}*/}
-          {/*disableBackdropTransition={!iOS}*/}
-          {/*disableDiscovery={iOS}*/}
+        {/*open={this.state.open_drawer}*/}
+        {/*onClose={this.toggleDrawer(false)}*/}
+        {/*onOpen={this.toggleDrawer(true)}*/}
+        {/*disableBackdropTransition={!iOS}*/}
+        {/*disableDiscovery={iOS}*/}
         {/*>*/}
-          {/*<div*/}
-            {/*tabIndex={0}*/}
-            {/*role="button"*/}
-            {/*onClick={this.toggleDrawer(false)}*/}
-            {/*onKeyDown={this.toggleDrawer(false)}*/}
-          {/*>*/}
-            {/*{sideList}*/}
-          {/*</div>*/}
+        {/*<div*/}
+        {/*tabIndex={0}*/}
+        {/*role="button"*/}
+        {/*onClick={this.toggleDrawer(false)}*/}
+        {/*onKeyDown={this.toggleDrawer(false)}*/}
+        {/*>*/}
+        {/*{sideList}*/}
+        {/*</div>*/}
         {/*</SwipeableDrawer>*/}
 
         <Dialog
