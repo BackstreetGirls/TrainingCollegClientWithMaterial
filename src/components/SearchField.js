@@ -177,7 +177,7 @@ class SearchField extends React.Component {
       <div className={classes.root}>
         {
           this.state.visibility ?
-            <Grid container spacing={2} alignItems="flex-end">
+            <Grid container spacing={0} alignItems="flex-end">
               <Grid item sm={9} xs={8}>
                 <Downshift style={{marginButton: 10}}>
                   {({getInputProps, getItemProps, isOpen, inputValue, selectedItem, highlightedIndex}) => (

@@ -63,7 +63,7 @@ class ClassesGrid extends React.Component {
                   title={tile.title}
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="headline" component="h2">
+                  <Typography noWrap gutterBottom variant="headline" component="h2">
                     {tile.title}
                   </Typography>
                   <Typography component="p">

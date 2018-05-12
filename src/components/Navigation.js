@@ -10,9 +10,9 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
-import IconButton from 'material-ui/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import SwipeableDrawer from 'material-ui/SwipeableDrawer';
+// import IconButton from 'material-ui/IconButton';
+// import MenuIcon from '@material-ui/icons/Menu';
+// import SwipeableDrawer from 'material-ui/SwipeableDrawer';
 import Dialog, {
   DialogActions,
   DialogContent,
@@ -47,16 +47,16 @@ const styles = {
 class NavigationPage extends React.Component {
 
   state = {
-    open_drawer: false,
+    // open_drawer: false,
     open_loginForm: false,
     open_registerForm: false,
   };
 
-  toggleDrawer = (state) => () => {
-    this.setState({
-      open_drawer: state,
-    });
-  };
+  // toggleDrawer = (state) => () => {
+  //   this.setState({
+  //     open_drawer: state,
+  //   });
+  // };
 
   openLoginForm = () => {
     this.setState({open_loginForm: true});
@@ -164,49 +164,50 @@ class NavigationPage extends React.Component {
     const {classes} = this.props;
     const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-    const sideList = (
-      <div className={classes.list}>
-        // todo
-      </div>
-    );
+    // const sideList = (
+    //   <div className={classes.list}>
+    //     // todo
+    //   </div>
+    // );
 
     return (
       <div>
         <AppBar position="static" color="inherit">
           <Toolbar>
-            <IconButton
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="Menu"
-              onClick={this.toggleDrawer(true)}
-            >
-              <MenuIcon/>
-            </IconButton>
+            {/*<IconButton*/}
+              {/*className={classes.menuButton}*/}
+              {/*color="inherit"*/}
+              {/*aria-label="Menu"*/}
+              {/*onClick={this.toggleDrawer(true)}*/}
+            {/*>*/}
+              {/*<MenuIcon/>*/}
+            {/*</IconButton>*/}
             <Typography variant="title" color="inherit" className={classes.flex}>
               TrainingCollege
             </Typography>
             <SearchField/>
+            <Button color="inherit">Category</Button>
             <Button color="inherit" onClick={this.openLoginForm}>Login</Button>
             <Button color="inherit" onClick={this.openRegisterForm}>Register</Button>
           </Toolbar>
         </AppBar>
 
-        <SwipeableDrawer
-          open={this.state.open_drawer}
-          onClose={this.toggleDrawer(false)}
-          onOpen={this.toggleDrawer(true)}
-          disableBackdropTransition={!iOS}
-          disableDiscovery={iOS}
-        >
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer(false)}
-            onKeyDown={this.toggleDrawer(false)}
-          >
-            {sideList}
-          </div>
-        </SwipeableDrawer>
+        {/*<SwipeableDrawer*/}
+          {/*open={this.state.open_drawer}*/}
+          {/*onClose={this.toggleDrawer(false)}*/}
+          {/*onOpen={this.toggleDrawer(true)}*/}
+          {/*disableBackdropTransition={!iOS}*/}
+          {/*disableDiscovery={iOS}*/}
+        {/*>*/}
+          {/*<div*/}
+            {/*tabIndex={0}*/}
+            {/*role="button"*/}
+            {/*onClick={this.toggleDrawer(false)}*/}
+            {/*onKeyDown={this.toggleDrawer(false)}*/}
+          {/*>*/}
+            {/*{sideList}*/}
+          {/*</div>*/}
+        {/*</SwipeableDrawer>*/}
 
         <Dialog
           open={this.state.open_loginForm}
@@ -250,7 +251,7 @@ class NavigationPage extends React.Component {
             <Button onClick={this.closeRegisterForm} color="primary">
               Cancel
             </Button>
-            <Button onClick={this.closeRegisterForm} color="primary">
+            <Button onClick={this.handleRegister} color="primary">
               Subscribe
             </Button>
           </DialogActions>
