@@ -7,6 +7,7 @@ import PlaceOrderMainPage from './routes/placeorder/PlaceOrderMainPage';
 import TraineeInfoPage from './routes/traineeinfo/TraineeInfoPage';
 import ChangePasswordPage from './routes/traineeinfo/ChangePasswordPage';
 import OrderListPage from './routes/myorder/OrderListPage'
+import AllCourses from './routes/courselist/AllCourses';
 
 function RouterConfig({history}) {
   return (
@@ -20,6 +21,7 @@ function RouterConfig({history}) {
         <Route path='/traineecenter' exact component={TraineeInfoPage}/>
         <Route path='/changepassword' exact component={ChangePasswordPage}/>
         <Route path='/myorder' exact component={OrderListPage}/>
+        <Route path='/courselist' exact component={AllCourses}/>
 
         <Route path='*' exact component={Page404}/>
       </Switch>
