@@ -12,17 +12,56 @@ import Dialog, {
 } from 'material-ui/Dialog';
 import Button from 'material-ui/Button';
 import TextField from 'material-ui/TextField';
-
-import {Card, Icon, Modal, Form, Input} from 'antd';
+import {Card, Icon} from 'antd';
 import styles from '../css/TraineeInfoPage.css';
 import Navigation from '../../components/Navigation';
 import {Avatar} from 'antd';
 import avatar from '../../assets/avatar.png';
+import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import Paper from 'material-ui/Paper';
+
 const {Meta} = Card;
+
+let id = 0;
+function createData(consumption,level) {
+  id += 1;
+  return { id, consumption,level};
+}
+
+const data = [
+  createData(100, 1),
+  createData(200, 2),
+  createData(500, 3),
+  createData(1000, 4),
+  createData(2000, 5),
+  createData(5000, 6),
+  createData(10000, 7),
+  createData(20000, 8),
+  createData(50000, 9),
+  createData(100000, 10),
+];
+
+let id2 = 0;
+function createData2(consumption,discount) {
+  id2 += 1;
+  return { id2, consumption,discount};
+}
+
+const data2 = [
+  createData2(100, '1%'),
+  createData2(200, '2%'),
+  createData2(500, '5%'),
+  createData2(1000, '10%'),
+  createData2(2000, '12%'),
+  createData2(5000, '15%'),
+  createData2(10000, '20%'),
+  createData2(20000, '23%'),
+  createData2(50000, '25%'),
+  createData2(100000, '30%'),
+];
 
 
 class TraineeInfoPage extends React.Component {
-
 
   state = {
     open: false,
@@ -70,6 +109,8 @@ class TraineeInfoPage extends React.Component {
   credit_info_open=()=>{
     this.setState({credit: true});
   };
+
+
 
   render() {
     return (
@@ -167,7 +208,7 @@ class TraineeInfoPage extends React.Component {
               </div>
             </DialogContent>
             <DialogActions>
-              <Button onClick={this.handleCancel} color="primary">
+              <Button onClick={this.handleClose} color="primary">
                 Cancel
               </Button>
               <Button onClick={this.handleClose} color="primary">
@@ -186,19 +227,27 @@ class TraineeInfoPage extends React.Component {
               <DialogContentText>
                 The higher the amount of consumption, the higher the membership grade.
               </DialogContentText>
-              <div style={{marginLeft:"23%"}}>
-                <p>
-                  Total consumption reached ¥100   --level 1<br/>
-                  Total consumption reached ¥200   --level 2<br/>
-                  Total consumption reached ¥500   --level 3<br/>
-                  Total consumption reached ¥1000  --level 4<br/>
-                  Total consumption reached ¥2000  --level 5<br/>
-                  Total consumption reached ¥5000  --level 6<br/>
-                  Total consumption reached ¥10000 --level 7<br/>
-                  Total consumption reached ¥20000 --level 8<br/>
-                  Total consumption reached ¥50000 --level 9<br/>
-                  Total consumption reached ¥10000 --level 10
-                </p>
+              <div style={{width:'60%',marginLeft:'20%',marginTop:'3%',maxHeight:260}}>
+                <Paper>
+                  <Table>
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Total Consumption(¥)</TableCell>
+                        <TableCell>Level</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {data.map(n => {
+                        return (
+                          <TableRow key={n.id}>
+                            <TableCell>{n.consumption}</TableCell>
+                            <TableCell>{n.level}</TableCell>
+                          </TableRow>
+                        );
+                      })}
+                    </TableBody>
+                  </Table>
+                </Paper>
               </div>
             </DialogContent>
             <DialogActions>
@@ -218,19 +267,27 @@ class TraineeInfoPage extends React.Component {
               <DialogContentText>
                 According to different cumulative consumption, give different discount. The higher the amount of consumption, the greater the discounts.
               </DialogContentText>
-              <div style={{marginLeft:"23%"}}>
-                <p>
-                  Total consumption reached ¥100   --1% off<br/>
-                  Total consumption reached ¥200   --2% off<br/>
-                  Total consumption reached ¥500   --5% off<br/>
-                  Total consumption reached ¥1000  --10% off<br/>
-                  Total consumption reached ¥2000  --12% off<br/>
-                  Total consumption reached ¥5000  --15% off<br/>
-                  Total consumption reached ¥10000 --20% off<br/>
-                  Total consumption reached ¥20000 --23% off<br/>
-                  Total consumption reached ¥50000 --25% off<br/>
-                  Total consumption reached ¥10000 --30% off
-                </p>
+              <div style={{width:'60%',marginLeft:'20%',marginTop:'3%',maxHeight:260}}>
+                <Paper>
+                  <Table>
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Total Consumption(¥)</TableCell>
+                        <TableCell>Discount(off)</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {data2.map(n => {
+                        return (
+                          <TableRow key={n.id}>
+                            <TableCell>{n.consumption}</TableCell>
+                            <TableCell>{n.discount}</TableCell>
+                          </TableRow>
+                        );
+                      })}
+                    </TableBody>
+                  </Table>
+                </Paper>
               </div>
             </DialogContent>
             <DialogActions>

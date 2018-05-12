@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import {connect} from 'dva';
-import {Form, Icon, Input, Button, Tooltip, Select, message} from 'antd';
+import {Form, message} from 'antd';
 import styles from '../css/ChangePasswordPage.css';
 import Navigation from '../../components/Navigation';
 import ChangePasswordForm from '../../components/ChangePasswordForm';
@@ -11,9 +11,6 @@ import {Avatar } from 'antd';
 import avatar from '../../assets/avatar.png';
 import Typography from 'material-ui/Typography';
 
-
-const FormItem = Form.Item;
-const Option = Select.Option;
 
 class TraineeEditInfoForm extends React.Component {
 
@@ -98,31 +95,6 @@ class TraineeEditInfoForm extends React.Component {
   };
 
   render() {
-    const {getFieldDecorator} = this.props.form;
-
-    const formItemLayout = {
-      labelCol: {
-        xs: {span: 24},
-        sm: {span: 8},
-      },
-      wrapperCol: {
-        xs: {span: 24},
-        sm: {span: 16},
-      },
-    };
-
-    const buttonLayout = {
-      wrapperCol: {
-        xs: {
-          span: 24,
-          offset: 0,
-        },
-        sm: {
-          span: 16,
-          offset: 8,
-        },
-      },
-    };
 
     return (
       <div className={styles.wrapper} style={{height: '80%'}}>
