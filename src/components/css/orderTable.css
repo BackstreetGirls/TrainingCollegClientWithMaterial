@@ -2,6 +2,12 @@
   position: relative;
 }
 
+
+.cell-image{
+  max-width: 50px;
+  height: auto;
+}
+
 .editable-cell-input-wrapper,
 .editable-cell-text-wrapper {
   padding-right: 24px;
@@ -40,3 +46,4 @@
 .editable-add-btn {
   margin-bottom: 8px;
 }
+

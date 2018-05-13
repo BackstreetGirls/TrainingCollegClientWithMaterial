@@ -1,6 +1,5 @@
 import Navigation from '../../components/Navigation'
-import OrderTable from '../../components/OrderTable'
-import EditableTable from '../../components/EditableTable'
+import EditableTable from '../../components/OrderTable'
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -57,7 +56,7 @@ class OrderListPage extends React.Component {
 
           <Tabs tabBarExtraContent={operations}>
             <TabPane tab="All" key="1">
-              <OrderTable/>
+              <EditableTable/>
             </TabPane>
             <TabPane tab="Unpaid" key="2">
               <EditableTable/>
