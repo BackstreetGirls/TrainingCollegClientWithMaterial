@@ -139,6 +139,9 @@ export default {
         else if (pathToRegexp('/Supervisor/TraineeStatistics').exec(location.pathname)) {
           document.title = '管理员-学员数据';
         }
+        else if (pathToRegexp('/myorder').exec(location.pathname)) {
+          document.title = '我的订单';
+        }
         else {
           document.title = '页面不存在';
         }
