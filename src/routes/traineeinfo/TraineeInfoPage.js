@@ -119,7 +119,7 @@ class TraineeInfoPage extends React.Component {
         <div className={styles.inner_wrapper}>
           <div className={styles.welcome}>
             <div>
-              <Avatar src={avatar} style={{width: 100, height: 100}}/>
+              <Avatar src={avatar} style={{width: 100, height: 100,marginTop:'5%'}}/>
 
             </div>
           </div>
