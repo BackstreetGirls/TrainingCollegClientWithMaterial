@@ -58,7 +58,7 @@ class CourseDetailPage extends React.Component {
 
         <div className={classes.margin}>
           <Card elevation={0} style={{border: '1px solid rgba(0, 0, 0, 0.12)'}}>
-            <Grid container spacing={16} alignItems="flex-end">
+            <Grid container spacing={24} alignItems="flex-end">
               <Grid item sm={4} xs={4}>
                 <CardMedia
                   className={classes.media}
@@ -84,7 +84,7 @@ class CourseDetailPage extends React.Component {
 
                   <CardActions>
                     <Button variant="raised" color="primary">
-                      Join In
+                      Join Now
                     </Button>
                   </CardActions>
                 </Card>
