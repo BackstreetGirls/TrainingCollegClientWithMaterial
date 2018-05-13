@@ -12,6 +12,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Grid from 'material-ui/Grid';
 import Button from 'material-ui/Button';
+import { message} from 'antd';
 
 import './css/Form.css';
 
@@ -53,6 +54,15 @@ class ChangePasswordForm extends React.Component {
 
   handleClickShowPassword = () => {
     this.setState({showPassword: !this.state.showPassword});
+  };
+
+  submit=()=>{
+    message.config({
+      top: 10,
+      duration: 2,
+      maxCount: 3,
+    });
+    message.success('Change password success!');
   };
 
 
@@ -110,7 +120,7 @@ class ChangePasswordForm extends React.Component {
 
             </Grid>
             <Grid item sm={3} xs={4}>
-              <Button variant="raised" color="primary" className={classes.button}>
+              <Button variant="raised" color="primary" className={classes.button} onClick={this.submit}>
                 Modify
               </Button>
             </Grid>
