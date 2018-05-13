@@ -7,7 +7,7 @@ const courses = [
     img: recommendation1,
     title: 'Graphic design',
     description: 'Take you master graphic design foundation skills.',
-    rate: 5,
+    rate: 4,
   },
   {
     key: 1,
@@ -42,7 +42,7 @@ const courses = [
     img: recommendation1,
     title: 'Graphic design',
     description: 'Take you master graphic design foundation skills.',
-    rate: 5,
+    rate: 4.5,
   },
   {
     key: 4,

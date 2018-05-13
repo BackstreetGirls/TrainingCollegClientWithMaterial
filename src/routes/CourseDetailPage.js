@@ -87,7 +87,10 @@ class CourseDetailPage extends React.Component {
                         this.state.courseInfo.title === undefined ? "No course name yet." : this.state.courseInfo.title
                       }
                     </Typography>
-                    <Rate className={classes.subtitle} disabled allowHalf defaultValue={4.5}/>
+                    <Rate className={classes.subtitle} disabled allowHalf
+                          defaultValue={
+                            this.state.courseInfo.rate === undefined ? 0 : this.state.courseInfo.rate
+                          }/>
 
                     <Typography component="title" className={classes.price}>
                       {
