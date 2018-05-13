@@ -14,7 +14,11 @@
     "dva": "^2.2.3",
     "material-ui": "^1.0.0-beta.43",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "rsuite": "^3.0.4",
+    "rsuite-table": "^3.0.0",
+    "rsuite-theme": "^2.0.17",
+    "save": "^2.3.2"
   },
   "devDependencies": {
     "babel-plugin-dva-hmr": "^0.3.2",

@@ -1,8 +1,12 @@
-import Navigation from '../../components/Navigation';
+import Navigation from '../../components/Navigation'
+import OrderTable from '../../components/OrderTable'
+import EditableTable from '../../components/EditableTable'
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Tabs, Button, Input, Table } from 'antd';
+import { Tabs, Button, Input } from 'antd';
 import {withStyles} from "material-ui/styles/index";
+
 
 const TabPane = Tabs.TabPane;
 const Search = Input.Search;
@@ -40,7 +44,7 @@ class OrderListPage extends React.Component {
       date: '',
     };
   }
-  
+
   render() {
     const {classes} = this.props;
 
@@ -52,8 +56,12 @@ class OrderListPage extends React.Component {
           My Orders
 
           <Tabs tabBarExtraContent={operations}>
-            <TabPane tab="All" key="1">Content of tab 1</TabPane>
-            <TabPane tab="Unpaid" key="2">Content of tab 2</TabPane>
+            <TabPane tab="All" key="1">
+              <OrderTable/>
+            </TabPane>
+            <TabPane tab="Unpaid" key="2">
+              <EditableTable/>
+            </TabPane>
             <TabPane tab="Paid" key="3">Content of tab 3</TabPane>
             <TabPane tab="Closed" key="4">Content of tab 4</TabPane>
           </Tabs>
