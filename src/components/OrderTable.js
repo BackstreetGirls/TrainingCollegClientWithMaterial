@@ -13,7 +13,7 @@ class EditableCell extends React.Component {
     const { value, imagesrc } = this.state;
     return (
       <div className="editable-cell">
-        <img className="cell-image" src={imagesrc}/>{value}
+        <img className={style.cell_image} src={imagesrc}/>{value}
       </div>
     );
   }

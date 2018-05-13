@@ -2,9 +2,8 @@
   position: relative;
 }
 
-
-.cell-image{
-  max-width: 50px;
+.cell_image{
+  max-width: 100px;
   height: auto;
 }
 
