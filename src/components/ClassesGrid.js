@@ -8,6 +8,7 @@ import GridList from 'material-ui/GridList';
 import Card, {CardActions, CardContent, CardMedia} from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import {Rate} from 'antd';
+import {Link} from 'dva/router';
 
 
 const styles = theme => ({
@@ -56,24 +57,26 @@ class ClassesGrid extends React.Component {
         <GridList className={classes.gridList} cols={2.5} style={{margin: '0 10px'}}>
           {this.props.tileData.map(tile => (
             <div style={{height: '320', margin: '0 10px', cursor: 'pointer'}} key={tile.key}>
-              <Card className={classes.card}>
-                <CardMedia
-                  className={classes.media}
-                  image={tile.img}
-                  title={tile.title}
-                />
-                <CardContent>
-                  <Typography noWrap gutterBottom variant="headline" component="h2">
-                    {tile.title}
-                  </Typography>
-                  <Typography component="p">
-                    {tile.description}
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Rate className={classes.rate} disabled allowHalf defaultValue={tile.rate}/>
-                </CardActions>
-              </Card>
+              <Link to={"/detail&courseID=:" + tile.key}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    className={classes.media}
+                    image={tile.img}
+                    title={tile.title}
+                  />
+                  <CardContent>
+                    <Typography noWrap gutterBottom variant="headline" component="h2">
+                      {tile.title}
+                    </Typography>
+                    <Typography component="p">
+                      {tile.description}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Rate className={classes.rate} disabled allowHalf defaultValue={tile.rate}/>
+                  </CardActions>
+                </Card>
+              </Link>
             </div>
           ))}
         </GridList>

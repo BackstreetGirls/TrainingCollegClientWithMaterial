@@ -13,6 +13,7 @@ import Button from 'material-ui/Button';
 import {Rate} from 'antd';
 import Navigation from '../components/Navigation';
 import img from '../assets/Recommendation/recommendation1.jpeg'
+import tileData from '../utils/FixedData';
 
 
 const styles = theme => ({
@@ -49,6 +50,19 @@ const styles = theme => ({
 
 class CourseDetailPage extends React.Component {
 
+  state = {
+    courseInfo: {},
+  };
+
+  // React组件初始化时自动调用的方法
+  componentWillMount() {
+    // this.props.match.params.key的值为':2'
+    let key = this.props.match.params.key.toString().substring(1);
+    this.setState({
+      courseInfo: tileData.courses[key]
+    });
+  }
+
   render() {
     const {classes} = this.props;
 
@@ -69,16 +83,22 @@ class CourseDetailPage extends React.Component {
                 <Card className={classes.card} elevation={0} style={{height: 250}}>
                   <CardContent>
                     <Typography variant="title" className={classes.title}>
-                      Master Python
+                      {
+                        this.state.courseInfo.title === undefined ? "No course name yet." : this.state.courseInfo.title
+                      }
                     </Typography>
                     <Rate className={classes.subtitle} disabled allowHalf defaultValue={4.5}/>
 
                     <Typography component="title" className={classes.price}>
-                      ¥ 129.00
+                      {
+                        this.state.courseInfo.price === undefined ? "No price yet." : this.state.courseInfo.price
+                      }
                     </Typography>
 
                     <Typography color="textSecondary">
-                      Registration deadline: 2018.7.18
+                      Registration deadline: {
+                      this.state.courseInfo.deadline === undefined ? "No registration deadline yet." : this.state.courseInfo.deadline
+                    }
                     </Typography>
                   </CardContent>
 
@@ -102,46 +122,54 @@ class CourseDetailPage extends React.Component {
                     Registered/Total
                   </Typography>
                   <Typography className={classes.pos} color="textSecondary">
-                    2/500
+                    {
+                      this.state.courseInfo.registered_total === undefined ? "No such information yet." : this.state.courseInfo.registered_total
+                    }
                   </Typography>
 
                   <Typography variant="headline" className={classes.title}>
                     Start Date
                   </Typography>
                   <Typography className={classes.pos} color="textSecondary">
-                    2018.8.1
+                    {
+                      this.state.courseInfo.start_date === undefined ? "No start date yet." : this.state.courseInfo.start_date
+                    }
                   </Typography>
 
                   <Typography variant="headline" className={classes.title}>
                     Class Amount
                   </Typography>
                   <Typography className={classes.pos} color="textSecondary">
-                    5
+                    {
+                      this.state.courseInfo.class_amount === undefined ? "No classes yet." : this.state.courseInfo.class_amount
+                    }
                   </Typography>
 
                   <Typography variant="headline" className={classes.title}>
                     Lessons/Week & Total Weeks
                   </Typography>
                   <Typography className={classes.pos} color="textSecondary">
-                    6 & 12
+                    {
+                      this.state.courseInfo.lessons_perWeek_totalWeeks === undefined ? "No such information yet." : this.state.courseInfo.lessons_perWeek_totalWeeks
+                    }
                   </Typography>
 
                   <Typography variant="headline" className={classes.title}>
                     Course Introduction
                   </Typography>
                   <Typography className={classes.pos} color="textSecondary">
-                    This Specialization builds on the success of the Python for Everybody course and will introduce
-                    fundamental programming concepts including data structures, networked application program
-                    interfaces, and databases, using the Python programming language. In the Capstone Project, you’ll
-                    use the technologies learned throughout the Specialization to design and create your own
-                    applications for data retrieval, processing, and visualization.
+                    {
+                      this.state.courseInfo.course_detail === undefined ? "No detailed introduction yet." : this.state.courseInfo.course_detail
+                    }
                   </Typography>
 
                   <Typography variant="headline" className={classes.title}>
                     Teacher Introduction
                   </Typography>
                   <Typography className={classes.pos} color="textSecondary">
-                    Associate Professor: Charles Severance
+                    {
+                      this.state.courseInfo.teacher === undefined ? "No teacher yet." : this.state.courseInfo.teacher
+                    }
                   </Typography>
 
                 </CardContent>
@@ -154,34 +182,36 @@ class CourseDetailPage extends React.Component {
                     Provider
                   </Typography>
                   <Typography className={classes.pos} color="textSecondary">
-                    The University of Michigan
+                    {
+                      this.state.courseInfo.provider === undefined ? "No provider yet." : this.state.courseInfo.provider
+                    }
                   </Typography>
 
                   <Typography variant="headline" className={classes.title}>
                     Location
                   </Typography>
                   <Typography className={classes.pos} color="textSecondary">
-                    xxx
+                    {
+                      this.state.courseInfo.provider_location === undefined ? "No provider location yet." : this.state.courseInfo.provider_location
+                    }
                   </Typography>
 
                   <Typography variant="headline" className={classes.title}>
                     Contact Email
                   </Typography>
                   <Typography className={classes.pos} color="textSecondary">
-                    michigan123@gmail.com
+                    {
+                      this.state.courseInfo.provider_email === undefined ? "No provider email yet." : this.state.courseInfo.provider_email
+                    }
                   </Typography>
 
                   <Typography variant="headline" className={classes.title}>
                     Introduction
                   </Typography>
                   <Typography className={classes.pos} color="textSecondary">
-                    The University of Michigan is recognized as a leader in higher education due to the outstanding
-                    quality of its 19 schools and colleges, internationally recognized faculty, and departments with 250
-                    degree programs.
-
-                    The mission of the University of Michigan is to serve the people of Michigan and the world through
-                    preeminence in creating, communicating, preserving and applying knowledge, art, and academic values,
-                    and in developing leaders and citizens who will challenge the present and enrich the future.
+                    {
+                      this.state.courseInfo.provider_detail === undefined ? "No provider detailed information yet." : this.state.courseInfo.provider_detail
+                    }
                   </Typography>
                 </CardContent>
               </Card>
