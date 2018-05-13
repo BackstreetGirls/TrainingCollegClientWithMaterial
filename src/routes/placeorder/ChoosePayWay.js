@@ -12,6 +12,7 @@ import TextField from 'material-ui/TextField';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from 'material-ui/IconButton';
+import Typography from 'material-ui/Typography';
 
 const styles = theme => ({
   container: {
@@ -27,10 +28,20 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
   },
+  imgContainer:{
+    marginLeft: '15%',
+    width:'50%',
+    display: 'flex',
+    flexDirection: 'row',
+  },
   formControl: {
     marginLeft: '25%',
     minWidth: 120,
   },
+  formControl2:{
+    marginLeft: '15%',
+    minWidth: 120,
+  }
 
 });
 
@@ -97,7 +108,12 @@ class ChoosePayWay extends React.Component {
           </FormControl>
         </div>
         <div id="alipay_input" style={{display:this.state.way==='alipay'?'block':'none'}}>
-          <FormControl className={classes.formControl}>
+          <Typography component="p" style={{marginLeft:'20%'}}>
+            Please scan the QR code or login your account.
+          </Typography>
+          <div className={classes.imgContainer}>
+            <img style={{width:100,height:100,marginTop:'5%'}} src='src/assets/alipay_pay.jpg'/>
+            <FormControl className={classes.formControl2}>
             <TextField
               required
               InputLabelProps={{
@@ -129,9 +145,15 @@ class ChoosePayWay extends React.Component {
               }
             />
           </FormControl>
+          </div>
         </div>
         <div id="wechat_input" style={{display:this.state.way==='wechat'?'block':'none'}}>
-          <FormControl className={classes.formControl}>
+          <Typography component="p" style={{marginLeft:'20%'}}>
+            Please scan the QR code or login your account.
+          </Typography>
+          <div className={classes.imgContainer}>
+            <img style={{width:100,height:100,marginTop:'5%'}} src='src/assets/wechat_pay.png'/>
+            <FormControl className={classes.formControl2}>
             <TextField
               required
               InputLabelProps={{
@@ -164,6 +186,7 @@ class ChoosePayWay extends React.Component {
               }
             />
           </FormControl>
+            </div>
         </div>
       </div>
     );
@@ -179,7 +202,7 @@ class ChoosePayWay extends React.Component {
   };
 
   handleClickShowPassword = () => {
-    this.setState({showPassword: !this.state.showPassword});
+
   };
 
   changeWayToAlipay=()=>{

@@ -142,6 +142,15 @@ export default {
         else if (pathToRegexp('/myorder').exec(location.pathname)) {
           document.title = '我的订单';
         }
+        else if(pathToRegexp('/traineecenter').exec(location.pathname)){
+          document.title = '学员中心';
+        }
+        else if(pathToRegexp('/placeorder').exec(location.pathname)){
+          document.title = '确认订单';
+        }
+        else if(pathToRegexp('/changepassword').exec(location.pathname)){
+          document.title = '修改密码';
+        }
         else {
           document.title = '页面不存在';
         }

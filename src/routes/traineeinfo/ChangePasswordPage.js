@@ -107,7 +107,7 @@ class TraineeEditInfoForm extends React.Component {
             </Typography>
           </div>
         </div>
-        <div className={styles.edit_form}>
+        <div className={styles.edit_form} style={{marginTop:'3%'}}>
           <ChangePasswordForm/>
         </div>
 
