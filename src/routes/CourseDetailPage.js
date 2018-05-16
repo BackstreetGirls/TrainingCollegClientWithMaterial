@@ -18,6 +18,7 @@ import IconButton from 'material-ui/IconButton';
 import Share from '@material-ui/icons/Share';
 import Favorite from '@material-ui/icons/Favorite';
 import NoFavorite from '@material-ui/icons/FavoriteBorder';
+import TextField from 'material-ui/TextField';
 import Dialog, {
   DialogActions,
   DialogContent,
@@ -266,15 +267,25 @@ class CourseDetailPage extends React.Component {
           onClose={(index)=>{this.dialog_close(index)}}
           aria-labelledby="form-dialog-title"
         >
-          <DialogTitle id="form-dialog-title3">Copy the link!</DialogTitle>
+          <DialogTitle id="form-dialog-title3">Share</DialogTitle>
           <DialogContent>
-            <DialogContentText>
-              <Paper style={{width:'0%'}} elevation={4}>
-                <Typography component="p">
-                  http://localhost:8000/#/detail&courseID=:0
-                </Typography>
-              </Paper>
+            <DialogContentText style={{width:320}}>
+              Please input the email to share our course.
             </DialogContentText>
+              <div style={{marginLeft:"21%"}}>
+                <TextField
+                  autoFocus
+                  required
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  margin="normal"
+                  id="name"
+                  label="email"
+                  placeholder="example@xxx.com"
+                  type="email"
+                />
+              </div>
 
           </DialogContent>
           <DialogActions>
