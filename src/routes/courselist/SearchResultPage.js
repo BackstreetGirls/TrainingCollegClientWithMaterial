@@ -34,9 +34,9 @@ class SearchResultPage extends React.Component {
 
         <div className={classes.margin}>
           <Tabs defaultActiveKey="1" onChange={callback}>
-            <TabPane tab="Synthetically" key="1">
+            <TabPane tab="Synthetically(Sorting)" key="1">
               <div>
-                <ClassesGrid title=" " tileData={tileData.recommendedClasses}/>
+                <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
               <div className={classes.margin}>
                 <Pagination simple defaultCurrent={1} total={50} pageSize={20} style={{marginLeft: '42%'}} />
@@ -44,7 +44,7 @@ class SearchResultPage extends React.Component {
             </TabPane>
             <TabPane tab="Comment-Based" key="2">
               <div>
-                <ClassesGrid title=" " tileData={tileData.recommendedClasses}/>
+                <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
               <div className={classes.margin}>
                 <Pagination simple defaultCurrent={1} total={50} pageSize={20} style={{marginLeft: '42%'}} />
@@ -52,7 +52,7 @@ class SearchResultPage extends React.Component {
             </TabPane>
             <TabPane tab="Newest" key="3">
               <div>
-                <ClassesGrid title=" " tileData={tileData.recommendedClasses}/>
+                <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
               <div className={classes.margin}>
                 <Pagination simple defaultCurrent={1} total={50} pageSize={20} style={{marginLeft: '42%'}} />
