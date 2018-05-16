@@ -14,6 +14,17 @@ import {Rate} from 'antd';
 import Navigation from '../components/Navigation';
 import img from '../assets/Recommendation/recommendation1.jpeg'
 import tileData from '../utils/FixedData';
+import IconButton from 'material-ui/IconButton';
+import Share from '@material-ui/icons/Share';
+import Favorite from '@material-ui/icons/Favorite';
+import NoFavorite from '@material-ui/icons/FavoriteBorder';
+import Dialog, {
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from 'material-ui/Dialog';
+import Paper from 'material-ui/Paper';
 
 
 const styles = theme => ({
@@ -52,6 +63,8 @@ class CourseDetailPage extends React.Component {
 
   state = {
     courseInfo: {},
+    isFavorite: true,
+    dialog:false
   };
 
   // React组件初始化时自动调用的方法
@@ -62,6 +75,18 @@ class CourseDetailPage extends React.Component {
       courseInfo: tileData.courses[key]
     });
   }
+
+  share=()=>{
+    this.setState({dialog:true});
+  };
+
+  dialog_close=()=> {
+    this.setState({dialog: false});
+  };
+
+  changeFavorite=()=>{
+    this.setState({isFavorite:!this.isFavorite});
+  };
 
   render() {
     const {classes} = this.props;
@@ -82,11 +107,25 @@ class CourseDetailPage extends React.Component {
               <Grid item sm={8} xs={8}>
                 <Card className={classes.card} elevation={0} style={{height: 250}}>
                   <CardContent>
-                    <Typography variant="title" className={classes.title}>
-                      {
-                        this.state.courseInfo.title === undefined ? "No course name yet." : this.state.courseInfo.title
-                      }
-                    </Typography>
+                    <div style={{display: 'flex', flexDirection: 'row'}}>
+                      <Typography variant="title" className={classes.title}>
+                        {
+                          this.state.courseInfo.title === undefined ? "No course name yet." : this.state.courseInfo.title
+                        }
+                      </Typography>
+
+                      <div style={{marginTop:'-1%',display:this.state.isFavorite===true?'block':'none'}}>
+                        <IconButton onClick={(index)=>{this.changeFavorite(index)}}><Favorite/></IconButton>
+                      </div>
+
+                      <div style={{marginTop:'-1%',display:this.state.isFavorite===false?'block':'none'}}>
+                        <IconButton onClick={(index)=>{this.changeFavorite(index)}}><NoFavorite/></IconButton>
+                      </div>
+
+                      <div style={{marginTop:'-1%',marginLeft:'-1%'}}>
+                        <IconButton onClick={this.share}><Share/></IconButton>
+                      </div>
+                    </div>
                     <Rate className={classes.subtitle} disabled allowHalf
                           defaultValue={
                             this.state.courseInfo.rate === undefined ? 0 : this.state.courseInfo.rate
@@ -221,6 +260,29 @@ class CourseDetailPage extends React.Component {
             </Grid>
           </Grid>
         </div>
+
+        <Dialog
+          open={this.state.dialog}
+          onClose={(index)=>{this.dialog_close(index)}}
+          aria-labelledby="form-dialog-title"
+        >
+          <DialogTitle id="form-dialog-title3">Copy the link!</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              <Paper style={{width:'0%'}} elevation={4}>
+                <Typography component="p">
+                  http://localhost:8000/#/detail&courseID=:0
+                </Typography>
+              </Paper>
+            </DialogContentText>
+
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={(index)=>{this.dialog_close(index)}} color="primary">
+              OK
+            </Button>
+          </DialogActions>
+        </Dialog>
 
       </div>
     )
