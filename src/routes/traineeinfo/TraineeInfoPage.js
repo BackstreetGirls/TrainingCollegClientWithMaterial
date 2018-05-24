@@ -68,6 +68,7 @@ class TraineeInfoPage extends React.Component {
     level:false,
     discount:false,
     credit:false,
+    bp:2000,
   };
 
   //兑换对话框
@@ -77,10 +78,12 @@ class TraineeInfoPage extends React.Component {
 
   handleClose = () => {
     this.setState({open: false});
-    // 1s后刷新本页面
-    this.timer = setInterval(() => {
-      window.location.reload(true);
-    }, 1000);
+
+  };
+
+  exchange=()=>{
+    this.setState({open: false});
+    this.setState({bp:3000});
   };
 
   //等级规则
@@ -164,7 +167,7 @@ class TraineeInfoPage extends React.Component {
             /><br/>
             <Meta
               title="BP(point)"
-              description={2000}
+              description={this.state.bp}
             />
             <Button color="primary" variant="raised" onClick={this.handleClickOpen}
                     style={{marginLeft: '80%'}}>EXCHANGE</Button>
@@ -203,7 +206,6 @@ class TraineeInfoPage extends React.Component {
                   id="name"
                   label="BankId"
                   placeholder="622888888123456789"
-                  type="email"
                 />
               </div>
             </DialogContent>
@@ -211,7 +213,7 @@ class TraineeInfoPage extends React.Component {
               <Button onClick={this.handleClose} color="primary">
                 Cancel
               </Button>
-              <Button onClick={this.handleClose} color="primary">
+              <Button onClick={this.exchange} color="primary">
                 Exchange
               </Button>
             </DialogActions>

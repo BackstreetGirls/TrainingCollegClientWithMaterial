@@ -35,7 +35,7 @@ class AllCoursesPage extends React.Component {
           <Tabs defaultActiveKey="1" onChange={callback}>
             <TabPane tab="All" key="1">
               <div>
-                <ClassesGrid title=" " tileData={tileData.recommendedClasses}/>
+                <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
               <div className={classes.margin}>
                 <Pagination simple defaultCurrent={1} total={200} pageSize={20} style={{marginLeft: '42%'}} />
@@ -43,42 +43,42 @@ class AllCoursesPage extends React.Component {
             </TabPane>
             <TabPane tab="Computer Science" key="2">
               <div>
-                <ClassesGrid title=" " tileData={tileData.recommendedClasses}/>
+                <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
               <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={50} pageSize={20} style={{marginLeft: '42%'}} />
+                <Pagination simple defaultCurrent={1} total={40} pageSize={20} style={{marginLeft: '42%'}} />
               </div>
             </TabPane>
             <TabPane tab="Social Science" key="3">
               <div>
-                <ClassesGrid title=" " tileData={tileData.recommendedClasses}/>
+                <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
               <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={50} pageSize={20} style={{marginLeft: '42%'}} />
+                <Pagination simple defaultCurrent={1} total={40} pageSize={20} style={{marginLeft: '42%'}} />
               </div>
             </TabPane>
             <TabPane tab="Humanities and Arts" key="4">
               <div>
-                <ClassesGrid title=" " tileData={tileData.recommendedClasses}/>
+                <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
               <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={50} pageSize={20} style={{marginLeft: '42%'}} />
+                <Pagination simple defaultCurrent={1} total={40} pageSize={20} style={{marginLeft: '42%'}} />
               </div>
             </TabPane>
             <TabPane tab="Language Learning" key="5">
               <div>
-                <ClassesGrid title=" " tileData={tileData.recommendedClasses}/>
+                <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
               <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={50} pageSize={20} style={{marginLeft: '42%'}} />
+                <Pagination simple defaultCurrent={1} total={40} pageSize={20} style={{marginLeft: '42%'}} />
               </div>
             </TabPane>
             <TabPane tab="Economics" key="6">
               <div>
-                <ClassesGrid title=" " tileData={tileData.recommendedClasses}/>
+                <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
               <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={50} pageSize={20} style={{marginLeft: '42%'}} />
+                <Pagination simple defaultCurrent={1} total={40} pageSize={20} style={{marginLeft: '42%'}} />
               </div>
             </TabPane>
           </Tabs>
