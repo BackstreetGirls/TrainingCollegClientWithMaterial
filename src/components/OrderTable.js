@@ -1,5 +1,5 @@
-import React from 'react';
-import {Table, Input, Icon, Button, Popconfirm, Row, Col} from 'antd';
+import React,{Fragment} from 'react';
+import {Table, Input, Icon, Button, Popconfirm, Rate} from 'antd';
 import {withStyles} from "material-ui/styles/index";
 import style from "./css/orderTable.css"
 
@@ -10,7 +10,7 @@ class EditableCell extends React.Component {
   }
 
   render() {
-    const { value, imagesrc } = this.state;
+    const {value, imagesrc } = this.state;
     return (
       <div className="editable-cell">
         <img className={style.cell_image} src={imagesrc}/>{value}
@@ -19,7 +19,28 @@ class EditableCell extends React.Component {
   }
 }
 
+const LineItemRow = ({ record, ...restProps }) => (
+  <Fragment>
+    <tr>
+      <td colSpan="1" style={{ background: "#fbfbfb" }}>
+        订单号：{record.no}
+      </td>
+      <td colSpan="4" style={{ background: "#fbfbfb" }}>
+        机构：{record.institute}
+      </td>
+      <td colSpan="2" style={{ background: "#fbfbfb" }}>
+        日期：{record.date}
+      </td>
+    </tr>
+    <tr {...restProps} />
+  </Fragment>
+);
+
 class OrderTable extends React.Component {
+  handleRow = record => ({
+    record
+  });
+
   constructor(props) {
     super(props);
     this.columns = [{
@@ -64,22 +85,35 @@ class OrderTable extends React.Component {
             </div>
             </div>
           )
+        }else if(record.state=='已支付'){
+          return(
+            <div>
+              <Rate/>
+              <a href="javascript:;">评分</a>
+            </div>
+          )
         }
       },
     }];
 
     this.state = {
       dataSource: [{
+        no: '2018052211328',
+        institute: '皮皮钰编程培训中心',
+        date: '2018-5-22',
         key: '0',
         imagesrc: 'src/assets/course/course1.png',
         name: 'Angular4: 从入门到实战',
         price: '1186',
         amount: '1',
         payment: '1186',
-        state: '等待支付',
+        state: '已支付',
         way: '支付方式',
         description: '2018-5-9',
       }, {
+        no: '2018052311329',
+        institute: '皮皮钰编程培训中心',
+        date: '2018-5-23',
         key: '1',
         imagesrc: 'src/assets/course/course2.png',
         name: 'Vue: 从入门到开发',
@@ -102,21 +136,14 @@ class OrderTable extends React.Component {
   render() {
     const { dataSource } = this.state;
     const columns = this.columns;
-    return (
-      <div>
-        <Table bordered dataSource={dataSource} columns={columns} expandedRowRender={record =>
-          <div>
-            <Row>
-              <Col span={8}>2018-5-11</Col>
-              <Col span={8}>orderID: TZ-123123-000001</Col>
-              <Col span={8}>Institute: Angular University</Col>
-            </Row>
-          </div>
-        }/>
-      </div>
-    );
+
+    const components = {
+      body: {
+        row: LineItemRow
+      }
+    };
+    return <Table bordered components={components} onRow={this.handleRow} columns={columns} dataSource={dataSource} />;
   }
+
 }
-
-
 export default withStyles(style)(OrderTable);

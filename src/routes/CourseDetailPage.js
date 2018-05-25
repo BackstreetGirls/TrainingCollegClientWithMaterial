@@ -12,7 +12,7 @@ import Button from 'material-ui/Button';
 
 import {Rate} from 'antd';
 import Navigation from '../components/Navigation';
-import img from '../assets/Recommendation/recommendation1.jpeg'
+import img from '../assets/Recommendation/recommendation.jpeg'
 import tileData from '../utils/FixedData';
 import IconButton from 'material-ui/IconButton';
 import Share from '@material-ui/icons/Share';
