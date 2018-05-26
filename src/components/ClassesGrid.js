@@ -58,7 +58,7 @@ class ClassesGrid extends React.Component {
           {this.props.tileData.map(tile => (
             <div style={{height: '320', margin: '0 10px', cursor: 'pointer'}} key={tile.key}>
               <Link to={"/detail&courseID=:" + tile.key}>
-                <Card className={classes.card}>
+                <Card className={classes.card} style={{width: 250, height: 400}}>
                   <CardMedia
                     className={classes.media}
                     image={tile.img}
