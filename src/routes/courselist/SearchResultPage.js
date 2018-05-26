@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import { Tabs, Pagination } from 'antd';
 
-const Total = 50;
 const TabPane = Tabs.TabPane;
 
 function callback(key) {
