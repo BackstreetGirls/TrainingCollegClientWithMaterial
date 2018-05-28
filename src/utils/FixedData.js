@@ -2,6 +2,7 @@ import recommendation0 from '../assets/Recommendation/recommendation0.jpg';
 import recommendation1 from '../assets/Recommendation/recommendation.jpeg';
 import recommendation2 from '../assets/Recommendation/recommendation2.png';
 import recommendation3 from '../assets/Recommendation/recommendation3.jpg';
+import recommendation4 from '../assets/Recommendation/recommendation4.jpeg';
 import recommendation9 from '../assets/Recommendation/recommendation9.jpeg';
 import recommendation10 from '../assets/Recommendation/recommendation10.jpg';
 
@@ -90,12 +91,12 @@ const courses = [
   },
   {
     key: 4,
-    img: recommendation1,
+    img: recommendation4,
     title: 'Neural Networks and Deep Learning',
     rate: 5,
     price: '¥ 0.00',
     deadline: '2018.7.14',
-    description: 'If you want to break into cutting-edge AI, this course will help you do so. Deep learning engineers are highly sought after, and mastering deep learning will give you numerous new career opportunities. Deep learning is also a new "superpower" that will let you build AI systems that just weren\'t possible a few years ago',
+    description: 'If you want to break into cutting-edge AI, this course will help you do so.',
     registered_total: '2/500',
     start_date: '2018.9.1',
     class_amount: '5',
