@@ -187,6 +187,9 @@ class NavigationPage extends React.Component {
               TrainingCollege
             </Typography>
             <SearchField/>
+            <Link to="/homepage" style={{color: 'inherit'}}>
+              <Button color="inherit">Home</Button>
+            </Link>
             <Link to="/allcourses" style={{color: 'inherit'}}>
               <Button color="inherit">Category</Button>
             </Link>

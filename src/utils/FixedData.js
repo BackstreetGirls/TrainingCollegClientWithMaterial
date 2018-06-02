@@ -177,27 +177,6 @@ const courses = [
   },
   {
     key: 8,
-    img: recommendation1,
-    title: 'Master Python',
-    rate: 5,
-    price: '¥ 129.00',
-    deadline: '2018.7.18',
-    description: 'Take you master graphic design foundation skills.',
-    registered_total: '2/500',
-    start_date: '2018.8.1',
-    class_amount: '5',
-    lessons_perWeek_totalWeeks: '6 & 12',
-    course_detail: 'This Specialization builds on the success of the Python for Everybody course and will introduce fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language. In the Capstone Project, you’ll use the technologies learned throughout the Specialization to design and create your own applications for data retrieval, processing, and visualization.',
-    teacher: 'Associate Professor: Charles Severance',
-    provider: 'The University of Michigan',
-    provider_location: 'xxx',
-    provider_email: 'michigan123@gmail.com',
-    provider_detail: 'The University of Michigan is recognized as a leader in higher education due to the outstanding quality of its 19 schools and colleges, internationally recognized faculty, and departments with 250 degree programs.\n' +
-    '\n' +
-    '                    The mission of the University of Michigan is to serve the people of Michigan and the world through preeminence in creating, communicating, preserving and applying knowledge, art, and academic values, and in developing leaders and citizens who will challenge the present and enrich the future.\n',
-  },
-  {
-    key: 9,
     img: recommendation9,
     title: 'Applied Data Science with Python',
     rate: 5,
@@ -216,7 +195,7 @@ const courses = [
     provider_detail: 'Michigan’s academic vigor offers excellence across disciplines and around the globe. The University is recognized as a leader in higher education due to the outstanding quality of its 19 schools and colleges, internationally recognized faculty, and departments with 250 degree programs.',
   },
   {
-    key: 10,
+    key: 9,
     img: recommendation10,
     title: 'Algorithms, Part II',
     rate: 5,

@@ -5,6 +5,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import GridList from 'material-ui/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
 import Card, {CardActions, CardContent, CardMedia} from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import {Rate} from 'antd';
@@ -27,12 +28,13 @@ const styles = theme => ({
     margin: '15px 22px',
   },
   gridList: {
-    flexWrap: 'nowrap',
+    // flexWrap: 'nowrap',
+    width: '100%',
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
   },
   card: {
-    maxWidth: 345,
+    maxWidth: 250,
   },
   media: {
     height: 0,
@@ -54,11 +56,11 @@ class ClassesGrid extends React.Component {
         <p className={classes.title}>
           {this.props.title ? this.props.title : "Default"}
         </p>
-        <GridList className={classes.gridList} cols={2.5} style={{margin: '0 10px'}}>
+        <GridList className={classes.gridList} spacing={8} cols={5} style={{margin: '-10px 10px 0 10px'}}>
           {this.props.tileData.map(tile => (
-            <div style={{height: '320', margin: '0 10px', cursor: 'pointer'}} key={tile.key}>
+            <div style={{height: 'auto', marginTop: 10, cursor: 'pointer'}} key={tile.key}>
               <Link to={"/detail&courseID=:" + tile.key}>
-                <Card className={classes.card} style={{width: 250, height: 400}}>
+                <Card className={classes.card} style={{maxWidth: 250, height: 350}}>
                   <CardMedia
                     className={classes.media}
                     image={tile.img}
@@ -68,7 +70,7 @@ class ClassesGrid extends React.Component {
                     <Typography noWrap gutterBottom variant="headline" component="h2">
                       {tile.title}
                     </Typography>
-                    <Typography component="p">
+                    <Typography component="p" style={{height: 74}}>
                       {tile.description}
                     </Typography>
                   </CardContent>
