@@ -61,8 +61,12 @@ class OrderListPage extends React.Component {
             <TabPane tab="Unpaid" key="2">
               <EditableTable/>
             </TabPane>
-            <TabPane tab="Paid" key="3">Content of tab 3</TabPane>
-            <TabPane tab="Closed" key="4">Content of tab 4</TabPane>
+            <TabPane tab="Paid" key="3">
+              <EditableTable/>
+            </TabPane>
+            <TabPane tab="Closed" key="4">
+              <EditableTable/>
+            </TabPane>
           </Tabs>
         </div>
 

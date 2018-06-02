@@ -3,7 +3,8 @@
 }
 
 .cell_image{
-  max-width: 100px;
+  width: 150px;
+  margin-right: 5px;
   height: auto;
 }
 
