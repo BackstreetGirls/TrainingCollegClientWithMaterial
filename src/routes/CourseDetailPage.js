@@ -18,14 +18,21 @@ import IconButton from 'material-ui/IconButton';
 import Share from '@material-ui/icons/Share';
 import Favorite from '@material-ui/icons/Favorite';
 import NoFavorite from '@material-ui/icons/FavoriteBorder';
-import TextField from 'material-ui/TextField';
 import Dialog, {
   DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
 } from 'material-ui/Dialog';
-import Paper from 'material-ui/Paper';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemText from '@material-ui/core/ListItemText';
+import PersonIcon from '@material-ui/icons/Person';
+import AddIcon from '@material-ui/icons/Add';
+import blue from '@material-ui/core/colors/blue';
+import Avatar from '@material-ui/core/Avatar';
+import Input from '@material-ui/core/Input';
 
 
 const styles = theme => ({
@@ -57,7 +64,16 @@ const styles = theme => ({
     marginBottom: 24,
     marginTop: 4,
   },
+  avatar: {
+    backgroundColor: blue[100],
+    color: blue[600],
+  },
+  input: {
+    margin: theme.spacing.unit,
+  },
 });
+
+const emails = ['username@gmail.com', 'user02@gmail.com'];
 
 
 class CourseDetailPage extends React.Component {
@@ -89,8 +105,13 @@ class CourseDetailPage extends React.Component {
     this.setState({isFavorite:!this.isFavorite});
   };
 
+  handleListItemClick = value => {
+    this.setState({dialog: false});
+  };
+
+
   render() {
-    const {classes} = this.props;
+    const { classes, onClose, selectedValue, ...other } = this.props;
 
     return (
       <div style={{minWidth: 1000}}>
@@ -262,37 +283,36 @@ class CourseDetailPage extends React.Component {
           </Grid>
         </div>
 
-        <Dialog
-          open={this.state.dialog}
-          onClose={(index)=>{this.dialog_close(index)}}
-          aria-labelledby="form-dialog-title"
-        >
-          <DialogTitle id="form-dialog-title3">Share</DialogTitle>
-          <DialogContent>
-            <DialogContentText style={{width:320}}>
-              Please input the email to share our course.
-            </DialogContentText>
-              <div style={{marginLeft:"21%"}}>
-                <TextField
-                  autoFocus
-                  required
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  margin="normal"
-                  id="name"
-                  label="email"
+        <Dialog open={this.state.dialog} onClose={this.dialog_close} aria-labelledby="simple-dialog-title" {...other}>
+          <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
+          <div>
+            <List>
+              {emails.map(email => (
+                <ListItem button onClick={() => this.handleListItemClick(email)} key={email}>
+                  <ListItemAvatar>
+                    <Avatar className={classes.avatar}>
+                      <PersonIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText primary={email} />
+                </ListItem>
+              ))}
+              <ListItem>
+                <ListItemAvatar>
+                  <Avatar button onClick={() => this.handleListItemClick('addAccount')}>
+                    <AddIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <Input
                   placeholder="example@xxx.com"
-                  type="email"
+                  className={classes.input}
+                  inputProps={{
+                    'aria-label': 'Description',
+                  }}
                 />
-              </div>
-
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={(index)=>{this.dialog_close(index)}} color="primary">
-              OK
-            </Button>
-          </DialogActions>
+              </ListItem>
+            </List>
+          </div>
         </Dialog>
 
       </div>
