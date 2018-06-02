@@ -1,5 +1,5 @@
-import React,{Fragment} from 'react';
-import {Table, Input, Popover, Popconfirm, Rate} from 'antd';
+import React, {Fragment} from 'react';
+import {Table, Popover, Popconfirm, Rate} from 'antd';
 import {withStyles} from "material-ui/styles/index";
 import style from "./css/orderTable.css"
 import Button from 'material-ui/Button';
@@ -8,28 +8,28 @@ class EditableCell extends React.Component {
   state = {
     value: this.props.value,
     imagesrc: this.props.imagesrc,
-  }
+  };
 
   render() {
-    const {value, imagesrc } = this.state;
+    const {value, imagesrc} = this.state;
     return (
       <div className="editable-cell">
-        <img className={style.cell_image} src={imagesrc}/>{value}
+        <img className={style.cell_image} alt="load false" src={imagesrc}/>{value}
       </div>
     );
   }
 }
 
-const LineItemRow = ({ record, ...restProps }) => (
+const LineItemRow = ({record, ...restProps}) => (
   <Fragment>
     <tr>
-      <td colSpan="1" style={{ background: "#fbfbfb" }}>
+      <td colSpan="1" style={{background: "#fbfbfb"}}>
         orderId：{record.no}
       </td>
-      <td colSpan="4" style={{ background: "#fbfbfb" }}>
+      <td colSpan="4" style={{background: "#fbfbfb"}}>
         institution：{record.institute}
       </td>
-      <td colSpan="2" style={{ background: "#fbfbfb" }}>
+      <td colSpan="2" style={{background: "#fbfbfb"}}>
         date：{record.date}
       </td>
     </tr>
@@ -63,32 +63,32 @@ class OrderTable extends React.Component {
     }, {
       title: 'Payment',
       dataIndex: 'payment',
-    },{
+    }, {
       title: 'State',
       dataIndex: 'state',
     }, {
       title: 'Way',
       dataIndex: 'way',
-    },{
+    }, {
       title: 'Operation',
       dataIndex: 'operation',
       render: (text, record) => {
 
-        if (record.state=='Unpaid') {
+        if (record.state === 'Unpaid') {
           return (
             <div>
-            <div>
+              <div>
                 <Button variant="raised" color="primary">Pay</Button>
-            </div>
-            <div>
-              <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record.key)}>
-                <Button color="primary">Cancle</Button>
-              </Popconfirm>
-            </div>
+              </div>
+              <div>
+                <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record.key)}>
+                  <Button color="primary">Cancle</Button>
+                </Popconfirm>
+              </div>
             </div>
           )
-        }else if(record.state=='Paid'){
-          return(
+        } else if (record.state === 'Paid') {
+          return (
             <div>
               <Popover content={<Rate onKeyDown={() => this.onRate(record.key)}></Rate>}>
                 <Button color="primary">Rate</Button>
@@ -133,15 +133,15 @@ class OrderTable extends React.Component {
 
   onCancle = (key) => {
     const dataSource = [...this.state.dataSource];
-    this.setState({ dataSource: dataSource.filter(item => item.key !== key) });
-  }
+    this.setState({dataSource: dataSource.filter(item => item.key !== key)});
+  };
 
   onRate = (key) => {
-    
-  }
+
+  };
 
   render() {
-    const { dataSource } = this.state;
+    const {dataSource} = this.state;
     const columns = this.columns;
 
     const components = {
@@ -149,8 +149,9 @@ class OrderTable extends React.Component {
         row: LineItemRow
       }
     };
-    return <Table bordered components={components} onRow={this.handleRow} columns={columns} dataSource={dataSource} />;
+    return <Table bordered components={components} onRow={this.handleRow} columns={columns} dataSource={dataSource}/>;
   }
 
 }
+
 export default withStyles(style)(OrderTable);

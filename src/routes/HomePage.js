@@ -37,13 +37,13 @@ class HomePage extends React.Component {
 
         <Carousel autoplay>
           <div>
-            <img src={carousal1}/>
+            <img alt="load false" src={carousal1}/>
             <Button variant="raised" color="primary" className={classes.button} style={{marginTop: -1500}}>
               Learn more
             </Button>
           </div>
           <div>
-            <img src={carousal1}/>
+            <img alt="load false" src={carousal1}/>
           </div>
           <div><h3>3</h3></div>
           <div><h3>4</h3></div>

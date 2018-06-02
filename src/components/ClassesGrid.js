@@ -5,7 +5,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import GridList from 'material-ui/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
 import Card, {CardActions, CardContent, CardMedia} from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import {Rate} from 'antd';

@@ -13,6 +13,9 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
+import alipay_pay from '../../assets/alipay.png';
+import wechat_pay from '../../assets/wechat_pay.png';
+
 
 const styles = theme => ({
   container: {
@@ -112,7 +115,7 @@ class ChoosePayWay extends React.Component {
             Please scan the QR code or login your account.
           </Typography>
           <div className={classes.imgContainer}>
-            <img style={{width:100,height:100,marginTop:'5%'}} src='src/assets/alipay_pay.jpg'/>
+            <img style={{width:100,height:100,marginTop:'5%'}} alt="load false" src={alipay_pay}/>
             <FormControl className={classes.formControl2}>
             <TextField
               required
@@ -152,7 +155,7 @@ class ChoosePayWay extends React.Component {
             Please scan the QR code or login your account.
           </Typography>
           <div className={classes.imgContainer}>
-            <img style={{width:100,height:100,marginTop:'5%'}} src='src/assets/wechat_pay.png'/>
+            <img style={{width:100,height:100,marginTop:'5%'}} alt="load false" src={wechat_pay}/>
             <FormControl className={classes.formControl2}>
             <TextField
               required

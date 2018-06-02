@@ -2,8 +2,7 @@ import Navigation from '../../components/Navigation'
 import EditableTable from '../../components/OrderTable'
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Tabs, Button, Input } from 'antd';
+import { Tabs, Input } from 'antd';
 import {withStyles} from "material-ui/styles/index";
 
 

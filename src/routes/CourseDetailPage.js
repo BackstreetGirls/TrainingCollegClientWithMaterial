@@ -8,8 +8,6 @@ import Card, {CardContent, CardActions, CardMedia} from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import Grid from 'material-ui/Grid';
 import Button from 'material-ui/Button';
-// import Divider from 'material-ui/Divider';
-
 import {Rate} from 'antd';
 import Navigation from '../components/Navigation';
 import img from '../assets/Recommendation/recommendation.jpeg'
@@ -18,12 +16,7 @@ import IconButton from 'material-ui/IconButton';
 import Share from '@material-ui/icons/Share';
 import Favorite from '@material-ui/icons/Favorite';
 import NoFavorite from '@material-ui/icons/FavoriteBorder';
-import Dialog, {
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-} from 'material-ui/Dialog';
+import Dialog, {DialogTitle} from 'material-ui/Dialog';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
@@ -123,7 +116,7 @@ class CourseDetailPage extends React.Component {
               <Grid item sm={4} xs={4}>
                 <CardMedia
                   className={classes.media}
-                  image={img}
+                  image={this.state.courseInfo.img === undefined ? img : this.state.courseInfo.img}
                 />
               </Grid>
               <Grid item sm={8} xs={8}>
