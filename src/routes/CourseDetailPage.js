@@ -26,6 +26,7 @@ import AddIcon from '@material-ui/icons/Add';
 import blue from '@material-ui/core/colors/blue';
 import Avatar from '@material-ui/core/Avatar';
 import Input from '@material-ui/core/Input';
+import { message} from 'antd';
 
 
 const styles = theme => ({
@@ -73,7 +74,7 @@ class CourseDetailPage extends React.Component {
 
   state = {
     courseInfo: {},
-    isFavorite: true,
+    isFavorite: false,
     dialog:false
   };
 
@@ -95,11 +96,28 @@ class CourseDetailPage extends React.Component {
   };
 
   changeFavorite=()=>{
-    this.setState({isFavorite:!this.isFavorite});
+    if(!this.state.isFavorite) {
+      message.success('Collect successfully');
+    }
+    else{
+      message.success('Remove from collection successfully');
+    }
+    this.setState({isFavorite:!this.state.isFavorite});
+    message.config({
+      top: 10,
+      duration: 2,
+      maxCount: 3,
+    });
   };
 
   handleListItemClick = value => {
     this.setState({dialog: false});
+    message.config({
+      top: 10,
+      duration: 2,
+      maxCount: 3,
+    });
+    message.success('Send share email successfully');
   };
 
 
@@ -130,7 +148,7 @@ class CourseDetailPage extends React.Component {
                       </Typography>
 
                       <div style={{marginTop:'-1%',display:this.state.isFavorite===true?'block':'none'}}>
-                        <IconButton onClick={(index)=>{this.changeFavorite(index)}}><Favorite/></IconButton>
+                        <IconButton style={{color:'red'}} onClick={(index)=>{this.changeFavorite(index)}}><Favorite/></IconButton>
                       </div>
 
                       <div style={{marginTop:'-1%',display:this.state.isFavorite===false?'block':'none'}}>
@@ -277,7 +295,7 @@ class CourseDetailPage extends React.Component {
         </div>
 
         <Dialog open={this.state.dialog} onClose={this.dialog_close} aria-labelledby="simple-dialog-title" {...other}>
-          <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
+          <DialogTitle id="simple-dialog-title">Share</DialogTitle>
           <div>
             <List>
               {emails.map(email => (
@@ -305,6 +323,9 @@ class CourseDetailPage extends React.Component {
                 />
               </ListItem>
             </List>
+            <Button onClick={(index)=>{this.dialog_close()}} color="primary" style={{marginBottom:'5%',marginLeft:'60%'}}>
+              CANCEL
+            </Button>
           </div>
         </Dialog>
 
