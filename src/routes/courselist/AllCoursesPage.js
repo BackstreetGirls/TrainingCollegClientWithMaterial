@@ -4,7 +4,7 @@ import Navigation from '../../components/Navigation';
 import ClassesGrid from '../../components/ClassesGrid';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
-import { Tabs, Pagination } from 'antd';
+import { Tabs } from 'antd';
 
 const TabPane = Tabs.TabPane;
 
@@ -23,6 +23,15 @@ const styles = theme => ({
 
 class AllCoursesPage extends React.Component {
 
+  constructor() {
+    super();
+    this.state = {offset: 0};
+  }
+
+  handleClick(offset) {
+    this.setState({offset});
+  }
+
   render() {
 
     const{classes} = this.props;
@@ -37,49 +46,38 @@ class AllCoursesPage extends React.Component {
               <div>
                 <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
-              <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={200} pageSize={20} style={{marginLeft: '42%'}} />
-              </div>
+              {/*分页*/}
+
             </TabPane>
             <TabPane tab="Computer Science" key="2">
               <div>
                 <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
-              <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={40} pageSize={20} style={{marginLeft: '42%'}} />
-              </div>
+
             </TabPane>
             <TabPane tab="Social Science" key="3">
               <div>
                 <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
-              <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={40} pageSize={20} style={{marginLeft: '42%'}} />
-              </div>
+
             </TabPane>
             <TabPane tab="Humanities and Arts" key="4">
               <div>
                 <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
-              <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={40} pageSize={20} style={{marginLeft: '42%'}} />
-              </div>
+
             </TabPane>
             <TabPane tab="Language Learning" key="5">
               <div>
                 <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
-              <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={40} pageSize={20} style={{marginLeft: '42%'}} />
-              </div>
+
             </TabPane>
             <TabPane tab="Economics" key="6">
               <div>
                 <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
-              <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={40} pageSize={20} style={{marginLeft: '42%'}} />
-              </div>
+
             </TabPane>
           </Tabs>
         </div>

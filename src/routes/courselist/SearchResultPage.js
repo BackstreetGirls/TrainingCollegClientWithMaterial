@@ -37,25 +37,19 @@ class SearchResultPage extends React.Component {
               <div>
                 <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
-              <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={50} pageSize={20} style={{marginLeft: '42%'}} />
-              </div>
+
             </TabPane>
             <TabPane tab="Comment-Based" key="2">
               <div>
                 <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
-              <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={50} pageSize={20} style={{marginLeft: '42%'}} />
-              </div>
+
             </TabPane>
             <TabPane tab="Newest" key="3">
               <div>
                 <ClassesGrid title=" " tileData={tileData.courses}/>
               </div>
-              <div className={classes.margin}>
-                <Pagination simple defaultCurrent={1} total={50} pageSize={20} style={{marginLeft: '42%'}} />
-              </div>
+
             </TabPane>
           </Tabs>
         </div>

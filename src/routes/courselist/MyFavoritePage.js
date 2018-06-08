@@ -35,7 +35,7 @@ class MyFavoritePage extends React.Component {
           <Tabs defaultActiveKey="1" onChange={callback}>
             <TabPane tab={<span><Icon type="heart" />Favorites</span>} key="1">
               <div>
-                <ClassesGrid title=" " tileData={tileData.courses}/>
+                <ClassesGrid title=" " tileData={tileData.favorite}/>
               </div>
             </TabPane>
           </Tabs>
