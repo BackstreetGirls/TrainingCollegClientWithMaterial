@@ -1,5 +1,8 @@
 import Navigation from '../../components/Navigation'
-import EditableTable from '../../components/OrderTable'
+import OrderTable from '../../routes/myorder/OrderTable'
+import UnpaidTable from '../../routes/myorder/UnpaidTable'
+import PaidTable from '../../routes/myorder/PaidTable'
+import ClosedTable from '../../routes/myorder/ClosedTable'
 
 import React from 'react';
 import { Tabs, Input } from 'antd';
@@ -55,16 +58,16 @@ class OrderListPage extends React.Component {
 
           <Tabs tabBarExtraContent={operations}>
             <TabPane tab="All" key="1">
-              <EditableTable/>
+              <OrderTable/>
             </TabPane>
             <TabPane tab="Unpaid" key="2">
-              <EditableTable/>
+              <UnpaidTable/>
             </TabPane>
             <TabPane tab="Paid" key="3">
-              <EditableTable/>
+              <PaidTable/>
             </TabPane>
             <TabPane tab="Closed" key="4">
-              <EditableTable/>
+              <ClosedTable/>
             </TabPane>
           </Tabs>
         </div>

@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {Table, Popover, Popconfirm, Rate} from 'antd';
 import {withStyles} from "material-ui/styles/index";
-import style from "./css/orderTable.css"
+import style from "../css/orderTable.css"
 import Button from 'material-ui/Button';
 
 class EditableCell extends React.Component {
