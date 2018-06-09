@@ -5,7 +5,13 @@ import recommendation3 from '../assets/Recommendation/recommendation3.jpg';
 import recommendation4 from '../assets/Recommendation/recommendation4.jpeg';
 import recommendation9 from '../assets/Recommendation/recommendation9.jpeg';
 import recommendation10 from '../assets/Recommendation/recommendation10.jpg';
+import result0 from '../assets/Recommendation/result0.jpg';
+import result1 from '../assets/Recommendation/result1.jpg';
+import result2 from '../assets/Recommendation/result2.jpg';
+import result3 from '../assets/Recommendation/result3.jpg';
+import result4 from '../assets/Recommendation/result4.jpg';
 
+//全部课程
 const courses = [
   {
     key: 0,
@@ -213,8 +219,139 @@ const courses = [
     provider_email: 'princeton123@gmail.com',
     provider_detail: 'Princeton University is a private research university located in Princeton, New Jersey, United States. It is one of the eight universities of the Ivy League, and one of the nine Colonial Colleges founded before the American Revolution.',
   },
+  {
+    key: 10,
+    img: result0,
+    title: 'Introducción al desarrollo de videojuegos con Unity',
+    rate: 4,
+    price: '$ 55.00',
+    deadline: '2018.6.10',
+    description: 'Aprende a desarrollar videojuegos multiplataforma utilizando una de las herramientas más populares del mercado.',
+    registered_total: '80/200',
+    start_date: '2018.6.23',
+    class_amount: '4',
+    lessons_perWeek_totalWeeks: '2 & 6',
+    course_detail: 'Nunca antes el mercado de los videojuegos se ha encontrado en un mejor momento. En la actualidad existen multitud de plataformas disponibles y la irrupción de los dispositivos móviles ha revolucionado el sector.\n' +
+    '\n' +
+    'La existencia de múltiples plataformas implica grandes retos para los desarrolladores en la toma de decisiones, tanto en la elección de las plataformas como en el dimensionamiento de los equipos de trabajo.\n' +
+    '\n' +
+    'Una solución a estos problemas es utilizar un motor de juegos, y sin lugar a dudas el motor más popular y usado del momento es Unity.\n' +
+    '\n' +
+    'Unity es el motor más popular por razones como sus poderosas herramientas, su capacidad de generar juegos en más de 20 plataformas distintas, su excelente curva de aprendizaje y los centenares de complementos disponibles para él desarrollados por terceros. ',
+    teacher: 'Jordi Linares Pellicer',
+    provider: 'Universitat Politècnica de Valencia',
+    provider_location: 'Spain',
+    provider_email: 'JordiP@gmail.com',
+    provider_detail:
+      'La Universitat Politècnica de València es una institución pública, dinámica e innovadora, dedicada a la investigación y a la docencia que, al mismo tiempo que mantiene fuertes vínculos con el entorno social en el que desarrolla sus actividades, opta por una decidida presencia en el extranjero. Es una universidad joven, que durante el curso académico 2018-2019 celebra su 50 aniversario. ',
+  },
+  {
+    key: 11,
+    img: result1,
+    title: 'Microsoft Bot Framework and Conversation as a Platform',
+    rate: 5,
+    price: '$ 99.00',
+    deadline: '2018.5.31',
+    description: 'Explore “Conversation as a Platform” with the Microsoft Bot Framework and create your own Cortana Skills bot that integrates AI.',
+    registered_total: '280/400',
+    start_date: '2018.6.7',
+    class_amount: '8',
+    lessons_perWeek_totalWeeks: '3 to 5 & 5',
+    course_detail: 'The Microsoft Bot Framework is a powerful set of services, tools, and SDKs that provides a rich foundation or "framework" for developers to build and connect intelligent bots. \n' +
+    '\n' +
+    'By leveraging the Microsoft Bot Framework, developers can create, integrate, and manage a wide variety of bots and bot experiences that interact with users naturally. The tools and services available in Microsoft Bot Framework dramatically reduce the amount of code and coordination required to develop “enterprise-ready” bot experiences. \n' +
+    '\n' +
+    'In this practical course, you\'ll explore “Conversation as a Platform” as it pertains to natural language understanding, bots, and Cortana. You\'ll work through hands-on exercises to learn how to piece them together—and find out how to make “Conversation as a Platform” a reality in your organization. \n' +
+    '\n' +
+    'The course starts with an overview of the Microsoft Bot Framework, and then takes a look at Azure Bot Service, which is designed to provision every resource required for production bots at the same time, as an integrated collection of services. The course material also shows how Azure Bot Service provides an integrated environment, specifically designed for developing bots.',
+    teacher: 'Lei Ma & Scott Peterson',
+    provider: 'Microsoft',
+    provider_location: 'USA',
+    provider_email: 'ScottP@gmail.com',
+    provider_detail:
+    '“Be passionate and bold. Always keep learning. You stop doing useful things if you don\'t learn.” – Satya Nadella, CEO, Microsoft\n' +
+    '\n' +
+    'We live in a mobile-first and cloud-first world. Computing is ubiquitous, and experiences span devices and exhibit ambient intelligence. Billions of sensors, screens and devices – in conference rooms, living rooms, cities, cars, phones, PCs – are forming a vast network and streams of data that simply disappear into the background of our lives. This computing power will digitize nearly everything around us, and will derive insights from all of the data being generated by interactions among people and between people and machines. We are moving from a world where computing power was scarce to a place where it now is almost limitless, and where the true scarce commodity is increasingly human attention.',
+  },
+  {
+    key: 12,
+    img: result2,
+    title: 'HTML5 Coding Essentials and Best Practices',
+    rate: 4,
+    price: '$ 129.00',
+    deadline: '2018.6.30',
+    description: 'Learn how to write Web pages and Web sites by mastering HTML5 coding techniques and best practices.',
+    registered_total: '50/100',
+    start_date: '2018.7.1',
+    class_amount: '2',
+    lessons_perWeek_totalWeeks: '5 to 8 & 6',
+    course_detail: 'HTML5 is the standard language of the Web, developed by W3C. For application developers and industry, HTML5 represents a set of features that people will be able to rely on for years to come. HTML5 is supported on a wide variety of devices, lowering the cost of creating rich applications to reach users everywhere.\n' +
+    '\n' +
+    'Whatever mobile phones, connected objects, game consoles, automobile dashboards, and devices that haven’t even been considered yet, HTML5 helps write once and deploy anywhere!\n' +
+    '\n' +
+    'In this course, you will learn all the new HTML5 features to help create great Web sites and applications in a simplified but powerful way. HTML5 provides native support for video and audio without plug-ins, provides support for offline applications, for games with smooth interactive animations, and much more.',
+    teacher: 'Michel Buffa',
+    provider: 'W3Cx',
+    provider_location: 'USA',
+    provider_email: 'MichelB@gmail.com',
+    provider_detail:
+    'The World Wide Web Consortium (W3C) is an international consortium where Member organizations, a full-time staff, and the public work together to develop Web standards and guidelines designed to ensure long-term growth for the Web. W3C\'s goal is for the Web to connect humanity in a way that makes access to knowledge more efficient and equitable.\n' +
+    '\n' +
+    'Founded in 1994 by the inventor of the Web, Tim Berners-Lee, W3C has successfully overseen processes of issue raising, design, consensus building and testing resulting in over 335 technical standards that make the Web work. Success stories include HTML5, XML, CSS and Web accessibility guidelines.',
+  },
+  {
+    key: 13,
+    img: result3,
+    title: 'AWS Developer: Optimizing on AWS',
+    rate: 5,
+    price: '$ 149.00',
+    deadline: '2018.6.11',
+    description: 'Learn from AWS experts how to leverage your developer skills to optimize applications in the AWS Cloud.',
+    registered_total: '150/500',
+    start_date: '2018.6.18',
+    class_amount: '8',
+    lessons_perWeek_totalWeeks: '4 & 6',
+    course_detail: 'Get hands-on training from AWS staff to optimize applications on the AWS platform. \n' +
+    '\n' +
+    'This course, part of the AWS Developer Professional Series, will focus on what you need to know to help you optimize your applications and optimize how you work in AWS. We strongly recommend that you complete Course 1, "Building on AWS" before starting this class.\n' +
+    '\n' +
+    'You will look at ways to improve utilization by using containers with the Amazon Elastic Container Service (Amazon ECS), caching services such as Amazon CloudFront and Amazon ElastiCache, and monitoring tools such as Amazon CloudWatch. You will look at serverless architectures using Amazon DynamoDB, Amazon API Gateway and, AWS Lambda. You will explore the AWS Command Line Interface (CLI), AWS Identity and Access Management (IAM) and learn how to use the AWS Key Management Service (KMS). You will finish off the class with a deep dive into AWS CloudFormation and a capstone exercise where you will debug a CloudFormation template.',
+    teacher: 'None Yet',
+    provider: 'AWS',
+    provider_location: 'USA',
+    provider_email: 'amazonWeb@gmail.com',
+    provider_detail:
+    'Free online courses from Amazon Web Services\n' +
+    'Since 2006, Amazon Web Services has been the world’s most comprehensive and broadly adopted cloud platform. AWS offers over 90 fully featured services for compute, storage, networking, database, analytics, application services, deployment, management, developer, mobile, Internet of Things (IoT), Artificial Intelligence (AI), security, hybrid and enterprise applications, from 44 Availability Zones (AZs) across 16 geographic regions in the U.S., Australia, Brazil, Canada, China, Germany, India, Ireland, Japan, Korea, Singapore, and the UK. AWS services are trusted by millions of active customers around the world — including the fastest-growing startups, largest enterprises, and leading government agencies — to power their infrastructure, make them more agile, and lower costs. To learn more about AWS, visit https://aws.amazon.com.',
+  },
+  {
+    key: 14,
+    img: result4,
+    title: 'Laboratorio di Programmazione',
+    rate: 4,
+    price: '$ 60.00',
+    deadline: '2018.8.31',
+    description: 'Impara a risolvere problemi complessi attraverso l\'uso del computer e avvicinati alla magia degli algoritmi.',
+    registered_total: '35/100',
+    start_date: '2018.9.1',
+    class_amount: '2',
+    lessons_perWeek_totalWeeks: '4 & 8',
+    course_detail: 'Il linguaggio di programmazione è uno degli strumenti che abbiamo per interpretare e risolvere i problemi di tutti i giorni. Un linguaggio che è alla base di problemi comuni, come le previsioni del tempo o l\'analisi della deformazione di una struttura di un\'auto in un incidente stradale.\n' +
+    '\n' +
+    'Questo corso fornisce un’introduzione alle metodologie e agli strumenti per la risoluzioni di problemi attraverso l\'uso del computer. Sarai guidato nell\'individuazione di metodologie di progetto, sviluppo ed analisi degli algoritmi di base per il calcolo scientifico nonché all’uso dei principali strumenti di calcolo (hardware e software), con particolare riguardo all’influenza che questi ultimi esercitano sullo sviluppo degli algoritmi stessi.',
+    teacher: 'Marco Lapegna, Prof',
+    provider: 'Università Federico II',
+    provider_location: 'Italy',
+    provider_email: 'MarcoL@gmail.com',
+    provider_detail:
+    'Free online courses from Università degli Studi di Napoli Federico II\n' +
+    'Fondata nel 1224, l\'Università degli Studi di Napoli Federico II è la più antica Università laica d’Europa. Con il suo Centro “Federica Weblearning”, è all’avanguardia nell’innovazione della didattica multimediale online.\n' +
+    '\n' +
+    'Le piattaforme di Federica offrono oltre 300 corsi blended e 75 MOOCs aperti a tutti e tenuti da prestigiosi docenti della Federico II e di altri Atenei nazionali e internazionali. Con oltre 5milioni di contatti, Federica presenta un design di straordinaria efficacia che integra in modalità seamless testi, video e link alle più autorevoli fonti online. Scopri di più su www.federica.eu.',
+  },
 ];
 
+//个人收藏
 const favorite = [
   {
     key: 0,
@@ -231,14 +368,489 @@ const favorite = [
     course_detail: 'This course is based on helping students master and apply modern computer technology, solving various economic management theories and practical problems, and taking the computer knowledge and skills that economic managers must have in the content arrangement as the basic starting point, and computer technology and quantitative analysis methods. It is closely integrated with the principles of economic management and fully reflects the interdependence, mutual penetration, mutual support, mutual influence, and mutual restraint with other economic management courses. It is the first of its kind in the economics and management disciplines of financial institutions and all other universities in the country.',
     teacher: 'Professor: LanJuan Liu',
     provider: 'Shanghai University of Finance',
-    provider_location: 'xxx',
-    provider_email: 'xxx@xxx.com',
+    provider_location: 'China',
+    provider_email: 'LjLiu@gmail.com',
     provider_detail:
       'Shanghai University of Finance and Economics is a multi-disciplinary national key university directly under the Ministry of Education of the People\'s Republic of China. It is the national "211 Project" and "985 Project." Advanced Discipline Innovation Platform “Key universities have been selected as “National High-level Innovative Talents Base for Overseas Talents”[1], “Key Research Base for Humanities and Social Sciences of the Ministry of Education”, “Excellent Legal Talents Education and Training Program”, and “National Construction of High-Level Universities” The "Government Graduate Program" is one of the first batch of doctoral awarding units in the country and is jointly built by the Ministry of Education, the Ministry of Finance, and the Shanghai Municipal People\'s Government.',
   },
 ];
 
+//搜索结果,按照CS搜索
+const search_result1 = [
+  {
+    key: 10,
+    img: result0,
+    title: 'Introducción al desarrollo de videojuegos con Unity',
+    rate: 4,
+    price: '$ 55.00',
+    deadline: '2018.6.10',
+    description: 'Aprende a desarrollar videojuegos multiplataforma utilizando una de las herramientas más populares del mercado.',
+    registered_total: '80/200',
+    start_date: '2018.6.23',
+    class_amount: '4',
+    lessons_perWeek_totalWeeks: '2 & 6',
+    course_detail: 'Nunca antes el mercado de los videojuegos se ha encontrado en un mejor momento. En la actualidad existen multitud de plataformas disponibles y la irrupción de los dispositivos móviles ha revolucionado el sector.\n' +
+    '\n' +
+    'La existencia de múltiples plataformas implica grandes retos para los desarrolladores en la toma de decisiones, tanto en la elección de las plataformas como en el dimensionamiento de los equipos de trabajo.\n' +
+    '\n' +
+    'Una solución a estos problemas es utilizar un motor de juegos, y sin lugar a dudas el motor más popular y usado del momento es Unity.\n' +
+    '\n' +
+    'Unity es el motor más popular por razones como sus poderosas herramientas, su capacidad de generar juegos en más de 20 plataformas distintas, su excelente curva de aprendizaje y los centenares de complementos disponibles para él desarrollados por terceros. ',
+    teacher: 'Jordi Linares Pellicer',
+    provider: 'Universitat Politècnica de Valencia',
+    provider_location: 'Spain',
+    provider_email: 'JordiP@gmail.com',
+    provider_detail:
+      'La Universitat Politècnica de València es una institución pública, dinámica e innovadora, dedicada a la investigación y a la docencia que, al mismo tiempo que mantiene fuertes vínculos con el entorno social en el que desarrolla sus actividades, opta por una decidida presencia en el extranjero. Es una universidad joven, que durante el curso académico 2018-2019 celebra su 50 aniversario. ',
+  },
+  {
+    key: 11,
+    img: result1,
+    title: 'Microsoft Bot Framework and Conversation as a Platform',
+    rate: 5,
+    price: '$ 99.00',
+    deadline: '2018.5.31',
+    description: 'Explore “Conversation as a Platform” with the Microsoft Bot Framework and create your own Cortana Skills bot that integrates AI.',
+    registered_total: '280/400',
+    start_date: '2018.6.7',
+    class_amount: '8',
+    lessons_perWeek_totalWeeks: '3 to 5 & 5',
+    course_detail: 'The Microsoft Bot Framework is a powerful set of services, tools, and SDKs that provides a rich foundation or "framework" for developers to build and connect intelligent bots. \n' +
+    '\n' +
+    'By leveraging the Microsoft Bot Framework, developers can create, integrate, and manage a wide variety of bots and bot experiences that interact with users naturally. The tools and services available in Microsoft Bot Framework dramatically reduce the amount of code and coordination required to develop “enterprise-ready” bot experiences. \n' +
+    '\n' +
+    'In this practical course, you\'ll explore “Conversation as a Platform” as it pertains to natural language understanding, bots, and Cortana. You\'ll work through hands-on exercises to learn how to piece them together—and find out how to make “Conversation as a Platform” a reality in your organization. \n' +
+    '\n' +
+    'The course starts with an overview of the Microsoft Bot Framework, and then takes a look at Azure Bot Service, which is designed to provision every resource required for production bots at the same time, as an integrated collection of services. The course material also shows how Azure Bot Service provides an integrated environment, specifically designed for developing bots.',
+    teacher: 'Lei Ma & Scott Peterson',
+    provider: 'Microsoft',
+    provider_location: 'USA',
+    provider_email: 'ScottP@gmail.com',
+    provider_detail:
+      '“Be passionate and bold. Always keep learning. You stop doing useful things if you don\'t learn.” – Satya Nadella, CEO, Microsoft\n' +
+      '\n' +
+      'We live in a mobile-first and cloud-first world. Computing is ubiquitous, and experiences span devices and exhibit ambient intelligence. Billions of sensors, screens and devices – in conference rooms, living rooms, cities, cars, phones, PCs – are forming a vast network and streams of data that simply disappear into the background of our lives. This computing power will digitize nearly everything around us, and will derive insights from all of the data being generated by interactions among people and between people and machines. We are moving from a world where computing power was scarce to a place where it now is almost limitless, and where the true scarce commodity is increasingly human attention.',
+  },
+  {
+    key: 12,
+    img: result2,
+    title: 'HTML5 Coding Essentials and Best Practices',
+    rate: 4,
+    price: '$ 129.00',
+    deadline: '2018.6.30',
+    description: 'Learn how to write Web pages and Web sites by mastering HTML5 coding techniques and best practices.',
+    registered_total: '50/100',
+    start_date: '2018.7.1',
+    class_amount: '2',
+    lessons_perWeek_totalWeeks: '5 to 8 & 6',
+    course_detail: 'HTML5 is the standard language of the Web, developed by W3C. For application developers and industry, HTML5 represents a set of features that people will be able to rely on for years to come. HTML5 is supported on a wide variety of devices, lowering the cost of creating rich applications to reach users everywhere.\n' +
+    '\n' +
+    'Whatever mobile phones, connected objects, game consoles, automobile dashboards, and devices that haven’t even been considered yet, HTML5 helps write once and deploy anywhere!\n' +
+    '\n' +
+    'In this course, you will learn all the new HTML5 features to help create great Web sites and applications in a simplified but powerful way. HTML5 provides native support for video and audio without plug-ins, provides support for offline applications, for games with smooth interactive animations, and much more.',
+    teacher: 'Michel Buffa',
+    provider: 'W3Cx',
+    provider_location: 'USA',
+    provider_email: 'MichelB@gmail.com',
+    provider_detail:
+      'The World Wide Web Consortium (W3C) is an international consortium where Member organizations, a full-time staff, and the public work together to develop Web standards and guidelines designed to ensure long-term growth for the Web. W3C\'s goal is for the Web to connect humanity in a way that makes access to knowledge more efficient and equitable.\n' +
+      '\n' +
+      'Founded in 1994 by the inventor of the Web, Tim Berners-Lee, W3C has successfully overseen processes of issue raising, design, consensus building and testing resulting in over 335 technical standards that make the Web work. Success stories include HTML5, XML, CSS and Web accessibility guidelines.',
+  },
+  {
+    key: 13,
+    img: result3,
+    title: 'AWS Developer: Optimizing on AWS',
+    rate: 5,
+    price: '$ 149.00',
+    deadline: '2018.6.11',
+    description: 'Learn from AWS experts how to leverage your developer skills to optimize applications in the AWS Cloud.',
+    registered_total: '150/500',
+    start_date: '2018.6.18',
+    class_amount: '8',
+    lessons_perWeek_totalWeeks: '4 & 6',
+    course_detail: 'Get hands-on training from AWS staff to optimize applications on the AWS platform. \n' +
+    '\n' +
+    'This course, part of the AWS Developer Professional Series, will focus on what you need to know to help you optimize your applications and optimize how you work in AWS. We strongly recommend that you complete Course 1, "Building on AWS" before starting this class.\n' +
+    '\n' +
+    'You will look at ways to improve utilization by using containers with the Amazon Elastic Container Service (Amazon ECS), caching services such as Amazon CloudFront and Amazon ElastiCache, and monitoring tools such as Amazon CloudWatch. You will look at serverless architectures using Amazon DynamoDB, Amazon API Gateway and, AWS Lambda. You will explore the AWS Command Line Interface (CLI), AWS Identity and Access Management (IAM) and learn how to use the AWS Key Management Service (KMS). You will finish off the class with a deep dive into AWS CloudFormation and a capstone exercise where you will debug a CloudFormation template.',
+    teacher: 'None Yet',
+    provider: 'AWS',
+    provider_location: 'USA',
+    provider_email: 'amazonWeb@gmail.com',
+    provider_detail:
+      'Free online courses from Amazon Web Services\n' +
+      'Since 2006, Amazon Web Services has been the world’s most comprehensive and broadly adopted cloud platform. AWS offers over 90 fully featured services for compute, storage, networking, database, analytics, application services, deployment, management, developer, mobile, Internet of Things (IoT), Artificial Intelligence (AI), security, hybrid and enterprise applications, from 44 Availability Zones (AZs) across 16 geographic regions in the U.S., Australia, Brazil, Canada, China, Germany, India, Ireland, Japan, Korea, Singapore, and the UK. AWS services are trusted by millions of active customers around the world — including the fastest-growing startups, largest enterprises, and leading government agencies — to power their infrastructure, make them more agile, and lower costs. To learn more about AWS, visit https://aws.amazon.com.',
+  },
+  {
+    key: 14,
+    img: result4,
+    title: 'Laboratorio di Programmazione',
+    rate: 4,
+    price: '$ 60.00',
+    deadline: '2018.8.31',
+    description: 'Impara a risolvere problemi complessi attraverso l\'uso del computer e avvicinati alla magia degli algoritmi.',
+    registered_total: '35/100',
+    start_date: '2018.9.1',
+    class_amount: '2',
+    lessons_perWeek_totalWeeks: '4 & 8',
+    course_detail: 'Il linguaggio di programmazione è uno degli strumenti che abbiamo per interpretare e risolvere i problemi di tutti i giorni. Un linguaggio che è alla base di problemi comuni, come le previsioni del tempo o l\'analisi della deformazione di una struttura di un\'auto in un incidente stradale.\n' +
+    '\n' +
+    'Questo corso fornisce un’introduzione alle metodologie e agli strumenti per la risoluzioni di problemi attraverso l\'uso del computer. Sarai guidato nell\'individuazione di metodologie di progetto, sviluppo ed analisi degli algoritmi di base per il calcolo scientifico nonché all’uso dei principali strumenti di calcolo (hardware e software), con particolare riguardo all’influenza che questi ultimi esercitano sullo sviluppo degli algoritmi stessi.',
+    teacher: 'Marco Lapegna, Prof',
+    provider: 'Università Federico II',
+    provider_location: 'Italy',
+    provider_email: 'MarcoL@gmail.com',
+    provider_detail:
+      'Free online courses from Università degli Studi di Napoli Federico II\n' +
+      'Fondata nel 1224, l\'Università degli Studi di Napoli Federico II è la più antica Università laica d’Europa. Con il suo Centro “Federica Weblearning”, è all’avanguardia nell’innovazione della didattica multimediale online.\n' +
+      '\n' +
+      'Le piattaforme di Federica offrono oltre 300 corsi blended e 75 MOOCs aperti a tutti e tenuti da prestigiosi docenti della Federico II e di altri Atenei nazionali e internazionali. Con oltre 5milioni di contatti, Federica presenta un design di straordinaria efficacia che integra in modalità seamless testi, video e link alle più autorevoli fonti online. Scopri di più su www.federica.eu.',
+  },
+  {
+    key: 0,
+    img: recommendation0,
+    title: 'Computer Application in Economic Management',
+    rate: 5,
+    price: '¥ 99.00',
+    deadline: '2018.5.15',
+    description: 'Help students master computer skills and improve the quality and efficiency of economic and management problems.',
+    registered_total: '40/500',
+    start_date: '2018.5.26',
+    class_amount: '5',
+    lessons_perWeek_totalWeeks: '2 & 16',
+    course_detail: 'This course is based on helping students master and apply modern computer technology, solving various economic management theories and practical problems, and taking the computer knowledge and skills that economic managers must have in the content arrangement as the basic starting point, and computer technology and quantitative analysis methods. It is closely integrated with the principles of economic management and fully reflects the interdependence, mutual penetration, mutual support, mutual influence, and mutual restraint with other economic management courses. It is the first of its kind in the economics and management disciplines of financial institutions and all other universities in the country.',
+    teacher: 'Professor: LanJuan Liu',
+    provider: 'Shanghai University of Finance',
+    provider_location: 'China',
+    provider_email: 'LjLiu@gmail.com',
+    provider_detail:
+      'Shanghai University of Finance and Economics is a multi-disciplinary national key university directly under the Ministry of Education of the People\'s Republic of China. It is the national "211 Project" and "985 Project." Advanced Discipline Innovation Platform “Key universities have been selected as “National High-level Innovative Talents Base for Overseas Talents”[1], “Key Research Base for Humanities and Social Sciences of the Ministry of Education”, “Excellent Legal Talents Education and Training Program”, and “National Construction of High-Level Universities” The "Government Graduate Program" is one of the first batch of doctoral awarding units in the country and is jointly built by the Ministry of Education, the Ministry of Finance, and the Shanghai Municipal People\'s Government.',
+  },
+];
+
+const search_result2 = [
+  {
+    key: 0,
+    img: recommendation0,
+    title: 'Computer Application in Economic Management',
+    rate: 5,
+    price: '¥ 99.00',
+    deadline: '2018.5.15',
+    description: 'Help students master computer skills and improve the quality and efficiency of economic and management problems.',
+    registered_total: '40/500',
+    start_date: '2018.5.26',
+    class_amount: '5',
+    lessons_perWeek_totalWeeks: '2 & 16',
+    course_detail: 'This course is based on helping students master and apply modern computer technology, solving various economic management theories and practical problems, and taking the computer knowledge and skills that economic managers must have in the content arrangement as the basic starting point, and computer technology and quantitative analysis methods. It is closely integrated with the principles of economic management and fully reflects the interdependence, mutual penetration, mutual support, mutual influence, and mutual restraint with other economic management courses. It is the first of its kind in the economics and management disciplines of financial institutions and all other universities in the country.',
+    teacher: 'Professor: LanJuan Liu',
+    provider: 'Shanghai University of Finance',
+    provider_location: 'China',
+    provider_email: 'LjLiu@gmail.com',
+    provider_detail:
+      'Shanghai University of Finance and Economics is a multi-disciplinary national key university directly under the Ministry of Education of the People\'s Republic of China. It is the national "211 Project" and "985 Project." Advanced Discipline Innovation Platform “Key universities have been selected as “National High-level Innovative Talents Base for Overseas Talents”[1], “Key Research Base for Humanities and Social Sciences of the Ministry of Education”, “Excellent Legal Talents Education and Training Program”, and “National Construction of High-Level Universities” The "Government Graduate Program" is one of the first batch of doctoral awarding units in the country and is jointly built by the Ministry of Education, the Ministry of Finance, and the Shanghai Municipal People\'s Government.',
+  },
+  {
+    key: 13,
+    img: result3,
+    title: 'AWS Developer: Optimizing on AWS',
+    rate: 5,
+    price: '$ 149.00',
+    deadline: '2018.6.11',
+    description: 'Learn from AWS experts how to leverage your developer skills to optimize applications in the AWS Cloud.',
+    registered_total: '150/500',
+    start_date: '2018.6.18',
+    class_amount: '8',
+    lessons_perWeek_totalWeeks: '4 & 6',
+    course_detail: 'Get hands-on training from AWS staff to optimize applications on the AWS platform. \n' +
+    '\n' +
+    'This course, part of the AWS Developer Professional Series, will focus on what you need to know to help you optimize your applications and optimize how you work in AWS. We strongly recommend that you complete Course 1, "Building on AWS" before starting this class.\n' +
+    '\n' +
+    'You will look at ways to improve utilization by using containers with the Amazon Elastic Container Service (Amazon ECS), caching services such as Amazon CloudFront and Amazon ElastiCache, and monitoring tools such as Amazon CloudWatch. You will look at serverless architectures using Amazon DynamoDB, Amazon API Gateway and, AWS Lambda. You will explore the AWS Command Line Interface (CLI), AWS Identity and Access Management (IAM) and learn how to use the AWS Key Management Service (KMS). You will finish off the class with a deep dive into AWS CloudFormation and a capstone exercise where you will debug a CloudFormation template.',
+    teacher: 'None Yet',
+    provider: 'AWS',
+    provider_location: 'USA',
+    provider_email: 'amazonWeb@gmail.com',
+    provider_detail:
+    'Free online courses from Amazon Web Services\n' +
+    'Since 2006, Amazon Web Services has been the world’s most comprehensive and broadly adopted cloud platform. AWS offers over 90 fully featured services for compute, storage, networking, database, analytics, application services, deployment, management, developer, mobile, Internet of Things (IoT), Artificial Intelligence (AI), security, hybrid and enterprise applications, from 44 Availability Zones (AZs) across 16 geographic regions in the U.S., Australia, Brazil, Canada, China, Germany, India, Ireland, Japan, Korea, Singapore, and the UK. AWS services are trusted by millions of active customers around the world — including the fastest-growing startups, largest enterprises, and leading government agencies — to power their infrastructure, make them more agile, and lower costs. To learn more about AWS, visit https://aws.amazon.com.',
+  },
+  {
+    key: 11,
+    img: result1,
+    title: 'Microsoft Bot Framework and Conversation as a Platform',
+    rate: 5,
+    price: '$ 99.00',
+    deadline: '2018.5.31',
+    description: 'Explore “Conversation as a Platform” with the Microsoft Bot Framework and create your own Cortana Skills bot that integrates AI.',
+    registered_total: '280/400',
+    start_date: '2018.6.7',
+    class_amount: '8',
+    lessons_perWeek_totalWeeks: '3 to 5 & 5',
+    course_detail: 'The Microsoft Bot Framework is a powerful set of services, tools, and SDKs that provides a rich foundation or "framework" for developers to build and connect intelligent bots. \n' +
+    '\n' +
+    'By leveraging the Microsoft Bot Framework, developers can create, integrate, and manage a wide variety of bots and bot experiences that interact with users naturally. The tools and services available in Microsoft Bot Framework dramatically reduce the amount of code and coordination required to develop “enterprise-ready” bot experiences. \n' +
+    '\n' +
+    'In this practical course, you\'ll explore “Conversation as a Platform” as it pertains to natural language understanding, bots, and Cortana. You\'ll work through hands-on exercises to learn how to piece them together—and find out how to make “Conversation as a Platform” a reality in your organization. \n' +
+    '\n' +
+    'The course starts with an overview of the Microsoft Bot Framework, and then takes a look at Azure Bot Service, which is designed to provision every resource required for production bots at the same time, as an integrated collection of services. The course material also shows how Azure Bot Service provides an integrated environment, specifically designed for developing bots.',
+    teacher: 'Lei Ma & Scott Peterson',
+    provider: 'Microsoft',
+    provider_location: 'USA',
+    provider_email: 'ScottP@gmail.com',
+    provider_detail:
+    '“Be passionate and bold. Always keep learning. You stop doing useful things if you don\'t learn.” – Satya Nadella, CEO, Microsoft\n' +
+    '\n' +
+    'We live in a mobile-first and cloud-first world. Computing is ubiquitous, and experiences span devices and exhibit ambient intelligence. Billions of sensors, screens and devices – in conference rooms, living rooms, cities, cars, phones, PCs – are forming a vast network and streams of data that simply disappear into the background of our lives. This computing power will digitize nearly everything around us, and will derive insights from all of the data being generated by interactions among people and between people and machines. We are moving from a world where computing power was scarce to a place where it now is almost limitless, and where the true scarce commodity is increasingly human attention.',
+  },
+  {
+    key: 10,
+    img: result0,
+    title: 'Introducción al desarrollo de videojuegos con Unity',
+    rate: 4,
+    price: '$ 55.00',
+    deadline: '2018.6.10',
+    description: 'Aprende a desarrollar videojuegos multiplataforma utilizando una de las herramientas más populares del mercado.',
+    registered_total: '80/200',
+    start_date: '2018.6.23',
+    class_amount: '4',
+    lessons_perWeek_totalWeeks: '2 & 6',
+    course_detail: 'Nunca antes el mercado de los videojuegos se ha encontrado en un mejor momento. En la actualidad existen multitud de plataformas disponibles y la irrupción de los dispositivos móviles ha revolucionado el sector.\n' +
+    '\n' +
+    'La existencia de múltiples plataformas implica grandes retos para los desarrolladores en la toma de decisiones, tanto en la elección de las plataformas como en el dimensionamiento de los equipos de trabajo.\n' +
+    '\n' +
+    'Una solución a estos problemas es utilizar un motor de juegos, y sin lugar a dudas el motor más popular y usado del momento es Unity.\n' +
+    '\n' +
+    'Unity es el motor más popular por razones como sus poderosas herramientas, su capacidad de generar juegos en más de 20 plataformas distintas, su excelente curva de aprendizaje y los centenares de complementos disponibles para él desarrollados por terceros. ',
+    teacher: 'Jordi Linares Pellicer',
+    provider: 'Universitat Politècnica de Valencia',
+    provider_location: 'Spain',
+    provider_email: 'JordiP@gmail.com',
+    provider_detail:
+      'La Universitat Politècnica de València es una institución pública, dinámica e innovadora, dedicada a la investigación y a la docencia que, al mismo tiempo que mantiene fuertes vínculos con el entorno social en el que desarrolla sus actividades, opta por una decidida presencia en el extranjero. Es una universidad joven, que durante el curso académico 2018-2019 celebra su 50 aniversario. ',
+  },
+  {
+    key: 12,
+    img: result2,
+    title: 'HTML5 Coding Essentials and Best Practices',
+    rate: 4,
+    price: '$ 129.00',
+    deadline: '2018.6.30',
+    description: 'Learn how to write Web pages and Web sites by mastering HTML5 coding techniques and best practices.',
+    registered_total: '50/100',
+    start_date: '2018.7.1',
+    class_amount: '2',
+    lessons_perWeek_totalWeeks: '5 to 8 & 6',
+    course_detail: 'HTML5 is the standard language of the Web, developed by W3C. For application developers and industry, HTML5 represents a set of features that people will be able to rely on for years to come. HTML5 is supported on a wide variety of devices, lowering the cost of creating rich applications to reach users everywhere.\n' +
+    '\n' +
+    'Whatever mobile phones, connected objects, game consoles, automobile dashboards, and devices that haven’t even been considered yet, HTML5 helps write once and deploy anywhere!\n' +
+    '\n' +
+    'In this course, you will learn all the new HTML5 features to help create great Web sites and applications in a simplified but powerful way. HTML5 provides native support for video and audio without plug-ins, provides support for offline applications, for games with smooth interactive animations, and much more.',
+    teacher: 'Michel Buffa',
+    provider: 'W3Cx',
+    provider_location: 'USA',
+    provider_email: 'MichelB@gmail.com',
+    provider_detail:
+    'The World Wide Web Consortium (W3C) is an international consortium where Member organizations, a full-time staff, and the public work together to develop Web standards and guidelines designed to ensure long-term growth for the Web. W3C\'s goal is for the Web to connect humanity in a way that makes access to knowledge more efficient and equitable.\n' +
+    '\n' +
+    'Founded in 1994 by the inventor of the Web, Tim Berners-Lee, W3C has successfully overseen processes of issue raising, design, consensus building and testing resulting in over 335 technical standards that make the Web work. Success stories include HTML5, XML, CSS and Web accessibility guidelines.',
+  },
+  {
+    key: 14,
+    img: result4,
+    title: 'Laboratorio di Programmazione',
+    rate: 4,
+    price: '$ 60.00',
+    deadline: '2018.8.31',
+    description: 'Impara a risolvere problemi complessi attraverso l\'uso del computer e avvicinati alla magia degli algoritmi.',
+    registered_total: '35/100',
+    start_date: '2018.9.1',
+    class_amount: '2',
+    lessons_perWeek_totalWeeks: '4 & 8',
+    course_detail: 'Il linguaggio di programmazione è uno degli strumenti che abbiamo per interpretare e risolvere i problemi di tutti i giorni. Un linguaggio che è alla base di problemi comuni, come le previsioni del tempo o l\'analisi della deformazione di una struttura di un\'auto in un incidente stradale.\n' +
+    '\n' +
+    'Questo corso fornisce un’introduzione alle metodologie e agli strumenti per la risoluzioni di problemi attraverso l\'uso del computer. Sarai guidato nell\'individuazione di metodologie di progetto, sviluppo ed analisi degli algoritmi di base per il calcolo scientifico nonché all’uso dei principali strumenti di calcolo (hardware e software), con particolare riguardo all’influenza che questi ultimi esercitano sullo sviluppo degli algoritmi stessi.',
+    teacher: 'Marco Lapegna, Prof',
+    provider: 'Università Federico II',
+    provider_location: 'Italy',
+    provider_email: 'MarcoL@gmail.com',
+    provider_detail:
+    'Free online courses from Università degli Studi di Napoli Federico II\n' +
+    'Fondata nel 1224, l\'Università degli Studi di Napoli Federico II è la più antica Università laica d’Europa. Con il suo Centro “Federica Weblearning”, è all’avanguardia nell’innovazione della didattica multimediale online.\n' +
+    '\n' +
+    'Le piattaforme di Federica offrono oltre 300 corsi blended e 75 MOOCs aperti a tutti e tenuti da prestigiosi docenti della Federico II e di altri Atenei nazionali e internazionali. Con oltre 5milioni di contatti, Federica presenta un design di straordinaria efficacia che integra in modalità seamless testi, video e link alle più autorevoli fonti online. Scopri di più su www.federica.eu.',
+  },
+];
+
+const search_result3 = [
+  {
+    key: 10,
+    img: result0,
+    title: 'Introducción al desarrollo de videojuegos con Unity',
+    rate: 4,
+    price: '$ 55.00',
+    deadline: '2018.6.10',
+    description: 'Aprende a desarrollar videojuegos multiplataforma utilizando una de las herramientas más populares del mercado.',
+    registered_total: '80/200',
+    start_date: '2018.6.23',
+    class_amount: '4',
+    lessons_perWeek_totalWeeks: '2 & 6',
+    course_detail: 'Nunca antes el mercado de los videojuegos se ha encontrado en un mejor momento. En la actualidad existen multitud de plataformas disponibles y la irrupción de los dispositivos móviles ha revolucionado el sector.\n' +
+    '\n' +
+    'La existencia de múltiples plataformas implica grandes retos para los desarrolladores en la toma de decisiones, tanto en la elección de las plataformas como en el dimensionamiento de los equipos de trabajo.\n' +
+    '\n' +
+    'Una solución a estos problemas es utilizar un motor de juegos, y sin lugar a dudas el motor más popular y usado del momento es Unity.\n' +
+    '\n' +
+    'Unity es el motor más popular por razones como sus poderosas herramientas, su capacidad de generar juegos en más de 20 plataformas distintas, su excelente curva de aprendizaje y los centenares de complementos disponibles para él desarrollados por terceros. ',
+    teacher: 'Jordi Linares Pellicer',
+    provider: 'Universitat Politècnica de Valencia',
+    provider_location: 'Spain',
+    provider_email: 'JordiP@gmail.com',
+    provider_detail:
+      'La Universitat Politècnica de València es una institución pública, dinámica e innovadora, dedicada a la investigación y a la docencia que, al mismo tiempo que mantiene fuertes vínculos con el entorno social en el que desarrolla sus actividades, opta por una decidida presencia en el extranjero. Es una universidad joven, que durante el curso académico 2018-2019 celebra su 50 aniversario. ',
+  },
+  {
+    key: 12,
+    img: result2,
+    title: 'HTML5 Coding Essentials and Best Practices',
+    rate: 4,
+    price: '$ 129.00',
+    deadline: '2018.6.30',
+    description: 'Learn how to write Web pages and Web sites by mastering HTML5 coding techniques and best practices.',
+    registered_total: '50/100',
+    start_date: '2018.7.1',
+    class_amount: '2',
+    lessons_perWeek_totalWeeks: '5 to 8 & 6',
+    course_detail: 'HTML5 is the standard language of the Web, developed by W3C. For application developers and industry, HTML5 represents a set of features that people will be able to rely on for years to come. HTML5 is supported on a wide variety of devices, lowering the cost of creating rich applications to reach users everywhere.\n' +
+    '\n' +
+    'Whatever mobile phones, connected objects, game consoles, automobile dashboards, and devices that haven’t even been considered yet, HTML5 helps write once and deploy anywhere!\n' +
+    '\n' +
+    'In this course, you will learn all the new HTML5 features to help create great Web sites and applications in a simplified but powerful way. HTML5 provides native support for video and audio without plug-ins, provides support for offline applications, for games with smooth interactive animations, and much more.',
+    teacher: 'Michel Buffa',
+    provider: 'W3Cx',
+    provider_location: 'USA',
+    provider_email: 'MichelB@gmail.com',
+    provider_detail:
+    'The World Wide Web Consortium (W3C) is an international consortium where Member organizations, a full-time staff, and the public work together to develop Web standards and guidelines designed to ensure long-term growth for the Web. W3C\'s goal is for the Web to connect humanity in a way that makes access to knowledge more efficient and equitable.\n' +
+    '\n' +
+    'Founded in 1994 by the inventor of the Web, Tim Berners-Lee, W3C has successfully overseen processes of issue raising, design, consensus building and testing resulting in over 335 technical standards that make the Web work. Success stories include HTML5, XML, CSS and Web accessibility guidelines.',
+  },
+  {
+    key: 14,
+    img: result4,
+    title: 'Laboratorio di Programmazione',
+    rate: 4,
+    price: '$ 60.00',
+    deadline: '2018.8.31',
+    description: 'Impara a risolvere problemi complessi attraverso l\'uso del computer e avvicinati alla magia degli algoritmi.',
+    registered_total: '35/100',
+    start_date: '2018.9.1',
+    class_amount: '2',
+    lessons_perWeek_totalWeeks: '4 & 8',
+    course_detail: 'Il linguaggio di programmazione è uno degli strumenti che abbiamo per interpretare e risolvere i problemi di tutti i giorni. Un linguaggio che è alla base di problemi comuni, come le previsioni del tempo o l\'analisi della deformazione di una struttura di un\'auto in un incidente stradale.\n' +
+    '\n' +
+    'Questo corso fornisce un’introduzione alle metodologie e agli strumenti per la risoluzioni di problemi attraverso l\'uso del computer. Sarai guidato nell\'individuazione di metodologie di progetto, sviluppo ed analisi degli algoritmi di base per il calcolo scientifico nonché all’uso dei principali strumenti di calcolo (hardware e software), con particolare riguardo all’influenza che questi ultimi esercitano sullo sviluppo degli algoritmi stessi.',
+    teacher: 'Marco Lapegna, Prof',
+    provider: 'Università Federico II',
+    provider_location: 'Italy',
+    provider_email: 'MarcoL@gmail.com',
+    provider_detail:
+    'Free online courses from Università degli Studi di Napoli Federico II\n' +
+    'Fondata nel 1224, l\'Università degli Studi di Napoli Federico II è la più antica Università laica d’Europa. Con il suo Centro “Federica Weblearning”, è all’avanguardia nell’innovazione della didattica multimediale online.\n' +
+    '\n' +
+    'Le piattaforme di Federica offrono oltre 300 corsi blended e 75 MOOCs aperti a tutti e tenuti da prestigiosi docenti della Federico II e di altri Atenei nazionali e internazionali. Con oltre 5milioni di contatti, Federica presenta un design di straordinaria efficacia che integra in modalità seamless testi, video e link alle più autorevoli fonti online. Scopri di più su www.federica.eu.',
+  },
+  {
+    key: 0,
+    img: recommendation0,
+    title: 'Computer Application in Economic Management',
+    rate: 5,
+    price: '¥ 99.00',
+    deadline: '2018.5.15',
+    description: 'Help students master computer skills and improve the quality and efficiency of economic and management problems.',
+    registered_total: '40/500',
+    start_date: '2018.5.26',
+    class_amount: '5',
+    lessons_perWeek_totalWeeks: '2 & 16',
+    course_detail: 'This course is based on helping students master and apply modern computer technology, solving various economic management theories and practical problems, and taking the computer knowledge and skills that economic managers must have in the content arrangement as the basic starting point, and computer technology and quantitative analysis methods. It is closely integrated with the principles of economic management and fully reflects the interdependence, mutual penetration, mutual support, mutual influence, and mutual restraint with other economic management courses. It is the first of its kind in the economics and management disciplines of financial institutions and all other universities in the country.',
+    teacher: 'Professor: LanJuan Liu',
+    provider: 'Shanghai University of Finance',
+    provider_location: 'China',
+    provider_email: 'LjLiu@gmail.com',
+    provider_detail:
+      'Shanghai University of Finance and Economics is a multi-disciplinary national key university directly under the Ministry of Education of the People\'s Republic of China. It is the national "211 Project" and "985 Project." Advanced Discipline Innovation Platform “Key universities have been selected as “National High-level Innovative Talents Base for Overseas Talents”[1], “Key Research Base for Humanities and Social Sciences of the Ministry of Education”, “Excellent Legal Talents Education and Training Program”, and “National Construction of High-Level Universities” The "Government Graduate Program" is one of the first batch of doctoral awarding units in the country and is jointly built by the Ministry of Education, the Ministry of Finance, and the Shanghai Municipal People\'s Government.',
+  },
+  {
+    key: 13,
+    img: result3,
+    title: 'AWS Developer: Optimizing on AWS',
+    rate: 5,
+    price: '$ 149.00',
+    deadline: '2018.6.11',
+    description: 'Learn from AWS experts how to leverage your developer skills to optimize applications in the AWS Cloud.',
+    registered_total: '150/500',
+    start_date: '2018.6.18',
+    class_amount: '8',
+    lessons_perWeek_totalWeeks: '4 & 6',
+    course_detail: 'Get hands-on training from AWS staff to optimize applications on the AWS platform. \n' +
+    '\n' +
+    'This course, part of the AWS Developer Professional Series, will focus on what you need to know to help you optimize your applications and optimize how you work in AWS. We strongly recommend that you complete Course 1, "Building on AWS" before starting this class.\n' +
+    '\n' +
+    'You will look at ways to improve utilization by using containers with the Amazon Elastic Container Service (Amazon ECS), caching services such as Amazon CloudFront and Amazon ElastiCache, and monitoring tools such as Amazon CloudWatch. You will look at serverless architectures using Amazon DynamoDB, Amazon API Gateway and, AWS Lambda. You will explore the AWS Command Line Interface (CLI), AWS Identity and Access Management (IAM) and learn how to use the AWS Key Management Service (KMS). You will finish off the class with a deep dive into AWS CloudFormation and a capstone exercise where you will debug a CloudFormation template.',
+    teacher: 'None Yet',
+    provider: 'AWS',
+    provider_location: 'USA',
+    provider_email: 'amazonWeb@gmail.com',
+    provider_detail:
+    'Free online courses from Amazon Web Services\n' +
+    'Since 2006, Amazon Web Services has been the world’s most comprehensive and broadly adopted cloud platform. AWS offers over 90 fully featured services for compute, storage, networking, database, analytics, application services, deployment, management, developer, mobile, Internet of Things (IoT), Artificial Intelligence (AI), security, hybrid and enterprise applications, from 44 Availability Zones (AZs) across 16 geographic regions in the U.S., Australia, Brazil, Canada, China, Germany, India, Ireland, Japan, Korea, Singapore, and the UK. AWS services are trusted by millions of active customers around the world — including the fastest-growing startups, largest enterprises, and leading government agencies — to power their infrastructure, make them more agile, and lower costs. To learn more about AWS, visit https://aws.amazon.com.',
+  },
+  {
+    key: 11,
+    img: result1,
+    title: 'Microsoft Bot Framework and Conversation as a Platform',
+    rate: 5,
+    price: '$ 99.00',
+    deadline: '2018.5.31',
+    description: 'Explore “Conversation as a Platform” with the Microsoft Bot Framework and create your own Cortana Skills bot that integrates AI.',
+    registered_total: '280/400',
+    start_date: '2018.6.7',
+    class_amount: '8',
+    lessons_perWeek_totalWeeks: '3 to 5 & 5',
+    course_detail: 'The Microsoft Bot Framework is a powerful set of services, tools, and SDKs that provides a rich foundation or "framework" for developers to build and connect intelligent bots. \n' +
+    '\n' +
+    'By leveraging the Microsoft Bot Framework, developers can create, integrate, and manage a wide variety of bots and bot experiences that interact with users naturally. The tools and services available in Microsoft Bot Framework dramatically reduce the amount of code and coordination required to develop “enterprise-ready” bot experiences. \n' +
+    '\n' +
+    'In this practical course, you\'ll explore “Conversation as a Platform” as it pertains to natural language understanding, bots, and Cortana. You\'ll work through hands-on exercises to learn how to piece them together—and find out how to make “Conversation as a Platform” a reality in your organization. \n' +
+    '\n' +
+    'The course starts with an overview of the Microsoft Bot Framework, and then takes a look at Azure Bot Service, which is designed to provision every resource required for production bots at the same time, as an integrated collection of services. The course material also shows how Azure Bot Service provides an integrated environment, specifically designed for developing bots.',
+    teacher: 'Lei Ma & Scott Peterson',
+    provider: 'Microsoft',
+    provider_location: 'USA',
+    provider_email: 'ScottP@gmail.com',
+    provider_detail:
+    '“Be passionate and bold. Always keep learning. You stop doing useful things if you don\'t learn.” – Satya Nadella, CEO, Microsoft\n' +
+    '\n' +
+    'We live in a mobile-first and cloud-first world. Computing is ubiquitous, and experiences span devices and exhibit ambient intelligence. Billions of sensors, screens and devices – in conference rooms, living rooms, cities, cars, phones, PCs – are forming a vast network and streams of data that simply disappear into the background of our lives. This computing power will digitize nearly everything around us, and will derive insights from all of the data being generated by interactions among people and between people and machines. We are moving from a world where computing power was scarce to a place where it now is almost limitless, and where the true scarce commodity is increasingly human attention.',
+  },
+];
+
+//首页推荐
+const recommendation = [
+
+];
+
+//首页最新
+const newest = [
+
+];
+
 export default {
   courses,
   favorite,
+  search_result1,
+  search_result2,
+  search_result3,
+  recommendation,
+  newest,
 }

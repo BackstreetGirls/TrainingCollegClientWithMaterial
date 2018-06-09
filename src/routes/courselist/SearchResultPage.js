@@ -35,19 +35,19 @@ class SearchResultPage extends React.Component {
           <Tabs defaultActiveKey="1" onChange={callback}>
             <TabPane tab="Synthetically(Sorting)" key="1">
               <div>
-                <ClassesGrid title=" " tileData={tileData.courses}/>
+                <ClassesGrid title=" " tileData={tileData.search_result1}/>
               </div>
 
             </TabPane>
             <TabPane tab="Comment-Based" key="2">
               <div>
-                <ClassesGrid title=" " tileData={tileData.courses}/>
+                <ClassesGrid title=" " tileData={tileData.search_result2}/>
               </div>
 
             </TabPane>
             <TabPane tab="Newest" key="3">
               <div>
-                <ClassesGrid title=" " tileData={tileData.courses}/>
+                <ClassesGrid title=" " tileData={tileData.search_result3}/>
               </div>
 
             </TabPane>
