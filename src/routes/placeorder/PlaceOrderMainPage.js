@@ -12,6 +12,7 @@ import { withStyles } from 'material-ui/styles';
 import Stepper, { Step, StepButton } from 'material-ui/Stepper';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
+import { message} from 'antd';
 
 const styles = ({
   root: {
@@ -159,6 +160,17 @@ class PlaceOrderMainPage extends React.Component {
      */
     if (completed.size !== this.totalSteps() - this.skippedSteps()) {
       this.handleNext();
+    }
+    else {
+      message.config({
+        top: 10,
+        duration: 2,
+        maxCount: 3,
+      });
+      message.success('Place the order successfully! Wait...');
+      setTimeout(function () {
+        window.location.href = "/#/myorder";
+      }, 1000);
     }
   };
 
