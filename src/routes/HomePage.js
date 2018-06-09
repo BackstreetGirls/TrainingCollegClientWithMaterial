@@ -50,11 +50,11 @@ class HomePage extends React.Component {
         </Carousel>
 
         <div className={classes.margin}>
-          <ClassesGrid title="Recommendation" tileData={tileData.courses}/>
+          <ClassesGrid title="Recommendation" tileData={tileData.recommendation}/>
         </div>
 
         <div className={classes.margin}>
-          <ClassesGrid title="Newest" tileData={tileData.courses}/>
+          <ClassesGrid title="Newest" tileData={tileData.newest}/>
         </div>
 
       </div>
