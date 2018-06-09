@@ -31,8 +31,8 @@ const courses = [
     course_detail: 'This course is based on helping students master and apply modern computer technology, solving various economic management theories and practical problems, and taking the computer knowledge and skills that economic managers must have in the content arrangement as the basic starting point, and computer technology and quantitative analysis methods. It is closely integrated with the principles of economic management and fully reflects the interdependence, mutual penetration, mutual support, mutual influence, and mutual restraint with other economic management courses. It is the first of its kind in the economics and management disciplines of financial institutions and all other universities in the country.',
     teacher: 'Professor: LanJuan Liu',
     provider: 'Shanghai University of Finance',
-    provider_location: 'xxx',
-    provider_email: 'xxx@xxx.com',
+    provider_location: 'China',
+    provider_email: 'LjLiu@gmail.com',
     provider_detail:
     'Shanghai University of Finance and Economics is a multi-disciplinary national key university directly under the Ministry of Education of the People\'s Republic of China. It is the national "211 Project" and "985 Project." Advanced Discipline Innovation Platform “Key universities have been selected as “National High-level Innovative Talents Base for Overseas Talents”[1], “Key Research Base for Humanities and Social Sciences of the Ministry of Education”, “Excellent Legal Talents Education and Training Program”, and “National Construction of High-Level Universities” The "Government Graduate Program" is one of the first batch of doctoral awarding units in the country and is jointly built by the Ministry of Education, the Ministry of Finance, and the Shanghai Municipal People\'s Government.',
   },
@@ -1108,6 +1108,26 @@ const newest = [
   },
 ];
 
+const cs_courses = [
+
+];
+
+const ss_courses = [
+
+];
+
+const ha_courses = [
+
+];
+
+const ll_courses = [
+
+];
+
+const eco_courses = [
+
+];
+
 export default {
   courses,
   favorite,
@@ -1116,4 +1136,9 @@ export default {
   search_result3,
   recommendation,
   newest,
+  cs_courses,
+  ss_courses,
+  ha_courses,
+  ll_courses,
+  eco_courses,
 }
