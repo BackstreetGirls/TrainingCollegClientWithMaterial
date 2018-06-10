@@ -90,11 +90,29 @@ class OrderTable extends React.Component {
         } else if (record.state === 'Paid') {
           return (
             <div>
-              <Popover content={<Rate onKeyDown={() => this.onRate(record.key)}></Rate>}>
+              <Popover content={<Rate onChange={() => this.onRate(record.key)}></Rate>}>
                 <Button color="primary">Rate</Button>
               </Popover>
             </div>
           )
+        } else if (record.state === 'Closed') {
+          if(record.rate === -1) {
+            return (
+              <div>
+                <div>
+                  <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record.key)}>
+                    <Button color="primary">Delete</Button>
+                  </Popconfirm>
+                </div>
+              </div>
+            )
+          }else{
+            return(
+              <div>
+                <Rate disabled value={record.rate}></Rate>
+              </div>
+            )
+          }
         }
       },
     }];
@@ -112,6 +130,7 @@ class OrderTable extends React.Component {
         payment: '99',
         state: 'Paid',
         way: 'AliPay',
+        rate: -1,
         description: '2018-5-9',
       }, {
         no: '2018052311329',
@@ -125,6 +144,7 @@ class OrderTable extends React.Component {
         payment: '129',
         state: 'Unpaid',
         way: '-',
+        rate: -1,
         description: '2018-5-10',
       }],
       count: 2,

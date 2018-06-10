@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {Table, Popover, Popconfirm, Rate} from 'antd';
+import {Table, Popover, Rate, message} from 'antd';
 import {withStyles} from "material-ui/styles/index";
 import style from "../css/orderTable.css"
 import Button from 'material-ui/Button';
@@ -74,23 +74,10 @@ class OrderTable extends React.Component {
       dataIndex: 'operation',
       render: (text, record) => {
 
-        if (record.state === 'Unpaid') {
+        if (record.state === 'Paid') {
           return (
             <div>
-              <div>
-                <Button variant="raised" color="primary">Pay</Button>
-              </div>
-              <div>
-                <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record.key)}>
-                  <Button color="primary">Cancle</Button>
-                </Popconfirm>
-              </div>
-            </div>
-          )
-        } else if (record.state === 'Paid') {
-          return (
-            <div>
-              <Popover content={<Rate onKeyDown={() => this.onRate(record.key)}></Rate>}>
+              <Popover content={<Rate onChange={() => this.onRate(record.key)}></Rate>}>
                 <Button color="primary">Rate</Button>
               </Popover>
             </div>
@@ -112,6 +99,7 @@ class OrderTable extends React.Component {
         payment: '99',
         state: 'Paid',
         way: 'AliPay',
+        rate: -1,
         description: '2018-5-9',
       }, {
         no: '2018052311329',
@@ -123,21 +111,25 @@ class OrderTable extends React.Component {
         price: '129',
         amount: '1',
         payment: '129',
-        state: 'Unpaid',
+        state: 'Paid',
         way: '-',
+        rate: -1,
         description: '2018-5-10',
       }],
       count: 2,
     };
   }
 
-  onCancle = (key) => {
+  onRate = (key) => {
+    console.log(key);
     const dataSource = [...this.state.dataSource];
     this.setState({dataSource: dataSource.filter(item => item.key !== key)});
-  };
-
-  onRate = (key) => {
-
+    message.config({
+      top: 10,
+      duration: 2,
+      maxCount: 3,
+    });
+    message.success('Rate Successfully!');
   };
 
   render() {

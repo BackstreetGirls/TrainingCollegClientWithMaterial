@@ -3,6 +3,7 @@ import {Table, Popover, Popconfirm, Rate, Modal, message} from 'antd';
 import {withStyles} from "material-ui/styles/index";
 import orderTableStyle from "../css/orderTable.css"
 import Button from 'material-ui/Button';
+import FullScreenDialog from '../../routes/myorder/FullScreenDialog';
 
 import Divider from 'material-ui/Divider';
 import Input, {InputAdornment} from 'material-ui/Input';

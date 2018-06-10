@@ -74,28 +74,31 @@ class OrderTable extends React.Component {
       dataIndex: 'operation',
       render: (text, record) => {
 
-        if (record.state === 'Unpaid') {
-          return (
-            <div>
+        if (record.state === 'Closed') {
+          if(record.rate === -1) {
+            return (
               <div>
-                <Button variant="raised" color="primary">Pay</Button>
+                <div>
+                  <Popconfirm title="Sure to delete?" onConfirm={() => this.onCancle(record.key)}>
+                    <Button size="small" color="secondary" variant="raised">Delete</Button>
+                  </Popconfirm>
+                </div>
               </div>
+            )
+          }else{
+            return(
               <div>
-                <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record.key)}>
-                  <Button color="primary">Cancle</Button>
-                </Popconfirm>
+                <Rate disabled value={record.rate} style={{display: "block"}}></Rate>
+                <div>
+                  <Popconfirm title="Sure to delete?" onConfirm={() => this.onCancle(record.key)}>
+                    <Button size="small" color="secondary" variant="raised">Delete</Button>
+                  </Popconfirm>
+                </div>
               </div>
-            </div>
-          )
-        } else if (record.state === 'Paid') {
-          return (
-            <div>
-              <Popover content={<Rate onKeyDown={() => this.onRate(record.key)}></Rate>}>
-                <Button color="primary">Rate</Button>
-              </Popover>
-            </div>
-          )
+            )
+          }
         }
+
       },
     }];
 
@@ -110,8 +113,9 @@ class OrderTable extends React.Component {
         price: '99',
         amount: '1',
         payment: '99',
-        state: 'Paid',
+        state: 'Closed',
         way: 'AliPay',
+        rate: 4,
         description: '2018-5-9',
       }, {
         no: '2018052311329',
@@ -123,8 +127,9 @@ class OrderTable extends React.Component {
         price: '129',
         amount: '1',
         payment: '129',
-        state: 'Unpaid',
+        state: 'Closed',
         way: '-',
+        rate: -1,
         description: '2018-5-10',
       }],
       count: 2,
@@ -134,10 +139,6 @@ class OrderTable extends React.Component {
   onCancle = (key) => {
     const dataSource = [...this.state.dataSource];
     this.setState({dataSource: dataSource.filter(item => item.key !== key)});
-  };
-
-  onRate = (key) => {
-
   };
 
   render() {
