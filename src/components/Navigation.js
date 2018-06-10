@@ -16,15 +16,15 @@ import Dialog, {
   DialogContent,
   DialogTitle,
 } from 'material-ui/Dialog';
-// import IconButton from 'material-ui/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
-// import SwipeableDrawer from 'material-ui/SwipeableDrawer';
-
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 
 import './css/Navigation.css';
 import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
 import SearchField from '../components/SearchField';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import {mainListItems, otherListItems} from '../components/PersonList';
 
 
 const styles = {
@@ -49,16 +49,11 @@ const styles = {
 class NavigationPage extends React.Component {
 
   state = {
-    // open_drawer: false,
+    open_drawer: false,
     open_loginForm: false,
     open_registerForm: false,
+    logout_confirm: false,
   };
-
-  // toggleDrawer = (state) => () => {
-  //   this.setState({
-  //     open_drawer: state,
-  //   });
-  // };
 
   openLoginForm = () => {
     this.setState({open_loginForm: true});
@@ -75,6 +70,27 @@ class NavigationPage extends React.Component {
   closeRegisterForm = () => {
     this.setState({open_registerForm: false});
   };
+
+  openLogoutConfirm = () => {
+    if (this.props.trainee.hasLoggedIn) {
+      this.setState({logout_confirm: true});
+    }
+    else {
+      message.warning("Already logged out!");
+      window.location.reload(true);
+    }
+  };
+
+  closeLogoutConfirm = () => {
+    this.setState({logout_confirm: false});
+  };
+
+  toggleDrawer = (open) => () => {
+    this.setState({
+      open_drawer: open,
+    });
+  };
+
 
   // 提交登录方法
   handleLogin = (e) => {
@@ -104,11 +120,18 @@ class NavigationPage extends React.Component {
           ...param,
         },
       }).then(value => {
-        // if(value){
-        //   this.props.history.push("/Trainee/ChooseCourseWithClass");
-        // }
-        this.setState({open_loginForm: false});
-      });
+        if (value) {
+          this.closeLoginForm()
+          // this.props.history.push("/Trainee/ChooseCourseWithClass");
+        }
+      }).then(
+        message.success("Login successfully!")
+      ).then(
+        // 1s后刷新本页面
+        this.timer = setInterval(() => {
+          window.location.reload(true);
+        }, 1000)
+      );
     }
     else {
       message.warning("invalid email!");
@@ -118,7 +141,6 @@ class NavigationPage extends React.Component {
   // 提交注册方法
   handleRegister = (e) => {
     e.preventDefault();
-
     let email = document.getElementById("email_register").value;
     let password = document.getElementById("password_register").value;
     let name = document.getElementById("name").value;
@@ -160,29 +182,40 @@ class NavigationPage extends React.Component {
     }
   };
 
+  // 退出登录方法
+  handleLogout = () => {
+    this.props.dispatch({
+      type: 'trainee/logout',
+      payload: {},
+    }).then(
+      this.closeLogoutConfirm()
+    ).then(
+      message.success("Logout successfully")
+    ).then(
+      // 1s后刷新本页面
+      this.timer = setInterval(() => {
+        window.location.reload(true);
+      }, 1000)
+    );
+  };
+
   render() {
 
     const {classes} = this.props;
-    // const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-    // const sideList = (
-    //   <div className={classes.list}>
-    //     // todo
-    //   </div>
-    // );
+    const sideList = (
+      <div className={classes.list}>
+        <List>{mainListItems}</List>
+        <Divider/>
+        <List>{otherListItems}</List>
+      </div>
+    );
 
     return (
       <div>
         <AppBar position="static" color="inherit">
           <Toolbar>
-            {/*<IconButton*/}
-            {/*className={classes.menuButton}*/}
-            {/*color="inherit"*/}
-            {/*aria-label="Menu"*/}
-            {/*onClick={this.toggleDrawer(true)}*/}
-            {/*>*/}
-            {/*<MenuIcon/>*/}
-            {/*</IconButton>*/}
             <Typography variant="title" color="inherit" className={classes.flex}>
               TrainingCollege
             </Typography>
@@ -193,27 +226,39 @@ class NavigationPage extends React.Component {
             <Link to="/allcourses" style={{color: 'inherit'}}>
               <Button color="inherit">Category</Button>
             </Link>
-            <Button color="inherit" onClick={this.openLoginForm}>Login</Button>
-            <Button color="inherit" onClick={this.openRegisterForm}>Register</Button>
+            {
+              this.props.trainee.hasLoggedIn === "true"
+                ?
+                <div>
+                  <Button color="inherit" onClick={this.toggleDrawer(true)}>Personal</Button>
+                  <Button color="inherit" onClick={this.openLogoutConfirm}>Logout</Button>
+                </div>
+                :
+                <div>
+                  <Button color="inherit" onClick={this.openLoginForm}>Login</Button>
+                  <Button color="inherit" onClick={this.openRegisterForm}>Register</Button>
+                </div>
+            }
           </Toolbar>
         </AppBar>
 
-        {/*<SwipeableDrawer*/}
-        {/*open={this.state.open_drawer}*/}
-        {/*onClose={this.toggleDrawer(false)}*/}
-        {/*onOpen={this.toggleDrawer(true)}*/}
-        {/*disableBackdropTransition={!iOS}*/}
-        {/*disableDiscovery={iOS}*/}
-        {/*>*/}
-        {/*<div*/}
-        {/*tabIndex={0}*/}
-        {/*role="button"*/}
-        {/*onClick={this.toggleDrawer(false)}*/}
-        {/*onKeyDown={this.toggleDrawer(false)}*/}
-        {/*>*/}
-        {/*{sideList}*/}
-        {/*</div>*/}
-        {/*</SwipeableDrawer>*/}
+        <SwipeableDrawer
+          anchor="right"
+          open={this.state.open_drawer}
+          onOpen={this.toggleDrawer(true)}
+          onClose={this.toggleDrawer(false)}
+          disableBackdropTransition={!iOS}
+          disableDiscovery={iOS}
+        >
+          <div
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer(false)}
+            onKeyDown={this.toggleDrawer(false)}
+          >
+            {sideList}
+          </div>
+        </SwipeableDrawer>
 
         <Dialog
           open={this.state.open_loginForm}
@@ -234,7 +279,7 @@ class NavigationPage extends React.Component {
               Cancel
             </Button>
             <Button onClick={this.handleLogin} color="primary">
-              Subscribe
+              Login
             </Button>
           </DialogActions>
         </Dialog>
@@ -258,7 +303,24 @@ class NavigationPage extends React.Component {
               Cancel
             </Button>
             <Button onClick={this.handleRegister} color="primary">
-              Subscribe
+              Register
+            </Button>
+          </DialogActions>
+        </Dialog>
+
+        <Dialog
+          open={this.state.logout_confirm}
+          onClose={this.closeLogoutConfirm}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">{"Are you sure to logout?"}</DialogTitle>
+          <DialogActions>
+            <Button onClick={this.closeLogoutConfirm} color="primary">
+              No
+            </Button>
+            <Button onClick={this.handleLogout} color="primary" autoFocus>
+              Yes
             </Button>
           </DialogActions>
         </Dialog>

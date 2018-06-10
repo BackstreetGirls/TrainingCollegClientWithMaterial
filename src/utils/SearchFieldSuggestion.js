@@ -1,0 +1,17 @@
+export const suggestions = [
+  {label: 'Algorithms, Part II'},
+  {label: 'Applied Data Science with Python'},
+  {label: 'AWS Developer: Optimizing on AWS'},
+  {label: 'Computer Application in Economic Management'},
+  {label: 'Essay Writing'},
+  {label: 'First Nights'},
+  {label: 'Fundamentals of Graphic Design'},
+  {label: 'HTML5 Coding Essentials and Best Practices'},
+  {label: 'Introducción al desarrollo de videojuegos con Unity'},
+  {label: 'Just Money: Banking as if Society Mattered'},
+  {label: 'L innovazione sociale per il patrimonio culturale'},
+  {label: 'Laboratorio di Programmazione'},
+  {label: 'Master Python'},
+  {label: 'Microsoft Bot Framework and Conversation as a Platform'},
+  {label: 'Neural Networks and Deep Learning'},
+];
