@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {Table, Popover, Popconfirm, Rate, Modal, message} from 'antd';
+import {Table, Popover, Popconfirm, Rate, Modal, message, Tabs} from 'antd';
 import {withStyles} from "material-ui/styles/index";
 import orderTableStyle from "../css/orderTable.css"
 import Button from 'material-ui/Button';
@@ -16,13 +16,14 @@ import alipay_pay from '../../assets/alipay.png';
 import wechat_pay from '../../assets/wechat_pay.png';
 
 import Dialog from '@material-ui/core/Dialog';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItem from '@material-ui/core/ListItem';
-import List from '@material-ui/core/List';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
+
+import tileData from "../../utils/FixedData";
+import ClassesGrid from '../../components/ClassesGrid';
+const TabPane = Tabs.TabPane;
 
 const styles = theme => ({
   container: {
@@ -302,15 +303,47 @@ class OrderTable extends React.Component {
                       {/*</Typography>*/}
                     </Toolbar>
                   </AppBar>
-                  <List>
-                    <ListItem button>
-                      <ListItemText primary="Phone ringtone" secondary="Titania" />
-                    </ListItem>
-                    <Divider />
-                    <ListItem button>
-                      <ListItemText primary="Default notification ringtone" secondary="Tethys" />
-                    </ListItem>
-                  </List>
+                    <div className={classes.margin}>
+                      <Tabs defaultActiveKey="1">
+                        <TabPane tab="All" key="1">
+                          <div>
+                            <ClassesGrid title=" " tileData={tileData.courses}/>
+                          </div>
+                          {/*分页*/}
+
+                        </TabPane>
+                        <TabPane tab="Computer Science" key="2">
+                          <div>
+                            <ClassesGrid title=" " tileData={tileData.courses}/>
+                          </div>
+
+                        </TabPane>
+                        <TabPane tab="Social Science" key="3">
+                          <div>
+                            <ClassesGrid title=" " tileData={tileData.courses}/>
+                          </div>
+
+                        </TabPane>
+                        <TabPane tab="Humanities and Arts" key="4">
+                          <div>
+                            <ClassesGrid title=" " tileData={tileData.courses}/>
+                          </div>
+
+                        </TabPane>
+                        <TabPane tab="Language Learning" key="5">
+                          <div>
+                            <ClassesGrid title=" " tileData={tileData.courses}/>
+                          </div>
+
+                        </TabPane>
+                        <TabPane tab="Economics" key="6">
+                          <div>
+                            <ClassesGrid title=" " tileData={tileData.courses}/>
+                          </div>
+
+                        </TabPane>
+                      </Tabs>
+                    </div>
                 </Dialog>
               </div>
             </div>
