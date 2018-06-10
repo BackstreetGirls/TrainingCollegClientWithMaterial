@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'dva/router';
 import {withStyles} from 'material-ui/styles';
 import Card, {CardContent, CardActions, CardMedia} from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
@@ -26,7 +27,7 @@ import AddIcon from '@material-ui/icons/Add';
 import blue from '@material-ui/core/colors/blue';
 import Avatar from '@material-ui/core/Avatar';
 import Input from '@material-ui/core/Input';
-import { message} from 'antd';
+import {message} from 'antd';
 
 
 const styles = theme => ({
@@ -75,7 +76,7 @@ class CourseDetailPage extends React.Component {
   state = {
     courseInfo: {},
     isFavorite: false,
-    dialog:false
+    dialog: false
   };
 
   // React组件初始化时自动调用的方法
@@ -87,22 +88,22 @@ class CourseDetailPage extends React.Component {
     });
   }
 
-  share=()=>{
-    this.setState({dialog:true});
+  share = () => {
+    this.setState({dialog: true});
   };
 
-  dialog_close=()=> {
+  dialog_close = () => {
     this.setState({dialog: false});
   };
 
-  changeFavorite=()=>{
-    if(!this.state.isFavorite) {
+  changeFavorite = () => {
+    if (!this.state.isFavorite) {
       message.success('Collect successfully');
     }
-    else{
+    else {
       message.success('Remove from collection successfully');
     }
-    this.setState({isFavorite:!this.state.isFavorite});
+    this.setState({isFavorite: !this.state.isFavorite});
     message.config({
       top: 10,
       duration: 2,
@@ -110,7 +111,7 @@ class CourseDetailPage extends React.Component {
     });
   };
 
-  handleListItemClick = value => {
+  handleListItemClick = () => {
     this.setState({dialog: false});
     message.config({
       top: 10,
@@ -122,7 +123,7 @@ class CourseDetailPage extends React.Component {
 
 
   render() {
-    const { classes, onClose, selectedValue, ...other } = this.props;
+    const {classes, ...other} = this.props;
 
     return (
       <div style={{minWidth: 1000}}>
@@ -147,15 +148,19 @@ class CourseDetailPage extends React.Component {
                         }
                       </Typography>
 
-                      <div style={{marginTop:'-1%',display:this.state.isFavorite===true?'block':'none'}}>
-                        <IconButton style={{color:'red'}} onClick={(index)=>{this.changeFavorite(index)}}><Favorite/></IconButton>
+                      <div style={{marginTop: '-1%', display: this.state.isFavorite === true ? 'block' : 'none'}}>
+                        <IconButton style={{color: 'red'}} onClick={(index) => {
+                          this.changeFavorite(index)
+                        }}><Favorite/></IconButton>
                       </div>
 
-                      <div style={{marginTop:'-1%',display:this.state.isFavorite===false?'block':'none'}}>
-                        <IconButton onClick={(index)=>{this.changeFavorite(index)}}><NoFavorite/></IconButton>
+                      <div style={{marginTop: '-1%', display: this.state.isFavorite === false ? 'block' : 'none'}}>
+                        <IconButton onClick={(index) => {
+                          this.changeFavorite(index)
+                        }}><NoFavorite/></IconButton>
                       </div>
 
-                      <div style={{marginTop:'-1%',marginLeft:'-1%'}}>
+                      <div style={{marginTop: '-1%', marginLeft: '-1%'}}>
                         <IconButton onClick={this.share}><Share/></IconButton>
                       </div>
                     </div>
@@ -178,16 +183,16 @@ class CourseDetailPage extends React.Component {
                   </CardContent>
 
                   <CardActions>
-                    <Button variant="raised" color="primary">
-                      Join Now
-                    </Button>
+                    <Link to="/placeorder">
+                      <Button variant="raised" color="primary">
+                        Join Now
+                      </Button>
+                    </Link>
                   </CardActions>
                 </Card>
               </Grid>
             </Grid>
           </Card>
-
-          {/*<Divider className={classes.content}/>*/}
 
           <Grid container spacing={16} className={classes.content}>
             <Grid item sm={8} xs={8}>
@@ -302,16 +307,16 @@ class CourseDetailPage extends React.Component {
                 <ListItem button onClick={() => this.handleListItemClick(email)} key={email}>
                   <ListItemAvatar>
                     <Avatar className={classes.avatar}>
-                      <PersonIcon />
+                      <PersonIcon/>
                     </Avatar>
                   </ListItemAvatar>
-                  <ListItemText primary={email} />
+                  <ListItemText primary={email}/>
                 </ListItem>
               ))}
               <ListItem>
                 <ListItemAvatar>
                   <Avatar button onClick={() => this.handleListItemClick('addAccount')}>
-                    <AddIcon />
+                    <AddIcon/>
                   </Avatar>
                 </ListItemAvatar>
                 <Input
@@ -323,7 +328,9 @@ class CourseDetailPage extends React.Component {
                 />
               </ListItem>
             </List>
-            <Button onClick={(index)=>{this.dialog_close()}} color="primary" style={{marginBottom:'5%',marginLeft:'60%'}}>
+            <Button onClick={(index) => {
+              this.dialog_close()
+            }} color="primary" style={{marginBottom: '5%', marginLeft: '60%'}}>
               CANCEL
             </Button>
           </div>

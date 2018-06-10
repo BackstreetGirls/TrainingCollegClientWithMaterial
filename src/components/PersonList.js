@@ -8,6 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import PersonIcon from '@material-ui/icons/Person';
 import OrderIcon from '@material-ui/icons/ViewList';
 import PasswordIcon from '@material-ui/icons/Lock';
+import StarIcon from '@material-ui/icons/Star';
 import {Link} from 'dva/router';
 
 export const mainListItems = (
@@ -26,6 +27,14 @@ export const mainListItems = (
           <OrderIcon/>
         </ListItemIcon>
         <ListItemText primary="My Order"/>
+      </ListItem>
+    </Link>
+    <Link to="/myfavorite">
+      <ListItem button>
+        <ListItemIcon>
+          <StarIcon/>
+        </ListItemIcon>
+        <ListItemText primary="My Favorite"/>
       </ListItem>
     </Link>
   </div>
