@@ -78,11 +78,11 @@ class OrderTable extends React.Component {
           return (
             <div>
               <div>
-                <Button variant="raised" color="primary">Pay</Button>
+                <Button  color="primary">Pay</Button>
               </div>
               <div>
                 <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record.key)}>
-                  <Button color="primary">Cancle</Button>
+                  <Button style={{fontSize:"3px"}}>Cancle</Button>
                 </Popconfirm>
               </div>
             </div>

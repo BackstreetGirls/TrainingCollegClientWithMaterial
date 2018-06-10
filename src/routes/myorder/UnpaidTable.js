@@ -124,12 +124,13 @@ class OrderTable extends React.Component {
           return (
             <div>
               <div>
-                <Button variant="raised" color="primary" onClick={this.showPayInfo}>Pay</Button>
+                <Button color="primary" onClick={this.showPayInfo}>Pay</Button>
                 <Modal
                   title="Choose Pay Way"
                   visible={this.state.visible}
                   onOk={this.handleOk}
-                  onCancel={this.handleCancel}>
+                  onCancel={this.handleCancel}
+                >
                   <div>
                     <div className={classes.container}>
                       <Button className={classes.button}
@@ -267,7 +268,7 @@ class OrderTable extends React.Component {
               </div>
               <div>
                 <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record.key)}>
-                  <Button color="primary">Cancle</Button>
+                  <Button style={{fontSize:"3px"}}>Cancle</Button>
                 </Popconfirm>
               </div>
             </div>
@@ -304,7 +305,7 @@ class OrderTable extends React.Component {
         no: '2018052311329',
         institute: 'The University of Michigan',
         date: '2018-6-23',
-        key: '1',
+        key: '2',
         imagesrc: 'src/assets/Recommendation/recommendation1.png',
         name: 'Master Python',
         price: '129',
@@ -340,8 +341,6 @@ class OrderTable extends React.Component {
     this.setState({
       visible: false,
     });
-    const dataSource = [...this.state.dataSource];
-    this.setState({dataSource: dataSource.filter(item => item.key !== e)});
   }
 
   handleCancel = (e) => {
@@ -350,6 +349,7 @@ class OrderTable extends React.Component {
       visible: false,
     });
   };
+
 
   handleChange = prop => event => {
     this.setState({[prop]: event.target.value});
