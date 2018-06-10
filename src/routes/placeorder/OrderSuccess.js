@@ -81,7 +81,7 @@ class OrderSuccessPage extends React.Component{
             </div>
             <div className={classNames(classes.column, classes.helper)}>
               <Typography variant="caption">
-                Total : ¥99<br />
+                Total : $99<br />
                 State : Have Paid
               </Typography>
             </div>

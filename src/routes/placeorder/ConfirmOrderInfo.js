@@ -85,7 +85,7 @@ class ConfirmOrderInfo extends React.Component {
               Date：2018/5/9
             </Typography>
             <Typography component="p">
-              Price：99元
+              Price：$99
             </Typography>
           </CardContent>
         </Card>
@@ -129,7 +129,7 @@ class ConfirmOrderInfo extends React.Component {
             />
 
             <Typography className={classes.total}>
-              Price : ¥99
+              Price : $99
             </Typography>
 
 
