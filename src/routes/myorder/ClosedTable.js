@@ -55,7 +55,7 @@ class OrderTable extends React.Component {
         />
       ),
     }, {
-      title: 'Price(¥)',
+      title: 'Price($)',
       dataIndex: 'price',
     }, {
       title: 'Amount',

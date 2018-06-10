@@ -114,7 +114,7 @@ class OrderTable extends React.Component {
         />
       ),
     }, {
-      title: 'Price(¥)',
+      title: 'Price($)',
       dataIndex: 'price',
     }, {
       title: 'Amount',
@@ -296,9 +296,10 @@ class OrderTable extends React.Component {
                       <IconButton color="inherit" onClick={this.handleClose} aria-label="Close">
                         <CloseIcon />
                       </IconButton>
-                      <Typography variant="title" color="inherit" className={classes.flex}>
-                        We recommend some other courses for you
-                      </Typography>
+                      We recommend some other courses for you
+                      {/*<Typography variant="title" color="inherit" className={classes.flex}>*/}
+                        {/*We recommend some other courses for you*/}
+                      {/*</Typography>*/}
                     </Toolbar>
                   </AppBar>
                   <List>
