@@ -202,7 +202,7 @@ export default {
           type: 'updateIsActive',
           payload: {is_active: data.t.is_active}
         });
-        message.success("Login successfully!");
+        // message.success("Login successfully!");
         return true;
       }
       else {
@@ -218,7 +218,7 @@ export default {
         type: 'updateHasLoggedIn',
         payload: {hasLoggedIn: false}
       });
-      message.success("Logout successfully");
+      // message.success("Logout successfully");
     },
 
     // 学员修改信息

@@ -72,8 +72,8 @@ class OrderSuccessPage extends React.Component{
               000001
             </div>
             <div className={classes.column}>
-              TensorFlow<br/>
-              2018/5/1-2018/7/1
+              Computer Application in Economic Management<br/>
+              2018/5/9
             </div>
             <div className={classes.column}>
               Chen Lily<br/>
@@ -81,7 +81,7 @@ class OrderSuccessPage extends React.Component{
             </div>
             <div className={classNames(classes.column, classes.helper)}>
               <Typography variant="caption">
-                Total : 299*2<br />
+                Total : $99<br />
                 State : Have Paid
               </Typography>
             </div>

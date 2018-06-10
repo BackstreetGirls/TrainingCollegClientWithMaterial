@@ -4,3 +4,8 @@
 TrainingCollegClientWithMaterial.iml
 node_modules/
 TrainingCollegeClientWithMaterial.iml
+.DS_Store
+src/.DS_Store
+src/assets/.DS_Store
+src/assets/Carousel/.DS_Store
+src/assets/Recommendation/.DS_Store

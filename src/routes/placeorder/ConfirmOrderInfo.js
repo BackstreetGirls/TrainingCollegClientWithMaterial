@@ -9,7 +9,7 @@ import TextField from 'material-ui/TextField';
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 
-import courseImage from '../../assets/Bussiness.png'
+import courseImage from '../../assets/Recommendation/recommendation0.jpg'
 
 const styles = theme => ({
   root: {
@@ -79,13 +79,13 @@ class ConfirmOrderInfo extends React.Component {
           />
           <CardContent>
             <Typography gutterBottom variant="headline">
-              Skills for business
+              Computer Application...
             </Typography>
             <Typography component="p">
-              Date：2018/5/1-2018/7/1
+              Date：2018/5/9
             </Typography>
             <Typography component="p">
-              Price：299元
+              Price：$99
             </Typography>
           </CardContent>
         </Card>
@@ -129,7 +129,7 @@ class ConfirmOrderInfo extends React.Component {
             />
 
             <Typography className={classes.total}>
-              Price : ¥299
+              Price : $99
             </Typography>
 
 

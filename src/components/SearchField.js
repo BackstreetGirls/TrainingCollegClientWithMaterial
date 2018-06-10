@@ -2,6 +2,7 @@
  * Created by hyx on 2018/5/5.
  */
 import React from 'react';
+import {message} from 'antd';
 import PropTypes from 'prop-types';
 import Downshift from 'downshift';
 import {withStyles} from 'material-ui/styles';
@@ -11,44 +12,8 @@ import {MenuItem} from 'material-ui/Menu';
 import Grid from 'material-ui/Grid';
 import IconButton from 'material-ui/IconButton';
 import Search from '@material-ui/icons/Search';
+import {suggestions} from "../utils/SearchFieldSuggestion";
 
-
-const suggestions = [
-  {label: 'Afghanistan'},
-  {label: 'Aland Islands'},
-  {label: 'Albania'},
-  {label: 'Algeria'},
-  {label: 'American Samoa'},
-  {label: 'Andorra'},
-  {label: 'Angola'},
-  {label: 'Anguilla'},
-  {label: 'Antarctica'},
-  {label: 'Antigua and Barbuda'},
-  {label: 'Argentina'},
-  {label: 'Armenia'},
-  {label: 'Aruba'},
-  {label: 'Australia'},
-  {label: 'Austria'},
-  {label: 'Azerbaijan'},
-  {label: 'Bahamas'},
-  {label: 'Bahrain'},
-  {label: 'Bangladesh'},
-  {label: 'Barbados'},
-  {label: 'Belarus'},
-  {label: 'Belgium'},
-  {label: 'Belize'},
-  {label: 'Benin'},
-  {label: 'Bermuda'},
-  {label: 'Bhutan'},
-  {label: 'Bolivia, Plurinational State of'},
-  {label: 'Bonaire, Sint Eustatius and Saba'},
-  {label: 'Bosnia and Herzegovina'},
-  {label: 'Botswana'},
-  {label: 'Bouvet Island'},
-  {label: 'Brazil'},
-  {label: 'British Indian Ocean Territory'},
-  {label: 'Brunei Darussalam'},
-];
 
 function renderInput(inputProps) {
   const {InputProps, classes, ref, ...other} = inputProps;
@@ -170,6 +135,18 @@ class SearchField extends React.Component {
     window.removeEventListener('resize', ::this.handleResize)
   }
 
+  // 搜索方法
+  handleSearch = () => {
+    let search_content = document.getElementById("searchField").value;
+    if (search_content === "") {
+      message.warning("Please type in the search content!");
+    }
+    else {
+      window.location.hash = "/searchresult";
+      window.location.reload(true);
+    }
+  };
+
   render() {
     const {classes} = this.props;
 
@@ -187,7 +164,7 @@ class SearchField extends React.Component {
                         classes,
                         InputProps: getInputProps({
                           placeholder: 'Search courses',
-                          id: 'integration-downshift-simple',
+                          id: 'searchField',
                         }),
                       })}
                       {isOpen ? (
@@ -208,7 +185,7 @@ class SearchField extends React.Component {
                 </Downshift>
               </Grid>
               <Grid item sm={3} xs={4}>
-                <IconButton><Search/></IconButton>
+                <IconButton onClick={this.handleSearch}><Search/></IconButton>
               </Grid>
             </Grid>
             :
