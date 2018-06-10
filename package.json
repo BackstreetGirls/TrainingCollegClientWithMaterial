@@ -7,17 +7,18 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@material-ui/icons": "^1.0.0-beta.43",
     "@material-ui/core": "^1.0.0-beta.43",
+    "@material-ui/icons": "^1.0.0-beta.43",
     "antd": "^3.4.3",
+    "avatar": "^0.1.0",
     "babel-plugin-import": "^1.7.0",
     "downshift": "^1.31.14",
     "dva": "^2.2.3",
     "material-ui": "^1.0.0-beta.43",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "save": "^2.3.2",
-    "react-native": "^0.51"
+    "react-native": "^0.51",
+    "save": "^2.3.2"
   },
   "devDependencies": {
     "babel-plugin-dva-hmr": "^0.3.2",
