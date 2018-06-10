@@ -3,7 +3,6 @@ import {Table, Popover, Popconfirm, Rate, Modal, message} from 'antd';
 import {withStyles} from "material-ui/styles/index";
 import orderTableStyle from "../css/orderTable.css"
 import Button from 'material-ui/Button';
-import FullScreenDialog from '../../routes/myorder/FullScreenDialog';
 
 import Divider from 'material-ui/Divider';
 import Input, {InputAdornment} from 'material-ui/Input';
@@ -15,6 +14,15 @@ import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
 import alipay_pay from '../../assets/alipay.png';
 import wechat_pay from '../../assets/wechat_pay.png';
+
+import Dialog from '@material-ui/core/Dialog';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItem from '@material-ui/core/ListItem';
+import List from '@material-ui/core/List';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import CloseIcon from '@material-ui/icons/Close';
+import Slide from '@material-ui/core/Slide';
 
 const styles = theme => ({
   container: {
@@ -84,6 +92,10 @@ const LineItemRow = ({record, ...restProps}) => (
   </Fragment>
 );
 
+function Transition(props) {
+  return <Slide direction="up" {...props} />;
+}
+
 class OrderTable extends React.Component {
   handleRow = record => ({
     record
@@ -121,6 +133,8 @@ class OrderTable extends React.Component {
       dataIndex: 'operation',
       render: (text, record) => {
         const {classes} = this.props;
+        const { fullScreen } = this.props;
+
         if (record.state === 'Unpaid') {
           return (
             <div>
@@ -271,6 +285,32 @@ class OrderTable extends React.Component {
                 <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record.key)}>
                   <Button style={{fontSize:"3px"}}>Cancle</Button>
                 </Popconfirm>
+                <Dialog
+                  fullScreen
+                  open={this.state.open}
+                  onClose={this.handleClose}
+                  TransitionComponent={Transition}
+                >
+                  <AppBar className={classes.appBar}>
+                    <Toolbar>
+                      <IconButton color="inherit" onClick={this.handleClose} aria-label="Close">
+                        <CloseIcon />
+                      </IconButton>
+                      <Typography variant="title" color="inherit" className={classes.flex}>
+                        We recommend some other courses for you
+                      </Typography>
+                    </Toolbar>
+                  </AppBar>
+                  <List>
+                    <ListItem button>
+                      <ListItemText primary="Phone ringtone" secondary="Titania" />
+                    </ListItem>
+                    <Divider />
+                    <ListItem button>
+                      <ListItemText primary="Default notification ringtone" secondary="Tethys" />
+                    </ListItem>
+                  </List>
+                </Dialog>
               </div>
             </div>
           )
@@ -323,6 +363,7 @@ class OrderTable extends React.Component {
   onCancle = (key) => {
     const dataSource = [...this.state.dataSource];
     this.setState({dataSource: dataSource.filter(item => item.key !== key)});
+    this.setState({ open: true });
   };
 
   showPayInfo = () => {
@@ -349,6 +390,10 @@ class OrderTable extends React.Component {
     this.setState({
       visible: false,
     });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
   };
 
 
