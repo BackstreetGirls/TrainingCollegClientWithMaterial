@@ -25,6 +25,10 @@ import SearchField from '../components/SearchField';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import {mainListItems, otherListItems} from '../components/PersonList';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
 
 
 const styles = {
@@ -53,6 +57,12 @@ class NavigationPage extends React.Component {
     open_loginForm: false,
     open_registerForm: false,
     logout_confirm: false,
+    age: '',
+    name: 'hai',
+  };
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   openLoginForm = () => {
@@ -211,6 +221,8 @@ class NavigationPage extends React.Component {
         <List>{otherListItems}</List>
       </div>
     );
+    const Option = Select.Option;
+
 
     return (
       <div>
@@ -219,6 +231,27 @@ class NavigationPage extends React.Component {
             <Typography variant="title" color="inherit" className={classes.flex}>
               TrainingCollege
             </Typography>
+            <FormControl style={{width:130,marginLeft:'-5%',marginRight:'5%',marginTop:'1.35%'}}>
+              <Select
+                value={this.state.age}
+                onChange={this.handleChange}
+                name="age"
+                displayEmpty
+                className={classes.selectEmpty}
+              >
+                <MenuItem value="">
+                  鼓楼区（21）
+                </MenuItem>
+                <MenuItem value={2}>栖霞区（11）</MenuItem>
+                <MenuItem value={3}>玄武区（20）</MenuItem>
+                <MenuItem value={4}>建邺区（13）</MenuItem>
+                <MenuItem value={5}>浦口区（14）</MenuItem>
+                <MenuItem value={6}>雨花台区（6）</MenuItem>
+                <MenuItem value={7}>秦淮区（18）</MenuItem>
+                <MenuItem value={8}>江宁区（10）</MenuItem>
+                <MenuItem value={9}>六合区（5）</MenuItem>
+              </Select>
+            </FormControl>
             <SearchField/>
             <Link to="/homepage" style={{color: 'inherit'}}>
               <Button color="inherit">Home</Button>

@@ -10,6 +10,11 @@ import Button from 'material-ui/Button';
 import Navigation from '../components/Navigation';
 import ClassesGrid from '../components/ClassesGrid';
 import tileData from '../utils/FixedData';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 import carousal1 from '../assets/Carousel/carousal1.jpg';
 
@@ -26,6 +31,17 @@ const styles = theme => ({
 });
 
 class HomePage extends React.Component {
+  state = {
+    open: true,
+  };
+
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
 
   render() {
 
@@ -56,6 +72,30 @@ class HomePage extends React.Component {
         <div className={classes.margin}>
           <ClassesGrid title="Newest" tileData={tileData.newest}/>
         </div>
+
+        <Dialog
+          open={this.state.open}
+          onClose={this.handleClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">{"Switch location"}</DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              The system has detected that your city is Gulou District,
+              <br/>
+              so can we help you to switch to this area?
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleClose} color="primary">
+              No
+            </Button>
+            <Button onClick={this.handleClose} color="primary" autoFocus>
+              Yes
+            </Button>
+          </DialogActions>
+        </Dialog>
 
       </div>
     )
