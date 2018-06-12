@@ -240,16 +240,16 @@ class NavigationPage extends React.Component {
                 className={classes.selectEmpty}
               >
                 <MenuItem value="">
-                  鼓楼区（21）
+                  Gulou（21）
                 </MenuItem>
-                <MenuItem value={2}>栖霞区（11）</MenuItem>
-                <MenuItem value={3}>玄武区（20）</MenuItem>
-                <MenuItem value={4}>建邺区（13）</MenuItem>
-                <MenuItem value={5}>浦口区（14）</MenuItem>
-                <MenuItem value={6}>雨花台区（6）</MenuItem>
-                <MenuItem value={7}>秦淮区（18）</MenuItem>
-                <MenuItem value={8}>江宁区（10）</MenuItem>
-                <MenuItem value={9}>六合区（5）</MenuItem>
+                <MenuItem value={2}>Qixia（11）</MenuItem>
+                <MenuItem value={3}>Xuanwu（20）</MenuItem>
+                <MenuItem value={4}>Jianye（13）</MenuItem>
+                <MenuItem value={5}>Pukou（14）</MenuItem>
+                <MenuItem value={6}>Yuhuatai（6）</MenuItem>
+                <MenuItem value={7}>Qinhuai（18）</MenuItem>
+                <MenuItem value={8}>Jiangning（10）</MenuItem>
+                <MenuItem value={9}>Liuhe（5）</MenuItem>
               </Select>
             </FormControl>
             <SearchField/>

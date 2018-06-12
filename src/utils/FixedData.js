@@ -1108,23 +1108,15 @@ const newest = [
   },
 ];
 
-const cs_courses = [
+const python_search1 = [
 
 ];
 
-const ss_courses = [
+const python_search2 = [
 
 ];
 
-const ha_courses = [
-
-];
-
-const ll_courses = [
-
-];
-
-const eco_courses = [
+const python_search3 = [
 
 ];
 
@@ -1136,9 +1128,7 @@ export default {
   search_result3,
   recommendation,
   newest,
-  cs_courses,
-  ss_courses,
-  ha_courses,
-  ll_courses,
-  eco_courses,
+  python_search1,
+  python_search2,
+  python_search3,
 }

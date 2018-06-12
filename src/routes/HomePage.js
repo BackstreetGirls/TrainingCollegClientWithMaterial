@@ -82,7 +82,7 @@ class HomePage extends React.Component {
           <DialogTitle id="alert-dialog-title">{"Switch location"}</DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              The system has detected that your city is Gulou District,
+              The system has detected that you are now in Gulou District,
               <br/>
               so can we help you to switch to this area?
             </DialogContentText>
