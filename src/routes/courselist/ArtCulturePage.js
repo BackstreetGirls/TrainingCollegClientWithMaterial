@@ -40,7 +40,7 @@ class ArtCulturePage extends React.Component {
                 onClick={this.handleClick}
                 style={{ width: 200 }}
                 defaultOpenKeys={['sub1']}
-                defaultSelectedKeys={['2']}
+                defaultSelectedKeys={['8']}
                 mode="inline"
               >
                 <MenuItemGroup key="g1" title="Courses">
