@@ -1350,6 +1350,65 @@ const python_search3 = [
   },
 ];
 
+const art_and_culture = [
+  {
+    key: 5,
+    img: course5,
+    title: 'L innovazione sociale per il patrimonio culturale',
+    rate: 4,
+    price: '$ 60.00',
+    deadline: '2018.6.18',
+    description: 'Impara a valorizzare il patrimonio culturale attraverso processi di rifunzionalizzazione.',
+    registered_total: '20/500',
+    start_date: '2018.7.1',
+    class_amount: '10',
+    lessons_perWeek_totalWeeks: '8 & 7',
+    course_detail: 'Il nostro patrimonio culturale è un bene prezioso, a volte poco valorizzato. Molti sono i luoghi che, sebbene ricchi di storia e cultura, sono stati a lungo dimenticati ma poi riscoperti e valorizzati.\n' +
+    '\n' +
+    'Questo corso mette in campo le competenze per rivalutare i siti storici ed affrontare processi di ri-funzionalizzazione del patrimonio culturale ed ambientale.\n' +
+    '\n' +
+    'L\'attenzione si concentra sul fenomeno dell\'innovazione sociale applicata al patrimonio culturale. Sono illustrate storie emblematiche che in questi anni si sono sviluppate nel Sud d’Italia, delineando le peculiarità di questo nuovo modello di gestione che rappresenta un\'alternativa tra il modello pubblico e quello privato.\n' +
+    '\n' +
+    'Attraverso approfondimenti e studi di caso potrai verificare le competenze acquisite per riuscire ad operare al meglio nelle imprese, negli enti e nelle associazioni nelle quali può essere impiegato.',
+    teacher: 'Kaifeng Hua, Prof.',
+    provider: 'Nanjing Normal University',
+    provider_location: 'Ninghai Road No.122, Gulou District, Nanjing',
+    provider_email: 'StefanoC@gmail.com',
+    provider_detail: 'Free online courses from Università degli Studi di Napoli Federico II\n' +
+    'Fondata nel 1224, l\'Università degli Studi di Napoli Federico II è la più antica Università laica d’Europa. Con il suo Centro “Federica Weblearning”, è all’avanguardia nell’innovazione della didattica multimediale online.\n' +
+    '\n' +
+    'Le piattaforme di Federica offrono oltre 300 corsi blended e 75 MOOCs aperti a tutti e tenuti da prestigiosi docenti della Federico II e di altri Atenei nazionali e internazionali. Con oltre 5milioni di contatti, Federica presenta un design di straordinaria efficacia che integra in modalità seamless testi, video e link alle più autorevoli fonti online. Scopri di più su www.federica.eu.',
+  },
+  {
+    key: 6,
+    img: course6,
+    title: 'First Nights',
+    rate: 5,
+    price: '$ 49.00',
+    deadline: '2018.7.18',
+    description: 'Berlioz’s Symphonie Fantastique and Program Music in the 19th Century',
+    registered_total: '12/100',
+    start_date: '2018.8.1',
+    class_amount: '2',
+    lessons_perWeek_totalWeeks: '3 & 3',
+    course_detail: 'Six years after the premiere of Beethoven’s monumental Ninth Symphony, composer Hector Berlioz sought to make use of the symphonic genre, but on his own terms. Indeed, he wrote not only a five-movement symphony, but also a narrative program to accompany and explain the symphony.\n' +
+    '\n' +
+    'This music course introduces students to the music and programmatic elements of Berlioz’s Symphonie Fantastique, illuminating a new direction for nineteenth-century music. The course’s grand finale is a live performance of the entire symphony by the Harvard Radcliffe Orchestra.\n' +
+    '\n' +
+    'Harvard’s Thomas Forrest Kelly (Morton B. Knafel Professor of Music) guides learners through Berlioz’s Symphony Fantastique,, highlighting Berlioz’s compostional process, his innovative orchestration, and the reception of his controversial piece of narrative instrumental music.\n' +
+    '\n' +
+    'You will learn the basics of Romantic musical style, Berlioz’s creative expansion of the standard orchestra, and the debates surrounding the idea of purely musical narrative in the 19th century.',
+    teacher: 'Baohua Nan',
+    provider: 'HCI Education',
+    provider_location: 'Guangzhou Road No.12, Gulou Distirict, Nanjing',
+    provider_email: 'ThomasK@gmail.com',
+    provider_detail: 'Free online courses from Harvard University\n' +
+    'Harvard University is devoted to excellence in teaching, learning, and research, and to developing leaders in many disciplines who make a difference globally. Harvard faculty are engaged with teaching and research to push the boundaries of human knowledge. The University has twelve degree-granting Schools in addition to the Radcliffe Institute for Advanced Study.\n' +
+    '\n' +
+    'Established in 1636, Harvard is the oldest institution of higher education in the United States. The University, which is based in Cambridge and Boston, Massachusetts, has an enrollment of over 20,000 degree candidates, including undergraduate, graduate, and professional students. Harvard has more than 360,000 alumni around the world.',
+  },
+];
+
 export default {
   courses,
   favorite,
@@ -1361,4 +1420,5 @@ export default {
   python_search1,
   python_search2,
   python_search3,
+  art_and_culture,
 }

@@ -57,7 +57,9 @@ class CurrentPage extends React.Component {
                 </MenuItemGroup>
                 <MenuItemGroup key="g3" title="Subjects">
                   <Menu.Item key="7">Architecture</Menu.Item>
-                  <Menu.Item key="8">Art & Culture</Menu.Item>
+                  <Menu.Item key="8">
+                    <Link to="/artcourses">Art & Culture</Link>
+                  </Menu.Item>
                   <Menu.Item key="9">Chemistry</Menu.Item>
                   <Menu.Item key="10">Computer Science</Menu.Item>
                   <Menu.Item key="11">Design</Menu.Item>
