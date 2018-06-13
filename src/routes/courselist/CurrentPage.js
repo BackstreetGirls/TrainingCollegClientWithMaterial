@@ -19,7 +19,7 @@ const styles = theme => ({
   },
 });
 
-class AllCoursesPage extends React.Component {
+class CurrentPage extends React.Component {
 
   handleClick = (e) => {
     console.log('click ', e);
@@ -40,16 +40,16 @@ class AllCoursesPage extends React.Component {
                 onClick={this.handleClick}
                 style={{ width: 200 }}
                 defaultOpenKeys={['sub1']}
-                defaultSelectedKeys={['1']}
+                defaultSelectedKeys={['2']}
                 mode="inline"
               >
                 <MenuItemGroup key="g1" title="Courses">
-                  <Menu.Item key="1">All</Menu.Item>
+                  <Menu.Item key="1">
+                    <Link to="/allcourses">All</Link>
+                  </Menu.Item>
                 </MenuItemGroup>
                 <MenuItemGroup key="g2" title="Availability">
-                  <Menu.Item key="2">
-                    <Link to="/currentcourses">Current</Link>
-                  </Menu.Item>
+                  <Menu.Item key="2">Current</Menu.Item>
                   <Menu.Item key="3">Starting Soon</Menu.Item>
                   <Menu.Item key="4">Upcoming</Menu.Item>
                   <Menu.Item key="5">Self-Paced</Menu.Item>
@@ -72,9 +72,9 @@ class AllCoursesPage extends React.Component {
                 </MenuItemGroup>
               </Menu>
             </Sider>
-              <Content>
-                <ClassesGridAll tileData={tileData.courses}/>
-              </Content>
+            <Content>
+              <ClassesGridAll title=" " tileData={tileData.newest}/>
+            </Content>
           </Layout>
         </div>
 
@@ -85,11 +85,11 @@ class AllCoursesPage extends React.Component {
 
 }
 
-AllCoursesPage.propTypes = {
+CurrentPage.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(AllCoursesPage);
+export default withStyles(styles)(CurrentPage);
 
 
 
