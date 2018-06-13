@@ -27,7 +27,6 @@ import Divider from '@material-ui/core/Divider';
 import {mainListItems, otherListItems} from '../components/PersonList';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 
 
@@ -221,8 +220,6 @@ class NavigationPage extends React.Component {
         <List>{otherListItems}</List>
       </div>
     );
-    const Option = Select.Option;
-
 
     return (
       <div>

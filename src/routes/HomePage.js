@@ -2,6 +2,7 @@
  * Created by hyx on 2018/4/27.
  */
 import React from 'react';
+import {connect} from 'dva';
 import {Carousel} from 'antd';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
@@ -35,12 +36,12 @@ class HomePage extends React.Component {
     open: true,
   };
 
-  handleClickOpen = () => {
-    this.setState({ open: true });
-  };
-
   handleClose = () => {
-    this.setState({ open: false });
+    this.setState({open: false});
+    this.props.dispatch({
+      type: 'trainee/changeLocationHintTag',
+      payload: {location_hint_tag: 1},
+    })
   };
 
   render() {
@@ -73,30 +74,35 @@ class HomePage extends React.Component {
           <ClassesGrid title="Newest" tileData={tileData.newest}/>
         </div>
 
-        <Dialog
-          open={this.state.open}
-          onClose={this.handleClose}
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-        >
-          <DialogTitle id="alert-dialog-title">{"Switch location"}</DialogTitle>
-          <DialogContent>
-            <DialogContentText id="alert-dialog-description">
-              The system has detected that you are now in Gulou District,
-              <br/>
-              so can we help you to switch to this area?
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
-              No
-            </Button>
-            <Button onClick={this.handleClose} color="primary" autoFocus>
-              Yes
-            </Button>
-          </DialogActions>
-        </Dialog>
-
+        {
+          this.props.trainee.location_hint_tag === 0
+            ?
+            <Dialog
+              open={this.state.open}
+              onClose={this.handleClose}
+              aria-labelledby="alert-dialog-title"
+              aria-describedby="alert-dialog-description"
+            >
+              <DialogTitle id="alert-dialog-title">{"Switch location"}</DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                  The system has detected that you are now in Gulou District,
+                  <br/>
+                  so can we help you to switch to this area?
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={this.handleClose} color="primary">
+                  No
+                </Button>
+                <Button onClick={this.handleClose} color="primary" autoFocus>
+                  Yes
+                </Button>
+              </DialogActions>
+            </Dialog>
+            :
+            null
+        }
       </div>
     )
   }
@@ -106,4 +112,10 @@ HomePage.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(HomePage);
+function mapStateToProps({trainee}) {
+  return {
+    trainee,
+  };
+}
+
+export default connect(mapStateToProps)(withStyles(styles)(HomePage));

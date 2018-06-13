@@ -80,7 +80,7 @@ class CourseDetailPage extends React.Component {
   };
 
   // React组件初始化时自动调用的方法
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // this.props.match.params.key的值为':2'
     let key = this.props.match.params.key.toString().substring(1);
     this.setState({

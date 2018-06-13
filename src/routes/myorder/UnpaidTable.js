@@ -134,7 +134,6 @@ class OrderTable extends React.Component {
       dataIndex: 'operation',
       render: (text, record) => {
         const {classes} = this.props;
-        const { fullScreen } = this.props;
 
         if (record.state === 'Unpaid') {
           return (
@@ -417,7 +416,7 @@ class OrderTable extends React.Component {
     this.setState({
       visible: false,
     });
-  }
+  };
 
   handleCancel = (e) => {
     console.log(e);
