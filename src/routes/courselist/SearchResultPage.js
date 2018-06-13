@@ -8,7 +8,7 @@ import Navigation from '../../components/Navigation';
 import ClassesGrid from '../../components/ClassesGrid';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
-import { Tabs, Pagination } from 'antd';
+import { Tabs } from 'antd';
 
 const TabPane = Tabs.TabPane;
 

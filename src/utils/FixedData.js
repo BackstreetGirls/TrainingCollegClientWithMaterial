@@ -1109,7 +1109,46 @@ const newest = [
 ];
 
 const python_search1 = [
-
+  {
+    key: 1,
+    img: recommendation1,
+    title: 'Master Python',
+    rate: 5,
+    price: '$ 129.00',
+    deadline: '2018.7.3',
+    description: 'Take you master graphic design foundation skills.',
+    registered_total: '2/500',
+    start_date: '2018.7.18',
+    class_amount: '5',
+    lessons_perWeek_totalWeeks: '6 & 12',
+    course_detail: 'This Specialization builds on the success of the Python for Everybody course and will introduce fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language. In the Capstone Project, you’ll use the technologies learned throughout the Specialization to design and create your own applications for data retrieval, processing, and visualization.',
+    teacher: 'Associate Professor: Guangdong Liu',
+    provider: 'Sparks Education',
+    provider_location: 'Shanxi Road No.123, Gulou District, Nanjing',
+    provider_email: 'liuguangdong123@gmail.com',
+    provider_detail: 'Sparks Education is recognized as a leader in higher education due to the outstanding quality of its 19 schools and colleges, internationally recognized faculty, and departments with 250 degree programs.\n' +
+    '\n' +
+    '                    The mission of the University of Michigan is to serve the people of Michigan and the world through preeminence in creating, communicating, preserving and applying knowledge, art, and academic values, and in developing leaders and citizens who will challenge the present and enrich the future.\n',
+  },
+  {
+    key: 8,
+    img: recommendation9,
+    title: 'Applied Data Science with Python',
+    rate: 5,
+    price: '$ 129.00',
+    deadline: '2018.5.20',
+    description: 'Gain new insights into your data 。Learn to apply data science methods and techniques, and acquire analysis skills.',
+    registered_total: '2/500',
+    start_date: '2018.5.21',
+    class_amount: '5',
+    lessons_perWeek_totalWeeks: '6 & 12',
+    course_detail: 'This course will introduce the learner to network analysis through tutorials using the NetworkX library. The course begins with an understanding of what network analysis is and motivations for why we might model phenomena as networks. The second week introduces the concept of connectivity and network robustness. The third week will explore ways of measuring the importance or centrality of a node in a network. The final week will explore the evolution of networks over time and cover models of network generation and the link prediction problem. ',
+    teacher: 'Associate Professor: Zhenyu Chen',
+    provider: 'Nanjing University',
+    provider_location: 'Hankou Road No.22, Gulou District, Nanjing',
+    provider_email: 'chenzhenyu123@gmail.com',
+    provider_detail: 'Nanjing University offers excellence across disciplines and around the globe. The University is recognized as a leader in higher education due to the outstanding quality of its 19 schools and colleges, internationally recognized faculty, and departments with 250 degree programs.',
+  },
 ];
 
 const python_search2 = [
