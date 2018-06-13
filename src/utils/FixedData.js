@@ -13,6 +13,7 @@ import result4 from '../assets/Recommendation/result4.jpg';
 import course5 from '../assets/Recommendation/course5.PNG';
 import course6 from '../assets/Recommendation/course6.PNG';
 import course7 from '../assets/Recommendation/course7.PNG';
+import python3 from '../assets/Recommendation/python3.PNG';
 
 //全部课程
 const courses = [
@@ -220,7 +221,7 @@ const courses = [
     rate: 5,
     price: '$ 129.00',
     deadline: '2018.5.20',
-    description: 'Gain new insights into your data 。Learn to apply data science methods and techniques, and acquire analysis skills.',
+    description: 'Gain new insights into your data. Learn to apply data science methods and techniques, and acquire analysis skills.',
     registered_total: '2/500',
     start_date: '2018.5.21',
     class_amount: '5',
@@ -380,6 +381,34 @@ const courses = [
     'Fondata nel 1224, l\'Università degli Studi di Napoli Federico II è la più antica Università laica d’Europa. Con il suo Centro “Federica Weblearning”, è all’avanguardia nell’innovazione della didattica multimediale online.\n' +
     '\n' +
     'Le piattaforme di Federica offrono oltre 300 corsi blended e 75 MOOCs aperti a tutti e tenuti da prestigiosi docenti della Federico II e di altri Atenei nazionali e internazionali. Con oltre 5milioni di contatti, Federica presenta un design di straordinaria efficacia che integra in modalità seamless testi, video e link alle più autorevoli fonti online. Scopri di più su www.federica.eu.',
+  },
+  {
+    key: 15,
+    img: python3,
+    title: 'Analytics in Python',
+    rate: 4,
+    price: '$ 375.00',
+    deadline: '2018.6.4',
+    description: 'Learn the fundamental of programming in Python and develop the ability to analyze data and make data-driven decisions.',
+    registered_total: '100/400',
+    start_date: '2018.7.4',
+    class_amount: '8',
+    lessons_perWeek_totalWeeks: '8 & 12',
+    course_detail: 'Data is the lifeblood of an organization. Competency in programming is an essential skill for successfully extracting information and knowledge from data.\n' +
+    '\n' +
+    'The goal of this course is to introduce learners to the basics of programming in Python and to give a working knowledge of how to use programs to deal with data.\n' +
+    '\n' +
+    'In this course, we will first cover the basics of programming and then focus on using Python on the entire data management process from data acquisition to analysis of data big data and small data.\n' +
+    '\n' +
+    'This is an intensive hands-on course that will equip and reward learners with proficiency in data management skills.',
+    teacher: 'Changmin Zhao',
+    provider: 'XZ Education',
+    provider_location: 'Hankou Road No.86, Gulou District, Nanjing',
+    provider_email: 'zhaochangmin@gmail.com',
+    provider_detail:
+    'XZ Education is one of the world\'s most important centers of research and at the same time a distinctive and distinguished learning environment for undergraduates and graduate students in many scholarly and professional fields. The University recognizes the importance of its location in New York City and seeks to link its research and teaching to the vast resources of a great metropolis.\n' +
+    '\n' +
+    'Teachers College, XZ Education’s affiliate graduate school of education, offers programs in education, health, leadership, and psychology that are perennially ranked among the nation’s best. Visit the TeachersCollegeX course schedule for what\'s available now.',
   },
 ];
 
@@ -1049,7 +1078,7 @@ const newest = [
     rate: 5,
     price: '$ 129.00',
     deadline: '2018.5.20',
-    description: 'Gain new insights into your data 。Learn to apply data science methods and techniques, and acquire analysis skills.',
+    description: 'Gain new insights into your data. Learn to apply data science methods and techniques, and acquire analysis skills.',
     registered_total: '2/500',
     start_date: '2018.5.21',
     class_amount: '5',
@@ -1110,6 +1139,34 @@ const newest = [
 
 const python_search1 = [
   {
+    key: 15,
+    img: python3,
+    title: 'Analytics in Python',
+    rate: 4,
+    price: '$ 375.00',
+    deadline: '2018.6.4',
+    description: 'Learn the fundamental of programming in Python and develop the ability to analyze data and make data-driven decisions.',
+    registered_total: '100/400',
+    start_date: '2018.7.4',
+    class_amount: '8',
+    lessons_perWeek_totalWeeks: '8 & 12',
+    course_detail: 'Data is the lifeblood of an organization. Competency in programming is an essential skill for successfully extracting information and knowledge from data.\n' +
+    '\n' +
+    'The goal of this course is to introduce learners to the basics of programming in Python and to give a working knowledge of how to use programs to deal with data.\n' +
+    '\n' +
+    'In this course, we will first cover the basics of programming and then focus on using Python on the entire data management process from data acquisition to analysis of data big data and small data.\n' +
+    '\n' +
+    'This is an intensive hands-on course that will equip and reward learners with proficiency in data management skills.',
+    teacher: 'Changmin Zhao',
+    provider: 'XZ Education',
+    provider_location: 'Hankou Road No.86, Gulou District, Nanjing',
+    provider_email: 'zhaochangmin@gmail.com',
+    provider_detail:
+    'XZ Education is one of the world\'s most important centers of research and at the same time a distinctive and distinguished learning environment for undergraduates and graduate students in many scholarly and professional fields. The University recognizes the importance of its location in New York City and seeks to link its research and teaching to the vast resources of a great metropolis.\n' +
+    '\n' +
+    'Teachers College, XZ Education’s affiliate graduate school of education, offers programs in education, health, leadership, and psychology that are perennially ranked among the nation’s best. Visit the TeachersCollegeX course schedule for what\'s available now.',
+  },
+  {
     key: 1,
     img: recommendation1,
     title: 'Master Python',
@@ -1137,7 +1194,7 @@ const python_search1 = [
     rate: 5,
     price: '$ 129.00',
     deadline: '2018.5.20',
-    description: 'Gain new insights into your data 。Learn to apply data science methods and techniques, and acquire analysis skills.',
+    description: 'Gain new insights into your data. Learn to apply data science methods and techniques, and acquire analysis skills.',
     registered_total: '2/500',
     start_date: '2018.5.21',
     class_amount: '5',
@@ -1152,11 +1209,145 @@ const python_search1 = [
 ];
 
 const python_search2 = [
-
+  {
+    key: 1,
+    img: recommendation1,
+    title: 'Master Python',
+    rate: 5,
+    price: '$ 129.00',
+    deadline: '2018.7.3',
+    description: 'Take you master graphic design foundation skills.',
+    registered_total: '2/500',
+    start_date: '2018.7.18',
+    class_amount: '5',
+    lessons_perWeek_totalWeeks: '6 & 12',
+    course_detail: 'This Specialization builds on the success of the Python for Everybody course and will introduce fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language. In the Capstone Project, you’ll use the technologies learned throughout the Specialization to design and create your own applications for data retrieval, processing, and visualization.',
+    teacher: 'Associate Professor: Guangdong Liu',
+    provider: 'Sparks Education',
+    provider_location: 'Shanxi Road No.123, Gulou District, Nanjing',
+    provider_email: 'liuguangdong123@gmail.com',
+    provider_detail: 'Sparks Education is recognized as a leader in higher education due to the outstanding quality of its 19 schools and colleges, internationally recognized faculty, and departments with 250 degree programs.\n' +
+    '\n' +
+    '                    The mission of the University of Michigan is to serve the people of Michigan and the world through preeminence in creating, communicating, preserving and applying knowledge, art, and academic values, and in developing leaders and citizens who will challenge the present and enrich the future.\n',
+  },
+  {
+    key: 8,
+    img: recommendation9,
+    title: 'Applied Data Science with Python',
+    rate: 5,
+    price: '$ 129.00',
+    deadline: '2018.5.20',
+    description: 'Gain new insights into your data. Learn to apply data science methods and techniques, and acquire analysis skills.',
+    registered_total: '2/500',
+    start_date: '2018.5.21',
+    class_amount: '5',
+    lessons_perWeek_totalWeeks: '6 & 12',
+    course_detail: 'This course will introduce the learner to network analysis through tutorials using the NetworkX library. The course begins with an understanding of what network analysis is and motivations for why we might model phenomena as networks. The second week introduces the concept of connectivity and network robustness. The third week will explore ways of measuring the importance or centrality of a node in a network. The final week will explore the evolution of networks over time and cover models of network generation and the link prediction problem. ',
+    teacher: 'Associate Professor: Zhenyu Chen',
+    provider: 'Nanjing University',
+    provider_location: 'Hankou Road No.22, Gulou District, Nanjing',
+    provider_email: 'chenzhenyu123@gmail.com',
+    provider_detail: 'Nanjing University offers excellence across disciplines and around the globe. The University is recognized as a leader in higher education due to the outstanding quality of its 19 schools and colleges, internationally recognized faculty, and departments with 250 degree programs.',
+  },
+  {
+    key: 15,
+    img: python3,
+    title: 'Analytics in Python',
+    rate: 4,
+    price: '$ 375.00',
+    deadline: '2018.6.4',
+    description: 'Learn the fundamental of programming in Python and develop the ability to analyze data and make data-driven decisions.',
+    registered_total: '100/400',
+    start_date: '2018.7.4',
+    class_amount: '8',
+    lessons_perWeek_totalWeeks: '8 & 12',
+    course_detail: 'Data is the lifeblood of an organization. Competency in programming is an essential skill for successfully extracting information and knowledge from data.\n' +
+    '\n' +
+    'The goal of this course is to introduce learners to the basics of programming in Python and to give a working knowledge of how to use programs to deal with data.\n' +
+    '\n' +
+    'In this course, we will first cover the basics of programming and then focus on using Python on the entire data management process from data acquisition to analysis of data big data and small data.\n' +
+    '\n' +
+    'This is an intensive hands-on course that will equip and reward learners with proficiency in data management skills.',
+    teacher: 'Changmin Zhao',
+    provider: 'XZ Education',
+    provider_location: 'Hankou Road No.86, Gulou District, Nanjing',
+    provider_email: 'zhaochangmin@gmail.com',
+    provider_detail:
+    'XZ Education is one of the world\'s most important centers of research and at the same time a distinctive and distinguished learning environment for undergraduates and graduate students in many scholarly and professional fields. The University recognizes the importance of its location in New York City and seeks to link its research and teaching to the vast resources of a great metropolis.\n' +
+    '\n' +
+    'Teachers College, XZ Education’s affiliate graduate school of education, offers programs in education, health, leadership, and psychology that are perennially ranked among the nation’s best. Visit the TeachersCollegeX course schedule for what\'s available now.',
+  },
 ];
 
 const python_search3 = [
-
+  {
+    key: 15,
+    img: python3,
+    title: 'Analytics in Python',
+    rate: 4,
+    price: '$ 375.00',
+    deadline: '2018.6.4',
+    description: 'Learn the fundamental of programming in Python and develop the ability to analyze data and make data-driven decisions.',
+    registered_total: '100/400',
+    start_date: '2018.7.4',
+    class_amount: '8',
+    lessons_perWeek_totalWeeks: '8 & 12',
+    course_detail: 'Data is the lifeblood of an organization. Competency in programming is an essential skill for successfully extracting information and knowledge from data.\n' +
+    '\n' +
+    'The goal of this course is to introduce learners to the basics of programming in Python and to give a working knowledge of how to use programs to deal with data.\n' +
+    '\n' +
+    'In this course, we will first cover the basics of programming and then focus on using Python on the entire data management process from data acquisition to analysis of data big data and small data.\n' +
+    '\n' +
+    'This is an intensive hands-on course that will equip and reward learners with proficiency in data management skills.',
+    teacher: 'Changmin Zhao',
+    provider: 'XZ Education',
+    provider_location: 'Hankou Road No.86, Gulou District, Nanjing',
+    provider_email: 'zhaochangmin@gmail.com',
+    provider_detail:
+    'XZ Education is one of the world\'s most important centers of research and at the same time a distinctive and distinguished learning environment for undergraduates and graduate students in many scholarly and professional fields. The University recognizes the importance of its location in New York City and seeks to link its research and teaching to the vast resources of a great metropolis.\n' +
+    '\n' +
+    'Teachers College, XZ Education’s affiliate graduate school of education, offers programs in education, health, leadership, and psychology that are perennially ranked among the nation’s best. Visit the TeachersCollegeX course schedule for what\'s available now.',
+  },
+  {
+    key: 8,
+    img: recommendation9,
+    title: 'Applied Data Science with Python',
+    rate: 5,
+    price: '$ 129.00',
+    deadline: '2018.5.20',
+    description: 'Gain new insights into your data. Learn to apply data science methods and techniques, and acquire analysis skills.',
+    registered_total: '2/500',
+    start_date: '2018.5.21',
+    class_amount: '5',
+    lessons_perWeek_totalWeeks: '6 & 12',
+    course_detail: 'This course will introduce the learner to network analysis through tutorials using the NetworkX library. The course begins with an understanding of what network analysis is and motivations for why we might model phenomena as networks. The second week introduces the concept of connectivity and network robustness. The third week will explore ways of measuring the importance or centrality of a node in a network. The final week will explore the evolution of networks over time and cover models of network generation and the link prediction problem. ',
+    teacher: 'Associate Professor: Zhenyu Chen',
+    provider: 'Nanjing University',
+    provider_location: 'Hankou Road No.22, Gulou District, Nanjing',
+    provider_email: 'chenzhenyu123@gmail.com',
+    provider_detail: 'Nanjing University offers excellence across disciplines and around the globe. The University is recognized as a leader in higher education due to the outstanding quality of its 19 schools and colleges, internationally recognized faculty, and departments with 250 degree programs.',
+  },
+  {
+    key: 1,
+    img: recommendation1,
+    title: 'Master Python',
+    rate: 5,
+    price: '$ 129.00',
+    deadline: '2018.7.3',
+    description: 'Take you master graphic design foundation skills.',
+    registered_total: '2/500',
+    start_date: '2018.7.18',
+    class_amount: '5',
+    lessons_perWeek_totalWeeks: '6 & 12',
+    course_detail: 'This Specialization builds on the success of the Python for Everybody course and will introduce fundamental programming concepts including data structures, networked application program interfaces, and databases, using the Python programming language. In the Capstone Project, you’ll use the technologies learned throughout the Specialization to design and create your own applications for data retrieval, processing, and visualization.',
+    teacher: 'Associate Professor: Guangdong Liu',
+    provider: 'Sparks Education',
+    provider_location: 'Shanxi Road No.123, Gulou District, Nanjing',
+    provider_email: 'liuguangdong123@gmail.com',
+    provider_detail: 'Sparks Education is recognized as a leader in higher education due to the outstanding quality of its 19 schools and colleges, internationally recognized faculty, and departments with 250 degree programs.\n' +
+    '\n' +
+    '                    The mission of the University of Michigan is to serve the people of Michigan and the world through preeminence in creating, communicating, preserving and applying knowledge, art, and academic values, and in developing leaders and citizens who will challenge the present and enrich the future.\n',
+  },
 ];
 
 export default {
