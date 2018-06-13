@@ -39,29 +39,33 @@ class AllCoursesPage extends React.Component {
                 onClick={this.handleClick}
                 style={{ width: 200 }}
                 defaultOpenKeys={['sub1']}
+                defaultSelectedKeys={['1']}
                 mode="inline"
               >
-                <MenuItemGroup key="g1" title="Availability">
-                  <Menu.Item key="1">Current</Menu.Item>
-                  <Menu.Item key="2">Starting Soon</Menu.Item>
-                  <Menu.Item key="3">Upcoming</Menu.Item>
-                  <Menu.Item key="4">Self-Paced</Menu.Item>
-                  <Menu.Item key="5">Archived</Menu.Item>
+                <MenuItemGroup key="g1" title="Courses">
+                  <Menu.Item key="1">All</Menu.Item>
                 </MenuItemGroup>
-                <MenuItemGroup key="g2" title="Subjects">
-                  <Menu.Item key="6">Architecture</Menu.Item>
-                  <Menu.Item key="7">Art & Culture</Menu.Item>
-                  <Menu.Item key="8">Chemistry</Menu.Item>
-                  <Menu.Item key="9">Computer Science</Menu.Item>
-                  <Menu.Item key="10">Design</Menu.Item>
-                  <Menu.Item key="11">Ecomomics & Finance</Menu.Item>
-                  <Menu.Item key="12">Engineering</Menu.Item>
-                  <Menu.Item key="13">History</Menu.Item>
-                  <Menu.Item key="14">Language</Menu.Item>
-                  <Menu.Item key="15">Law</Menu.Item>
-                  <Menu.Item key="16">Math</Menu.Item>
-                  <Menu.Item key="17">Music</Menu.Item>
-                  <Menu.Item key="18">Social Science</Menu.Item>
+                <MenuItemGroup key="g2" title="Availability">
+                  <Menu.Item key="2">Current</Menu.Item>
+                  <Menu.Item key="3">Starting Soon</Menu.Item>
+                  <Menu.Item key="4">Upcoming</Menu.Item>
+                  <Menu.Item key="5">Self-Paced</Menu.Item>
+                  <Menu.Item key="6">Archived</Menu.Item>
+                </MenuItemGroup>
+                <MenuItemGroup key="g3" title="Subjects">
+                  <Menu.Item key="7">Architecture</Menu.Item>
+                  <Menu.Item key="8">Art & Culture</Menu.Item>
+                  <Menu.Item key="9">Chemistry</Menu.Item>
+                  <Menu.Item key="10">Computer Science</Menu.Item>
+                  <Menu.Item key="11">Design</Menu.Item>
+                  <Menu.Item key="12">Ecomomics & Finance</Menu.Item>
+                  <Menu.Item key="13">Engineering</Menu.Item>
+                  <Menu.Item key="14">History</Menu.Item>
+                  <Menu.Item key="15">Language</Menu.Item>
+                  <Menu.Item key="16">Law</Menu.Item>
+                  <Menu.Item key="17">Math</Menu.Item>
+                  <Menu.Item key="18">Music</Menu.Item>
+                  <Menu.Item key="19">Social Science</Menu.Item>
                 </MenuItemGroup>
               </Menu>
             </Sider>
