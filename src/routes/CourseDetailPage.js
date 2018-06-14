@@ -43,9 +43,6 @@ const styles = theme => ({
   lessonTitle: {
     fontSize: 28,
   },
-  smallTitle: {
-    fontSize: 20,
-  },
   title: {
     fontSize: 24,
   },
@@ -62,11 +59,10 @@ const styles = theme => ({
   },
   content: {
     marginTop: theme.spacing.unit * 2,
-
   },
   pos: {
     fontSize: 18,
-    marginBottom: 24,
+    marginBottom: 36,
     marginTop: 4,
   },
   avatar: {
@@ -207,9 +203,9 @@ class CourseDetailPage extends React.Component {
 
           <Card elevation={2} style={{marginTop: 20, paddingBottom: 20}}>
             <Grid container spacing={16} className={classes.content}>
-              <Grid item sm={8} xs={8}>
+              <Grid item sm={8} xs={8} style={{borderRight: '1px solid rgba(0, 0, 0, 0.12)', margin: '20px 0'}}>
                 {/*style={{border: '1px solid rgba(0, 0, 0, 0.12)'}}*/}
-                <Card className={classes.card} elevation={0}>
+                <Card className={classes.card} elevation={0} style={{margin: '-20px 0'}}>
                   <CardContent>
                     <Typography variant="headline" className={classes.title}>
                       Course Introduction
@@ -240,9 +236,9 @@ class CourseDetailPage extends React.Component {
                   </CardContent>
                 </Card>
               </Grid>
+
               <Grid item sm={4} xs={4}>
-                {/*style={{border: '1px solid rgba(0, 0, 0, 0.12)'}}*/}
-                <Card className={classes.card} elevation={0} style={{borderLeft: '1px solid rgba(0, 0, 0, 0.12)'}}>
+                <Card className={classes.card} elevation={0}>
                   <CardContent>
                     <Grid container spacing={16} style={{margin: '10px 0', marginTop: '-6px', fontSize: 18}}>
                       <Grid item xs={6}>
