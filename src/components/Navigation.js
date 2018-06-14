@@ -17,7 +17,6 @@ import Dialog, {
   DialogTitle,
 } from 'material-ui/Dialog';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-
 import './css/Navigation.css';
 import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
@@ -25,12 +24,13 @@ import SearchField from '../components/SearchField';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import {mainListItems, otherListItems} from '../components/PersonList';
-import Select from '@material-ui/core/Select';
+import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
+import Location from '@material-ui/icons/LocationOn';
 
 
-const styles = {
+const styles = theme => ({
   root: {
     flexGrow: 1,
   },
@@ -47,7 +47,13 @@ const styles = {
   fullList: {
     width: 'auto',
   },
-};
+  button: {
+    margin: theme.spacing.unit,
+  },
+  leftIcon: {
+    marginRight: theme.spacing.unit / 2,
+  },
+});
 
 class NavigationPage extends React.Component {
 
@@ -56,12 +62,25 @@ class NavigationPage extends React.Component {
     open_loginForm: false,
     open_registerForm: false,
     logout_confirm: false,
-    age: '',
-    name: 'hai',
+    anchorEl: null,
+    location: "GuLou(21)",
   };
 
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+  handleChooseLocation = event => {
+    this.setState({
+      anchorEl: event.currentTarget,
+    });
+  };
+
+  closeChooseLocation = () => {
+    this.setState({anchorEl: null});
+  };
+
+  handleLocationChange = event => {
+    this.setState({
+      location: event.target.getAttribute("value"),
+      anchorEl: null,
+    });
   };
 
   openLoginForm = () => {
@@ -228,26 +247,34 @@ class NavigationPage extends React.Component {
             <Typography variant="title" color="inherit" className={classes.flex}>
               TrainingCollege
             </Typography>
-            <FormControl style={{width:130,marginLeft:'-5%',marginRight:'5%',marginTop:'1.35%'}}>
-              <Select
-                value={this.state.age}
-                onChange={this.handleChange}
-                name="age"
-                displayEmpty
-                className={classes.selectEmpty}
-              >
-                <MenuItem value="">
-                  Gulou（21）
-                </MenuItem>
-                <MenuItem value={2}>Qixia（11）</MenuItem>
-                <MenuItem value={3}>Xuanwu（20）</MenuItem>
-                <MenuItem value={4}>Jianye（13）</MenuItem>
-                <MenuItem value={5}>Pukou（14）</MenuItem>
-                <MenuItem value={6}>Yuhuatai（6）</MenuItem>
-                <MenuItem value={7}>Qinhuai（18）</MenuItem>
-                <MenuItem value={8}>Jiangning（10）</MenuItem>
-                <MenuItem value={9}>Liuhe（5）</MenuItem>
-              </Select>
+            <FormControl style={{width: 130, marginLeft: '-15%', marginRight: '8%', marginTop: '0.2%'}}>
+              <div>
+                <Button
+                  aria-owns={this.state.anchorEl ? 'simple-menu' : null}
+                  aria-haspopup="true"
+                  onClick={this.handleChooseLocation}
+                  variant="contained" size="small" className={classes.button}
+                >
+                  <Location className={classes.leftIcon}/>
+                  {this.state.location}
+                </Button>
+                <Menu
+                  id="simple-menu"
+                  anchorEl={this.state.anchorEl}
+                  open={Boolean(this.state.anchorEl)}
+                  onClose={this.closeChooseLocation}
+                >
+                  <MenuItem value="GuLou(21)" onClick={this.handleLocationChange}>GuLou(21)</MenuItem>
+                  <MenuItem value="QiXia(11)" onClick={this.handleLocationChange}>QiXia(11)</MenuItem>
+                  <MenuItem value="XuanWu(20)" onClick={this.handleLocationChange}>XuanWu(20)</MenuItem>
+                  <MenuItem value="JianYe(13)" onClick={this.handleLocationChange}>JianYe(13)</MenuItem>
+                  <MenuItem value="PuKou(14)" onClick={this.handleLocationChange}>PuKou(14)</MenuItem>
+                  <MenuItem value="YuHuaTai(6)" onClick={this.handleLocationChange}>YuHuaTai(6)</MenuItem>
+                  <MenuItem value="QinHuai(18)" onClick={this.handleLocationChange}>QinHuai(18)</MenuItem>
+                  <MenuItem value="JiangNing(10)" onClick={this.handleLocationChange}>JiangNing(10)</MenuItem>
+                  <MenuItem value="LiuHe(5)" onClick={this.handleLocationChange}>LiuHe(5)</MenuItem>
+                </Menu>
+              </div>
             </FormControl>
             <SearchField/>
             <Link to="/homepage" style={{color: 'inherit'}}>

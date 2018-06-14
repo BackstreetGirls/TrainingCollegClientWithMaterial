@@ -28,11 +28,14 @@ import blue from '@material-ui/core/colors/blue';
 import Avatar from '@material-ui/core/Avatar';
 import Input from '@material-ui/core/Input';
 import {message} from 'antd';
+import Footer from '../components/Footer';
 
 
 const styles = theme => ({
   margin: {
     margin: theme.spacing.unit * 4,
+    marginLeft: theme.spacing.unit * 10,
+    marginRight: theme.spacing.unit * 10,
   },
   card: {
     minWidth: 275,
@@ -298,6 +301,7 @@ class CourseDetailPage extends React.Component {
             </Grid>
           </Grid>
         </div>
+        <Footer/>
 
         <Dialog open={this.state.dialog} onClose={this.dialog_close} aria-labelledby="simple-dialog-title" {...other}>
           <DialogTitle id="simple-dialog-title">Share</DialogTitle>
@@ -328,14 +332,13 @@ class CourseDetailPage extends React.Component {
                 />
               </ListItem>
             </List>
-            <Button onClick={(index) => {
+            <Button onClick={() => {
               this.dialog_close()
             }} color="primary" style={{marginBottom: '5%', marginLeft: '60%'}}>
               CANCEL
             </Button>
           </div>
         </Dialog>
-
       </div>
     )
   }

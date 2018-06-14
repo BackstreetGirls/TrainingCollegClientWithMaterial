@@ -7,8 +7,8 @@ import {Carousel} from 'antd';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import Button from 'material-ui/Button';
-
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import ClassesGrid from '../components/ClassesGrid';
 import tileData from '../utils/FixedData';
 import Dialog from '@material-ui/core/Dialog';
@@ -25,6 +25,8 @@ const styles = theme => ({
   },
   margin: {
     margin: theme.spacing.unit * 4,
+    marginLeft: theme.spacing.unit * 6,
+    marginRight: theme.spacing.unit * 6,
   },
   button: {
     margin: theme.spacing.unit,
@@ -103,6 +105,7 @@ class HomePage extends React.Component {
             :
             null
         }
+        <Footer/>
       </div>
     )
   }

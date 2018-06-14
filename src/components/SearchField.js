@@ -115,7 +115,7 @@ class SearchField extends React.Component {
     this.setState({
       windowWidth: window.innerWidth
     });
-    if (this.state.windowWidth < 992) {
+    if (this.state.windowWidth < 1200) {
       this.setState({
         visibility: false,
       });
