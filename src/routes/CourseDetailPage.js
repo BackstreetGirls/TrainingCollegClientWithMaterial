@@ -40,11 +40,17 @@ const styles = theme => ({
   card: {
     minWidth: 275,
   },
+  lessonTitle: {
+    fontSize: 28,
+  },
+  smallTitle: {
+    fontSize: 20,
+  },
   title: {
     fontSize: 24,
   },
   subtitle: {
-    marginBottom: 24,
+    marginBottom: 22,
   },
   price: {
     fontSize: 24,
@@ -56,6 +62,7 @@ const styles = theme => ({
   },
   content: {
     marginTop: theme.spacing.unit * 2,
+
   },
   pos: {
     fontSize: 18,
@@ -133,7 +140,8 @@ class CourseDetailPage extends React.Component {
         <Navigation/>
 
         <div className={classes.margin}>
-          <Card elevation={0} style={{border: '1px solid rgba(0, 0, 0, 0.12)'}}>
+          {/*style={{border: '1px solid rgba(0, 0, 0, 0.12)'}}*/}
+          <Card elevation={2}>
             <Grid container spacing={24} alignItems="flex-end">
               <Grid item sm={4} xs={4}>
                 <CardMedia
@@ -145,7 +153,7 @@ class CourseDetailPage extends React.Component {
                 <Card className={classes.card} elevation={0} style={{height: 250}}>
                   <CardContent>
                     <div style={{display: 'flex', flexDirection: 'row'}}>
-                      <Typography variant="title" className={classes.title}>
+                      <Typography variant="title" className={classes.lessonTitle}>
                         {
                           this.state.courseInfo.title === undefined ? "No course name yet." : this.state.courseInfo.title
                         }
@@ -197,109 +205,150 @@ class CourseDetailPage extends React.Component {
             </Grid>
           </Card>
 
-          <Grid container spacing={16} className={classes.content}>
-            <Grid item sm={8} xs={8}>
-              <Card className={classes.card} elevation={0} style={{border: '1px solid rgba(0, 0, 0, 0.12)'}}>
-                <CardContent>
-                  <Typography variant="headline" className={classes.title}>
-                    Registered/Total
-                  </Typography>
-                  <Typography className={classes.pos} color="textSecondary">
-                    {
-                      this.state.courseInfo.registered_total === undefined ? "No such information yet." : this.state.courseInfo.registered_total
-                    }
-                  </Typography>
+          <Card elevation={2} style={{marginTop: 20, paddingBottom: 20}}>
+            <Grid container spacing={16} className={classes.content}>
+              <Grid item sm={8} xs={8}>
+                {/*style={{border: '1px solid rgba(0, 0, 0, 0.12)'}}*/}
+                <Card className={classes.card} elevation={0}>
+                  <CardContent>
+                    <Typography variant="headline" className={classes.title}>
+                      Course Introduction
+                    </Typography>
+                    <Typography className={classes.pos} color="textSecondary">
+                      {
+                        this.state.courseInfo.course_detail === undefined ? "No detailed introduction yet." : this.state.courseInfo.course_detail
+                      }
+                    </Typography>
 
-                  <Typography variant="headline" className={classes.title}>
-                    Start Date
-                  </Typography>
-                  <Typography className={classes.pos} color="textSecondary">
-                    {
-                      this.state.courseInfo.start_date === undefined ? "No start date yet." : this.state.courseInfo.start_date
-                    }
-                  </Typography>
+                    <Typography variant="headline" className={classes.title}>
+                      Teacher Introduction
+                    </Typography>
+                    <Typography className={classes.pos} color="textSecondary">
+                      {
+                        this.state.courseInfo.teacher === undefined ? "No teacher yet." : this.state.courseInfo.teacher
+                      }
+                    </Typography>
 
-                  <Typography variant="headline" className={classes.title}>
-                    Class Amount
-                  </Typography>
-                  <Typography className={classes.pos} color="textSecondary">
-                    {
-                      this.state.courseInfo.class_amount === undefined ? "No classes yet." : this.state.courseInfo.class_amount
-                    }
-                  </Typography>
+                    <Typography variant="headline" className={classes.title}>
+                      Institution Introduction
+                    </Typography>
+                    <Typography className={classes.pos} color="textSecondary">
+                      {
+                        this.state.courseInfo.provider_detail === undefined ? "No provider detailed information yet." : this.state.courseInfo.provider_detail
+                      }
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item sm={4} xs={4}>
+                {/*style={{border: '1px solid rgba(0, 0, 0, 0.12)'}}*/}
+                <Card className={classes.card} elevation={0} style={{borderLeft: '1px solid rgba(0, 0, 0, 0.12)'}}>
+                  <CardContent>
+                    <Grid container spacing={16} style={{margin: '10px 0', marginTop: '-6px', fontSize: 18}}>
+                      <Grid item xs={6}>
+                        <span style={{color: '#000'}}>Registered/Total</span>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <span style={{wordWrap: 'break-word'}}>
+                          {
+                            this.state.courseInfo.registered_total === undefined ? "No such information yet." : this.state.courseInfo.registered_total
+                          }
+                        </span>
+                      </Grid>
+                    </Grid>
 
-                  <Typography variant="headline" className={classes.title}>
-                    Lessons/Week & Total Weeks
-                  </Typography>
-                  <Typography className={classes.pos} color="textSecondary">
-                    {
-                      this.state.courseInfo.lessons_perWeek_totalWeeks === undefined ? "No such information yet." : this.state.courseInfo.lessons_perWeek_totalWeeks
-                    }
-                  </Typography>
+                    <Grid container spacing={16} style={{margin: '10px 0', fontSize: 18}}>
+                      <Grid item xs={6}>
+                        <span style={{color: '#000'}}>Start Date</span>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <span style={{wordWrap: 'break-word'}}>
+                          {
+                            this.state.courseInfo.start_date === undefined ? "No start date yet." : this.state.courseInfo.start_date
+                          }
+                        </span>
+                      </Grid>
+                    </Grid>
 
-                  <Typography variant="headline" className={classes.title}>
-                    Course Introduction
-                  </Typography>
-                  <Typography className={classes.pos} color="textSecondary">
-                    {
-                      this.state.courseInfo.course_detail === undefined ? "No detailed introduction yet." : this.state.courseInfo.course_detail
-                    }
-                  </Typography>
+                    <Grid container spacing={16} style={{margin: '10px 0', fontSize: 18}}>
+                      <Grid item xs={6}>
+                        <span style={{color: '#000'}}>Class Amount</span>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <span style={{wordWrap: 'break-word'}}>
+                          {
+                            this.state.courseInfo.class_amount === undefined ? "No classes yet." : this.state.courseInfo.class_amount
+                          }
+                        </span>
+                      </Grid>
+                    </Grid>
 
-                  <Typography variant="headline" className={classes.title}>
-                    Teacher Introduction
-                  </Typography>
-                  <Typography className={classes.pos} color="textSecondary">
-                    {
-                      this.state.courseInfo.teacher === undefined ? "No teacher yet." : this.state.courseInfo.teacher
-                    }
-                  </Typography>
+                    <Grid container spacing={16} style={{margin: '10px 0', fontSize: 18}}>
+                      <Grid item xs={6}>
+                        <span style={{color: '#000'}}>Lessons/Week & Total Weeks</span>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <span style={{wordWrap: 'break-word'}}>
+                          {
+                            this.state.courseInfo.lessons_perWeek_totalWeeks === undefined ? "No such information yet." : this.state.courseInfo.lessons_perWeek_totalWeeks
+                          }
+                        </span>
+                      </Grid>
+                    </Grid>
 
-                </CardContent>
-              </Card>
+                    <Grid container spacing={16} style={{margin: '10px 0', fontSize: 18}}>
+                      <Grid item xs={6}>
+                        <span style={{color: '#000'}}>Institution</span>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <span style={{wordWrap: 'break-word'}}>
+                          {
+                            this.state.courseInfo.provider === undefined ? "No provider yet." : this.state.courseInfo.provider
+                          }
+                        </span>
+                      </Grid>
+                    </Grid>
+
+                    <Grid container spacing={16} style={{margin: '10px 0', fontSize: 18}}>
+                      <Grid item xs={6}>
+                        <span style={{color: '#000'}}>Location</span>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <span style={{wordWrap: 'break-word'}}>
+                          {
+                            this.state.courseInfo.provider_location === undefined ? "No provider location yet." : this.state.courseInfo.provider_location
+                          }
+                        </span>
+                      </Grid>
+                    </Grid>
+
+                    <Grid container spacing={16} style={{margin: '10px 0', fontSize: 18}}>
+                      <Grid item xs={6}>
+                        <span style={{color: '#000'}}>Contact Email</span>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <span style={{wordWrap: 'break-word'}}>
+                          {
+                            this.state.courseInfo.provider_email === undefined ? "No provider email yet." : this.state.courseInfo.provider_email
+                          }
+                        </span>
+                      </Grid>
+                    </Grid>
+
+                    {/*<Typography variant="headline" className={classes.smallTitle}>*/}
+                      {/*Contact Email*/}
+                    {/*</Typography>*/}
+                    {/*<Typography className={classes.pos} color="textSecondary">*/}
+                      {/*{*/}
+                        {/*this.state.courseInfo.provider_email === undefined ? "No provider email yet." : this.state.courseInfo.provider_email*/}
+                      {/*}*/}
+                    {/*</Typography>*/}
+                  </CardContent>
+                </Card>
+              </Grid>
             </Grid>
-            <Grid item sm={4} xs={4}>
-              <Card className={classes.card} elevation={0} style={{border: '1px solid rgba(0, 0, 0, 0.12)'}}>
-                <CardContent>
-                  <Typography variant="headline" className={classes.title}>
-                    Provider
-                  </Typography>
-                  <Typography className={classes.pos} color="textSecondary">
-                    {
-                      this.state.courseInfo.provider === undefined ? "No provider yet." : this.state.courseInfo.provider
-                    }
-                  </Typography>
+          </Card>
 
-                  <Typography variant="headline" className={classes.title}>
-                    Location
-                  </Typography>
-                  <Typography className={classes.pos} color="textSecondary">
-                    {
-                      this.state.courseInfo.provider_location === undefined ? "No provider location yet." : this.state.courseInfo.provider_location
-                    }
-                  </Typography>
-
-                  <Typography variant="headline" className={classes.title}>
-                    Contact Email
-                  </Typography>
-                  <Typography className={classes.pos} color="textSecondary">
-                    {
-                      this.state.courseInfo.provider_email === undefined ? "No provider email yet." : this.state.courseInfo.provider_email
-                    }
-                  </Typography>
-
-                  <Typography variant="headline" className={classes.title}>
-                    Introduction
-                  </Typography>
-                  <Typography className={classes.pos} color="textSecondary">
-                    {
-                      this.state.courseInfo.provider_detail === undefined ? "No provider detailed information yet." : this.state.courseInfo.provider_detail
-                    }
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
         </div>
         <Footer/>
 

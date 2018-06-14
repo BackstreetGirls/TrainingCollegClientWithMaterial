@@ -10,7 +10,7 @@ class MyFooter extends React.Component {
   render() {
     return (
       <div>
-        <Footer style={{backgroundColor: 'black', color: 'white'}}>
+        <Footer style={{backgroundColor: 'black', color: 'white', textAlign: 'center'}}>
           Copyright © 2018 Backstreet Girls. All rights reserved.
         </Footer>
       </div>

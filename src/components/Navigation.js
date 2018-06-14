@@ -253,7 +253,7 @@ class NavigationPage extends React.Component {
                   aria-owns={this.state.anchorEl ? 'simple-menu' : null}
                   aria-haspopup="true"
                   onClick={this.handleChooseLocation}
-                  variant="contained" size="small" className={classes.button}
+                  variant="flat" size="small" className={classes.button}
                 >
                   <Location className={classes.leftIcon}/>
                   {this.state.location}
