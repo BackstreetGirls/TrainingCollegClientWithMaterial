@@ -102,6 +102,10 @@ class OrderTable extends React.Component {
     record
   });
 
+  state = {
+    open: false,
+  };
+
   constructor(props) {
     super(props);
     this.columns = [{
@@ -134,7 +138,7 @@ class OrderTable extends React.Component {
       dataIndex: 'operation',
       render: (text, record) => {
         const {classes} = this.props;
-        const { fullScreen } = this.props;
+        const {fullScreen} = this.props;
 
         if (record.state === 'Unpaid') {
           return (
@@ -375,22 +379,8 @@ class OrderTable extends React.Component {
           state: 'Unpaid',
           way: '-',
           description: '2018-5-10',
-        },
-        {
-        no: '2018052311329',
-        institute: 'The University of Michigan',
-        date: '2018-6-23',
-        key: '2',
-        imagesrc: 'src/assets/Recommendation/recommendation1.png',
-        name: 'Master Python',
-        price: '129',
-        amount: '1',
-        payment: '129',
-        state: 'Unpaid',
-        way: '-',
-        description: '2018-5-10',
-      }],
-      count: 2,
+        }],
+      count: 1,
     };
   }
 

@@ -6,15 +6,15 @@ import Button from 'material-ui/Button';
 
 class EditableCell extends React.Component {
   state = {
-    value: this.props.value,
+    name: this.props.name,
     imagesrc: this.props.imagesrc,
   };
 
   render() {
-    const {value, imagesrc} = this.state;
+    const {name, imagesrc} = this.state;
     return (
       <div className="editable-cell">
-        <img className={style.cell_image} alt="load false" src={imagesrc}/>{value}
+        <img className={style.cell_image} alt="load false" src={imagesrc}/>{name}
       </div>
     );
   }
@@ -38,19 +38,21 @@ const LineItemRow = ({record, ...restProps}) => (
 );
 
 class OrderTable extends React.Component {
+
   handleRow = record => ({
     record
   });
 
   constructor(props) {
     super(props);
+
     this.columns = [{
       title: 'Name',
       dataIndex: 'name',
 
       render: (text, record) => (
         <EditableCell
-          value={text}
+          name={text}
           imagesrc={record.imagesrc}
         />
       ),
@@ -81,7 +83,7 @@ class OrderTable extends React.Component {
                 <Button  color="primary">Pay</Button>
               </div>
               <div>
-                <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record.key)}>
+                <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record)}>
                   <Button style={{fontSize:"3px"}}>Cancle</Button>
                 </Popconfirm>
               </div>
@@ -90,29 +92,34 @@ class OrderTable extends React.Component {
         } else if (record.state === 'Paid') {
           return (
             <div>
-              <Popover content={<Rate onChange={() => this.onRate(record.key)}></Rate>}>
+              <Popover content={<Rate value={record.rate} onChange={()=>this.onRate({record})}> </Rate>}>
                 <Button color="primary">Rate</Button>
               </Popover>
             </div>
           )
         } else if (record.state === 'Closed') {
           if(record.rate === -1) {
-            return (
+          return (
+            <div>
               <div>
-                <div>
-                  <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record.key)}>
-                    <Button color="primary">Delete</Button>
-                  </Popconfirm>
-                </div>
+                <Popconfirm title="Sure to delete?" onConfirm={() => this.onDelete(record)}>
+                  <Button size="small" color="secondary" variant="raised">Delete</Button>
+                </Popconfirm>
               </div>
-            )
-          }else{
-            return(
+            </div>
+          )
+        }else{
+          return(
+            <div>
+              <Rate disabled value={record.rate} style={{display: "block"}}></Rate>
               <div>
-                <Rate disabled value={record.rate}></Rate>
+                <Popconfirm title="Sure to delete?" onConfirm={() => this.onDelete(record)}>
+                  <Button size="small" color="secondary" variant="raised">Delete</Button>
+                </Popconfirm>
               </div>
-            )
-          }
+            </div>
+          )
+        }
         }
       },
     }];
@@ -151,13 +158,17 @@ class OrderTable extends React.Component {
     };
   }
 
-  onCancle = (key) => {
-    const dataSource = [...this.state.dataSource];
-    this.setState({dataSource: dataSource.filter(item => item.key !== key)});
+  onCancle = (record) => {
+    record.state = 'Closed';
   };
 
-  onRate = (key) => {
+  onDelete = (record) => {
+    const dataSource = [...this.state.dataSource];
+    this.setState({dataSource: dataSource.filter(item => item.key !== record.key)});
+  }
 
+  onRate = (record) => {
+    record.state = 'Closed';
   };
 
   render() {

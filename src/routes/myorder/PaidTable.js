@@ -77,7 +77,7 @@ class OrderTable extends React.Component {
         if (record.state === 'Paid') {
           return (
             <div>
-              <Popover content={<Rate onChange={() => this.onRate(record.key)}></Rate>}>
+              <Popover content={<Rate onChange={() => this.onRate(record.key)}> </Rate>}>
                 <Button color="primary">Rate</Button>
               </Popover>
             </div>
@@ -101,22 +101,8 @@ class OrderTable extends React.Component {
         way: 'AliPay',
         rate: -1,
         description: '2018-5-9',
-      }, {
-        no: '2018052311329',
-        institute: 'The University of Michigan',
-        date: '2018-6-23',
-        key: '1',
-        imagesrc: 'src/assets/Recommendation/recommendation1.png',
-        name: 'Master Python',
-        price: '129',
-        amount: '1',
-        payment: '129',
-        state: 'Paid',
-        way: '-',
-        rate: -1,
-        description: '2018-5-10',
       }],
-      count: 2,
+      count: 1,
     };
   }
 
