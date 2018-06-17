@@ -19,7 +19,7 @@ const styles = theme => ({
   },
 });
 
-class AllCoursesPage extends React.Component {
+class ArtCulturePage extends React.Component {
 
   handleClick = (e) => {
     console.log('click ', e);
@@ -40,11 +40,13 @@ class AllCoursesPage extends React.Component {
                 onClick={this.handleClick}
                 style={{ width: 200 }}
                 defaultOpenKeys={['sub1']}
-                defaultSelectedKeys={['1']}
+                defaultSelectedKeys={['8']}
                 mode="inline"
               >
                 <MenuItemGroup key="g1" title="Courses">
-                  <Menu.Item key="1">All</Menu.Item>
+                  <Menu.Item key="1">
+                    <Link to="/allcourses">All</Link>
+                  </Menu.Item>
                 </MenuItemGroup>
                 <MenuItemGroup key="g2" title="Availability">
                   <Menu.Item key="2">
@@ -57,9 +59,7 @@ class AllCoursesPage extends React.Component {
                 </MenuItemGroup>
                 <MenuItemGroup key="g3" title="Subjects">
                   <Menu.Item key="7">Architecture</Menu.Item>
-                  <Menu.Item key="8">
-                    <Link to="/artcourses">Art & Culture</Link>
-                  </Menu.Item>
+                  <Menu.Item key="8">Art & Culture</Menu.Item>
                   <Menu.Item key="9">Chemistry</Menu.Item>
                   <Menu.Item key="10">Computer Science</Menu.Item>
                   <Menu.Item key="11">Design</Menu.Item>
@@ -74,9 +74,9 @@ class AllCoursesPage extends React.Component {
                 </MenuItemGroup>
               </Menu>
             </Sider>
-              <Content>
-                <ClassesGridAll tileData={tileData.courses}/>
-              </Content>
+            <Content>
+              <ClassesGridAll title=" " tileData={tileData.art_and_culture}/>
+            </Content>
           </Layout>
         </div>
 
@@ -87,11 +87,8 @@ class AllCoursesPage extends React.Component {
 
 }
 
-AllCoursesPage.propTypes = {
+ArtCulturePage.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(AllCoursesPage);
-
-
-
+export default withStyles(styles)(ArtCulturePage);

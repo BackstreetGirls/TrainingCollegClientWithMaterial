@@ -10,6 +10,9 @@ import OrderListPage from './routes/myorder/OrderListPage'
 import AllCoursesPage from './routes/courselist/AllCoursesPage';
 import SearchResultPage from './routes/courselist/SearchResultPage';
 import MyFavoritePage from './routes/courselist/MyFavoritePage'
+import PythonSearchPage from './routes/courselist/PythonSearchPage'
+import CurrentPage from './routes/courselist/CurrentPage'
+import ArtCulturePage from './routes/courselist/ArtCulturePage'
 
 function RouterConfig({history}) {
   return (
@@ -26,6 +29,9 @@ function RouterConfig({history}) {
         <Route path='/allcourses' exact component={AllCoursesPage}/>
         <Route path='/searchresult' exact component={SearchResultPage}/>
         <Route path='/myfavorite' exact component={MyFavoritePage}/>
+        <Route path='/pythonsearch' exact component={PythonSearchPage}/>
+        <Route path='/currentcourses' exact component={CurrentPage}/>
+        <Route path='/artcourses' exact component={ArtCulturePage}/>
 
         <Route path='*' exact component={Page404}/>
       </Switch>

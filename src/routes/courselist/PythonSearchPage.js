@@ -1,6 +1,6 @@
 /**
- * 求职者搜索结果页面，以搜索coding为例
- * 修改日期：2018/6/12
+ * python搜索结果页面
+ * 修改日期：2018/6/13
  */
 import React from 'react'
 import tileData from "../../utils/FixedData";
@@ -25,7 +25,7 @@ const styles = theme => ({
   },
 });
 
-class SearchResultPage extends React.Component {
+class PythonSearchPage extends React.Component {
 
   render() {
 
@@ -39,19 +39,19 @@ class SearchResultPage extends React.Component {
           <Tabs defaultActiveKey="1" onChange={callback}>
             <TabPane tab="Synthetically(Sorting)" key="1">
               <div>
-                <ClassesGrid title="Viewing 6 results related to 'coding'" tileData={tileData.search_result1}/>
+                <ClassesGrid title="Viewing 3 results related to 'python'" tileData={tileData.python_search1}/>
               </div>
 
             </TabPane>
             <TabPane tab="Comment-Based" key="2">
               <div>
-                <ClassesGrid title="Viewing 6 results related to 'coding'" tileData={tileData.search_result2}/>
+                <ClassesGrid title="Viewing 3 results related to 'python'" tileData={tileData.python_search2}/>
               </div>
 
             </TabPane>
             <TabPane tab="Newest" key="3">
               <div>
-                <ClassesGrid title="Viewing 6 results related to 'coding'" tileData={tileData.search_result3}/>
+                <ClassesGrid title="Viewing 3 results related to 'python'" tileData={tileData.python_search3}/>
               </div>
 
             </TabPane>
@@ -64,8 +64,8 @@ class SearchResultPage extends React.Component {
 
 }
 
-SearchResultPage.propTypes = {
+PythonSearchPage.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SearchResultPage);
+export default withStyles(styles)(PythonSearchPage);

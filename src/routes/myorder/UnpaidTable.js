@@ -139,7 +139,6 @@ class OrderTable extends React.Component {
       render: (text, record) => {
         const {classes} = this.props;
         const {fullScreen} = this.props;
-
         if (record.state === 'Unpaid') {
           return (
             <div>
@@ -368,20 +367,21 @@ class OrderTable extends React.Component {
       dataSource: [
         {
           no: '2018052311328',
-          institute: 'The University of Michigan',
+          institute: 'Sparks Education',
           date: '2018-6-23',
           key: '1',
           imagesrc: 'src/assets/Recommendation/recommendation1.png',
           name: 'Master Python',
-          price: '129',
+          price: '129.00',
           amount: '1',
-          payment: '129',
+          payment: '129.00',
           state: 'Unpaid',
           way: '-',
           description: '2018-5-10',
         }],
       count: 1,
-    };
+        }
+
   }
 
   onCancle = (key) => {
@@ -407,7 +407,7 @@ class OrderTable extends React.Component {
     this.setState({
       visible: false,
     });
-  }
+  };
 
   handleCancel = (e) => {
     console.log(e);

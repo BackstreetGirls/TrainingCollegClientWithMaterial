@@ -1,6 +1,3 @@
-/**
- * Created by hyx on 2018/5/2.
- */
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
@@ -18,13 +15,6 @@ const styles = theme => ({
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
-  },
-  title: {
-    fontSize: '32px',
-    fontWeight: 400,
-    width: '100%',
-    float: 'left',
-    margin: '15px 22px',
   },
   gridList: {
     // flexWrap: 'nowrap',
@@ -45,17 +35,14 @@ const styles = theme => ({
 });
 
 
-class ClassesGrid extends React.Component {
+class ClassesGridAll extends React.Component {
 
   render() {
     const {classes} = this.props;
 
     return (
       <div className={classes.root}>
-        <p className={classes.title}>
-          {this.props.title ? this.props.title : "Default"}
-        </p>
-        <GridList className={classes.gridList} spacing={8} cols={5} style={{margin: '-10px 10px 0 10px'}}>
+        <GridList className={classes.gridList} spacing={8} cols={4} style={{margin: '-10px 10px 0 10px'}}>
           {this.props.tileData.map(tile => (
             <div style={{height: 'auto', marginTop: 10, cursor: 'pointer'}} key={tile.key}>
               <Link to={"/detail&courseID=:" + tile.key}>
@@ -66,10 +53,10 @@ class ClassesGrid extends React.Component {
                     title={tile.title}
                   />
                   <CardContent>
-                    <Typography noWrap variant="title" style={{marginTop: 4}}>
+                    <Typography noWrap gutterBottom variant="headline" component="h2">
                       {tile.title}
                     </Typography>
-                    <Typography variant="caption" style={{height: 62, margin: '15px 0', fontSize: 14}}>
+                    <Typography component="p" style={{height: 74}}>
                       {tile.description}
                     </Typography>
                   </CardContent>
@@ -86,8 +73,8 @@ class ClassesGrid extends React.Component {
   }
 }
 
-ClassesGrid.propTypes = {
+ClassesGridAll.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ClassesGrid);
+export default withStyles(styles)(ClassesGridAll);

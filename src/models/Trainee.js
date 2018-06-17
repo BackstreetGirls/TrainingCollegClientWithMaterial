@@ -45,7 +45,8 @@ export default {
     courses_registration: [],
     bar_chart_statistics: [],
     pie_chart_statistics: [],
-    selectedKey: 5
+    selectedKey: 5,
+    location_hint_tag: 0,
   },
 
   subscriptions: {
@@ -646,9 +647,24 @@ export default {
       });
     },
 
+    * changeLocationHintTag({payload}, {call, put, select}) {
+      yield put({
+        type: 'updateLocationHintTag',
+        payload: {location_hint_tag: payload.location_hint_tag}
+      });
+    },
+
   },
 
   reducers: {
+
+    updateLocationHintTag(state, action) {
+      return {
+        ...state,
+        location_hint_tag: action.payload.location_hint_tag,
+      }
+    },
+
     // 更新是否已经登陆的标志
     updateHasLoggedIn(state, action) {
       return {

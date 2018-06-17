@@ -82,10 +82,10 @@ class ConfirmOrderInfo extends React.Component {
               Computer Application...
             </Typography>
             <Typography component="p">
-              Date：2018/5/9
+              Date：2018/6/18
             </Typography>
             <Typography component="p">
-              Price：$99
+              Price：$99.00
             </Typography>
           </CardContent>
         </Card>
@@ -129,7 +129,7 @@ class ConfirmOrderInfo extends React.Component {
             />
 
             <Typography className={classes.total}>
-              Price : $99
+              Price : $99.00
             </Typography>
 
 
