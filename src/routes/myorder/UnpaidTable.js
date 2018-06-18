@@ -52,6 +52,7 @@ const styles = theme => ({
     marginLeft: '15%',
     minWidth: 120,
   }
+
 });
 
 
@@ -63,6 +64,7 @@ class EditableCell extends React.Component {
     password: '',
     showPassword: false,
     way:'bank',
+    open: false
   };
 
   render() {
@@ -101,12 +103,11 @@ class OrderTable extends React.Component {
     record
   });
 
-  state = {
-    open: false,
-  };
-
   constructor(props) {
     super(props);
+    this.state = {
+      open: false,
+    };
     this.columns = [{
       title: 'Name',
       dataIndex: 'name',
@@ -137,7 +138,7 @@ class OrderTable extends React.Component {
       dataIndex: 'operation',
       render: (text, record) => {
         const {classes} = this.props;
-        const {fullScreen} = this.props;
+
         if (record.state === 'Unpaid') {
           return (
             <div>
@@ -164,7 +165,7 @@ class OrderTable extends React.Component {
                               onClick={(index)=>{this.changeWayToWechat(index)}}
                       />
                     </div>
-                    <Divider style={{width: '46%', marginTop: '2%', marginLeft: '13%'}}/>
+                    <Divider style={{width: '46%', marginTop: '2%', marginLeft: '24%'}}/>
                     <div id="bank_input" style={{display:this.state.way==='bank'?'block':'none'}}>
                       <FormControl className={classes.formControl}>
                         <TextField
@@ -175,7 +176,7 @@ class OrderTable extends React.Component {
                           id="name"
                           label="Bank account"
                           placeholder="length 18"
-                          className={classes.textField}
+                          style={{width: '180px'}}
                           margin="normal"
                         />
                         <br/>
@@ -185,6 +186,7 @@ class OrderTable extends React.Component {
                           placeholder="length 6"
                           type={this.state.showPassword ? 'text' : 'password'}
                           value={this.state.password}
+                          style={{width: '180px'}}
                           onChange={this.handleChange('password')}
                           endAdornment={
                             <InputAdornment position="end">
@@ -201,7 +203,7 @@ class OrderTable extends React.Component {
                       </FormControl>
                     </div>
                     <div id="alipay_input" style={{display:this.state.way==='alipay'?'block':'none'}}>
-                      <Typography component="p" style={{marginLeft:'20%'}}>
+                      <Typography component="p" style={{marginLeft:'16%'}}>
                         Please scan the QR code or login your account.
                       </Typography>
                       <div className={classes.imgContainer}>
@@ -215,7 +217,7 @@ class OrderTable extends React.Component {
                             id="alipay_name"
                             label="Alipay"
                             placeholder="mail or telephone"
-                            className={classes.textField}
+                            style={{width: '180px'}}
                             margin="normal"
                           />
                           <br/>
@@ -224,6 +226,7 @@ class OrderTable extends React.Component {
                             placeholder="password"
                             type={this.state.showPassword ? 'text' : 'password'}
                             value={this.state.password}
+                            style={{width: '180px'}}
                             onChange={this.handleChange('password')}
                             endAdornment={
                               <InputAdornment position="end">
@@ -255,7 +258,7 @@ class OrderTable extends React.Component {
                             id="wechat_name"
                             label="Wechat"
                             placeholder="wechat or telephone"
-                            className={classes.textField}
+                            style={{width: '180px'}}
                             margin="normal"
                           />
                           <br/>
@@ -265,6 +268,7 @@ class OrderTable extends React.Component {
                             placeholder="password"
                             type={this.state.showPassword ? 'text' : 'password'}
                             value={this.state.password}
+                            style={{width: '180px'}}
                             onChange={this.handleChange('password')}
                             endAdornment={
                               <InputAdornment position="end">
@@ -285,7 +289,7 @@ class OrderTable extends React.Component {
                 </Modal>
               </div>
               <div>
-                <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record.key)}>
+                <Popconfirm title="Sure to cancel?" onConfirm={() => this.onCancel(record.key)}>
                   <Button ghost style={{marginTop: '2px', width: '75px', color: 'red', border: '0px', borderRadius:'0px'}}>Cancel</Button>
                 </Popconfirm>
                 <Dialog
@@ -383,10 +387,10 @@ class OrderTable extends React.Component {
 
   }
 
-  onCancle = (key) => {
+  onCancel = (key) => {
     const dataSource = [...this.state.dataSource];
     this.setState({dataSource: dataSource.filter(item => item.key !== key)});
-    this.setState({ open: true });
+    this.handleOpen();
   };
 
   showPayInfo = () => {
@@ -411,8 +415,12 @@ class OrderTable extends React.Component {
   handleCancel = (e) => {
     console.log(e);
     this.setState({
-      visible: false,
+      visible: true,
     });
+  };
+
+  handleOpen = () => {
+    this.setState({ open: true });
   };
 
   handleClose = () => {
@@ -458,4 +466,4 @@ class OrderTable extends React.Component {
 
 }
 
-export default withStyles(styles,orderTableStyle)(OrderTable);
+export default withStyles(styles)(OrderTable);
