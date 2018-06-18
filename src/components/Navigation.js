@@ -247,7 +247,7 @@ class NavigationPage extends React.Component {
             <Typography variant="title" color="inherit" className={classes.flex}>
               TrainingCollege
             </Typography>
-            <FormControl style={{width: 130, marginLeft: '-15%', marginRight: '8%', marginTop: '0.2%'}}>
+            <FormControl style={{width: 130, marginLeft: '-8%', marginRight: '8%', marginTop: '0.2%'}}>
               <div>
                 <Button
                   aria-owns={this.state.anchorEl ? 'simple-menu' : null}
