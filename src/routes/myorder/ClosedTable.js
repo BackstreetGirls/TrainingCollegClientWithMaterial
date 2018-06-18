@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
-import {Table, Popconfirm, Rate, Button} from 'antd';
+import {Table, Popconfirm, Rate} from 'antd';
+import Button from 'material-ui/Button';
 import {withStyles} from "material-ui/styles/index";
 import style from "../css/orderTable.css"
 
@@ -84,8 +85,8 @@ class OrderTable extends React.Component {
             )
           }else{
             return(
-              <div style={{textAlign:'center'}}>
-                <Rate disabled value={record.rate} style={{display: "block", marginBottom:'10px'}}></Rate>
+              <div>
+                <Rate disabled value={record.rate} style={{display: "block", marginBottom:'10px'}}/>
               </div>
             )
           }
@@ -100,7 +101,7 @@ class OrderTable extends React.Component {
         return(
           <div>
             <Popconfirm title="Sure to delete?" onConfirm={() => this.onCancle(record.key)}>
-              <Button type="danger" style={{borderRadius: '0'}}>Delete</Button>
+              <Button variant='raised' style={{borderRadius: '0'}}>Delete</Button>
             </Popconfirm>
           </div>
         )

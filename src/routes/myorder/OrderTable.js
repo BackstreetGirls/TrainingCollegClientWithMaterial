@@ -1,8 +1,9 @@
 import React, {Fragment} from 'react';
-import {Table,Popconfirm, Rate, message, Button, Modal} from 'antd';
+import {Table,Popconfirm, Rate, message, Modal} from 'antd';
+import Button from 'material-ui/Button';
 import {withStyles} from "material-ui/styles/index";
-import style from "../css/orderTable.css"
 import Divider from 'material-ui/Divider';
+import style from "../css/orderTable.css"
 import Input, {InputAdornment} from 'material-ui/Input';
 import {FormControl} from 'material-ui/Form';
 import TextField from 'material-ui/TextField';
@@ -13,7 +14,8 @@ import Typography from 'material-ui/Typography';
 import alipay_pay from '../../assets/alipay.png';
 import wechat_pay from '../../assets/wechat_pay.png';
 
-const styles = theme => ({
+
+const styles = {
   container: {
     marginLeft: '12%',
     align: 'center'
@@ -41,7 +43,7 @@ const styles = theme => ({
     marginLeft: '15%',
     minWidth: 120,
   }
-});
+};
 
 class EditableCell extends React.Component {
   state = {
@@ -62,18 +64,18 @@ class EditableCell extends React.Component {
 
 const LineItemRow = ({record, ...restProps}) => (
   <Fragment>
-    <tr style={{fontSize: 'small',border: '2px solid red'}}>
-      <td colSpan="1" style={{background: "#fbfbfb"}}>
+    <tr style={{fontSize: 'small', background: 'rgba(246,246,246)'}}>
+      <td colSpan="1" style={{border: 0}}>
         OrderId：{record.no}
       </td>
-      <td colSpan="4" style={{background: "#fbfbfb"}}>
+      <td colSpan="4" style={{border: 0}}>
         Institution：{record.institute}
       </td>
-      <td colSpan="2" style={{background: "#fbfbfb"}}>
+      <td colSpan="2" style={{border: 0}}>
         Date：{record.date}
       </td>
     </tr>
-    <tr style={{align: 'center'}} {...restProps} />
+    <tr  {...restProps} />
   </Fragment>
 );
 
@@ -118,9 +120,9 @@ class OrderTable extends React.Component {
         const {classes} = this.props;
         if (record.state === 'Unpaid') {
           return (
-            <div style={{ textAlign: 'center'}}>
+            <div>
               <div>
-                <Button  style={{width: '75px', borderRadius:'0px'}} type="primary" onClick={this.showPayInfo}>Pay</Button>
+                <Button color="primary" variant="raised" style={{borderRadius:'0px'}} onClick={this.showPayInfo}>Pay</Button>
                 <Modal
                   title="Choose Pay Way"
                   visible={this.state.visible}
@@ -268,15 +270,15 @@ class OrderTable extends React.Component {
               </div>
               <div>
                 <Popconfirm title="Sure to cancel?" onConfirm={() => this.onCancel(record)}>
-                  <Button  ghost style={{marginTop: '2px', width: '75px', color: 'grey', border: '0px', borderRadius:'0px'}}>Cancel</Button>
+                  <Button style={{marginTop: '2px', color: 'grey', border: '0px', borderRadius:'0px'}}>Cancel</Button>
                 </Popconfirm>
               </div>
             </div>
           )
         } else if (record.state === 'Paid') {
           return (
-            <div style={{textAlign:'center'}}>
-              <Rate allowClear={false} onChange={this.onRate}></Rate>
+            <div>
+              <Rate allowClear={false} onChange={this.onRate}/>
             </div>
           )
         } else if (record.state === 'Closed') {
@@ -293,7 +295,7 @@ class OrderTable extends React.Component {
         }else{
           return(
             <div>
-              <Rate disabled value={record.rate} style={{display: "block"}}></Rate>
+              <Rate disabled value={record.rate} style={{display: "block"}}/>
               <div>
                 <Popconfirm title="Sure to delete?" onConfirm={() => this.onDelete(record)}>
                   <Button size="small" color="secondary" variant="raised">Delete</Button>
@@ -347,7 +349,7 @@ class OrderTable extends React.Component {
   onDelete = (record) => {
     const dataSource = [...this.state.dataSource];
     this.setState({dataSource: dataSource.filter(item => item.key !== record.key)});
-  }
+  };
 
   onRate = () => {
     message.config({
@@ -420,7 +422,7 @@ class OrderTable extends React.Component {
       }
     };
     return <Table bordered components={components} onRow={this.handleRow} columns={columns} dataSource={dataSource}
-                  style={{borderCollapse:'collapse'}}
+                  style={{marginTop: '-10px'}}
     />;
   }
 

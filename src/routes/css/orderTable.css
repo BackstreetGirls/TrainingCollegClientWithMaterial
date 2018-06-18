@@ -46,3 +46,21 @@
 .editable-add-btn {
   margin-bottom: 8px;
 }
+
+:global .ant-table-bordered .ant-table-thead > tr > th, :global .ant-table-bordered .ant-table-tbody > tr > td, :global .ant-table-bordered .ant-table-body > table {
+  border: none;
+}
+
+:global .ant-table-thead > tr > th {
+  background-color: #4054B2;
+  color: white;
+}
+
+/*:global .ant-table-tbody > tr > td {*/
+  /*background-color: cornsilk;*/
+/*}*/
+
+:global .ant-table table {
+  border-spacing: 0 10px;
+  border: none;
+}
