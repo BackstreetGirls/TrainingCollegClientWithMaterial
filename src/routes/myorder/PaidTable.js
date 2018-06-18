@@ -24,13 +24,13 @@ const LineItemRow = ({record, ...restProps}) => (
   <Fragment>
     <tr>
       <td colSpan="1" style={{background: '#fbfbfb'}}>
-        orderId：{record.no}
+        OrderId：{record.no}
       </td>
       <td colSpan="4" style={{background: "#fbfbfb"}}>
-        institution：{record.institute}
+        Institution：{record.institute}
       </td>
       <td colSpan="2" style={{background: "#fbfbfb"}}>
-        date：{record.date}
+        Date：{record.date}
       </td>
     </tr>
     <tr {...restProps} />

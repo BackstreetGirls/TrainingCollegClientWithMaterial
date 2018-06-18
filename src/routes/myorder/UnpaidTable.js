@@ -1,8 +1,7 @@
 import React, {Fragment} from 'react';
-import {Table, Popover, Popconfirm, Rate, Modal, message, Tabs} from 'antd';
+import {Table, Popover, Popconfirm, Rate, Modal, message, Tabs, Button} from 'antd';
 import {withStyles} from "material-ui/styles/index";
 import orderTableStyle from "../css/orderTable.css"
-import Button from 'material-ui/Button';
 
 import Divider from 'material-ui/Divider';
 import Input, {InputAdornment} from 'material-ui/Input';
@@ -80,13 +79,13 @@ const LineItemRow = ({record, ...restProps}) => (
   <Fragment>
     <tr>
       <td colSpan="1" style={{background: "#fbfbfb"}}>
-        orderId：{record.no}
+        OrderId：{record.no}
       </td>
       <td colSpan="4" style={{background: "#fbfbfb"}}>
-        institution：{record.institute}
+        Institution：{record.institute}
       </td>
       <td colSpan="2" style={{background: "#fbfbfb"}}>
-        date：{record.date}
+        Date：{record.date}
       </td>
     </tr>
     <tr {...restProps} />
@@ -143,7 +142,7 @@ class OrderTable extends React.Component {
           return (
             <div>
               <div>
-                <Button color="primary" onClick={this.showPayInfo}>Pay</Button>
+                <Button type="primary" style={{width: '75px', borderRadius:'0px'}} onClick={this.showPayInfo}>Pay</Button>
                 <Modal
                   title="Choose Pay Way"
                   visible={this.state.visible}
@@ -287,7 +286,7 @@ class OrderTable extends React.Component {
               </div>
               <div>
                 <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record.key)}>
-                  <Button style={{fontSize:"3px"}}>Cancle</Button>
+                  <Button ghost style={{marginTop: '2px', width: '75px', color: 'red', border: '0px', borderRadius:'0px'}}>Cancel</Button>
                 </Popconfirm>
                 <Dialog
                   fullScreen

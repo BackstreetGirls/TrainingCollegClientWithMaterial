@@ -1,8 +1,7 @@
 import React, {Fragment} from 'react';
-import {Table,Popconfirm, Rate, message} from 'antd';
+import {Table,Popconfirm, Rate, message, Button} from 'antd';
 import {withStyles} from "material-ui/styles/index";
 import style from "../css/orderTable.css"
-import Button from 'material-ui/Button';
 
 class EditableCell extends React.Component {
   state = {
@@ -22,18 +21,18 @@ class EditableCell extends React.Component {
 
 const LineItemRow = ({record, ...restProps}) => (
   <Fragment>
-    <tr>
+    <tr style={{fontSize: 'small', borderCollapse:'separate', borderSpacing:'0px 10px'}}>
       <td colSpan="1" style={{background: "#fbfbfb"}}>
-        orderId：{record.no}
+        OrderId：{record.no}
       </td>
       <td colSpan="4" style={{background: "#fbfbfb"}}>
-        institution：{record.institute}
+        Institution：{record.institute}
       </td>
       <td colSpan="2" style={{background: "#fbfbfb"}}>
-        date：{record.date}
+        Date：{record.date}
       </td>
     </tr>
-    <tr {...restProps} />
+    <tr style={{align: 'center'}} {...restProps} />
   </Fragment>
 );
 
@@ -80,11 +79,11 @@ class OrderTable extends React.Component {
           return (
             <div>
               <div>
-                <Button  color="primary">Pay</Button>
+                <Button  style={{width: '75px', borderRadius:'0px'}} type="primary">Pay</Button>
               </div>
               <div>
-                <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record)}>
-                  <Button>Cancle</Button>
+                <Popconfirm title="Sure to cancel?" onConfirm={() => this.onCancel(record)}>
+                  <Button  ghost style={{marginTop: '2px', width: '75px', color: 'red', border: '0px', borderRadius:'0px'}}>Cancel</Button>
                 </Popconfirm>
               </div>
             </div>
@@ -156,7 +155,7 @@ class OrderTable extends React.Component {
     };
   }
 
-  onCancle = (record) => {
+  onCancel = (record) => {
     record.state = 'Closed';
   };
 
@@ -171,7 +170,7 @@ class OrderTable extends React.Component {
       duration: 2,
       maxCount: 3,
     });
-    message.success('Rate success!');
+    message.success('Rate successfully!');
   };
 
   render() {
@@ -184,7 +183,6 @@ class OrderTable extends React.Component {
       }
     };
     return <Table bordered components={components} onRow={this.handleRow} columns={columns} dataSource={dataSource}
-                  className={style.table}
     />;
   }
 
