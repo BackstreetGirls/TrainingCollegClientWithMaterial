@@ -20,7 +20,9 @@ const operations = <Search
 
 const styles = theme => ({
   margin: {
-    margin: theme.spacing.unit * 4,
+    marginLeft: theme.spacing.unit * 12,
+    marginRight: theme.spacing.unit * 12,
+    marginTop: theme.spacing.unit * 4
   },
   card: {
     minWidth: 275,

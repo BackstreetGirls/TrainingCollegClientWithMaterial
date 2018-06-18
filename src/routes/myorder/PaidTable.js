@@ -6,15 +6,16 @@ import Button from 'material-ui/Button';
 
 class EditableCell extends React.Component {
   state = {
-    value: this.props.value,
+    name: this.props.value,
     imagesrc: this.props.imagesrc,
   };
 
   render() {
-    const {value, imagesrc} = this.state;
+    const {name, imagesrc} = this.state;
     return (
-      <div className={style.editable_cell}>
-        <img className={style.cell_image} alt="load false" src={imagesrc}/>{value}
+      <div className="editable-cell">
+        <div style={{fontWeight: 'bold', marginBottom: '6px', color: 'black'}}>{name}</div>
+        <img className={style.cell_image} alt="load false" src={imagesrc}/>
       </div>
     );
   }
@@ -77,7 +78,7 @@ class OrderTable extends React.Component {
 
         if (record.state === 'Paid') {
           return (
-            <div>
+            <div style={{textAlign:'center'}}>
               <Rate onChange={() => this.onRate(record.key)}> </Rate>
             </div>
           )

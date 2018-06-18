@@ -1,6 +1,5 @@
 import React, {Fragment} from 'react';
 import {Table,Popconfirm, Rate, message, Button, Modal} from 'antd';
-import orderTableStyle from "../css/orderTable.css"
 import {withStyles} from "material-ui/styles/index";
 import style from "../css/orderTable.css"
 import Divider from 'material-ui/Divider';
@@ -54,7 +53,8 @@ class EditableCell extends React.Component {
     const {name, imagesrc} = this.state;
     return (
       <div className="editable-cell">
-        <img className={style.cell_image} alt="load false" src={imagesrc}/>{name}
+        <div style={{fontWeight: 'bold', marginBottom: '6px', color: 'black'}}>{name}</div>
+        <img className={style.cell_image} alt="load false" src={imagesrc}/>
       </div>
     );
   }
@@ -62,7 +62,7 @@ class EditableCell extends React.Component {
 
 const LineItemRow = ({record, ...restProps}) => (
   <Fragment>
-    <tr style={{fontSize: 'small', borderCollapse:'separate', borderSpacing:'0px 10px'}}>
+    <tr style={{fontSize: 'small',border: '2px solid red'}}>
       <td colSpan="1" style={{background: "#fbfbfb"}}>
         OrderId：{record.no}
       </td>
@@ -118,7 +118,7 @@ class OrderTable extends React.Component {
         const {classes} = this.props;
         if (record.state === 'Unpaid') {
           return (
-            <div>
+            <div style={{ textAlign: 'center'}}>
               <div>
                 <Button  style={{width: '75px', borderRadius:'0px'}} type="primary" onClick={this.showPayInfo}>Pay</Button>
                 <Modal
@@ -267,14 +267,14 @@ class OrderTable extends React.Component {
               </div>
               <div>
                 <Popconfirm title="Sure to cancel?" onConfirm={() => this.onCancel(record)}>
-                  <Button  ghost style={{marginTop: '2px', width: '75px', color: 'red', border: '0px', borderRadius:'0px'}}>Cancel</Button>
+                  <Button  ghost style={{marginTop: '2px', width: '75px', color: 'grey', border: '0px', borderRadius:'0px'}}>Cancel</Button>
                 </Popconfirm>
               </div>
             </div>
           )
         } else if (record.state === 'Paid') {
           return (
-            <div>
+            <div style={{textAlign:'center'}}>
               <Rate allowClear={false} onChange={this.onRate}></Rate>
             </div>
           )
@@ -417,6 +417,7 @@ class OrderTable extends React.Component {
       }
     };
     return <Table bordered components={components} onRow={this.handleRow} columns={columns} dataSource={dataSource}
+                  style={{borderCollapse:'collapse'}}
     />;
   }
 

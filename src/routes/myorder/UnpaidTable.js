@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import {Table, Popover, Popconfirm, Rate, Modal, message, Tabs, Button} from 'antd';
 import {withStyles} from "material-ui/styles/index";
 import orderTableStyle from "../css/orderTable.css"
+import style from "../css/orderTable.css"
 
 import Divider from 'material-ui/Divider';
 import Input, {InputAdornment} from 'material-ui/Input';
@@ -58,7 +59,7 @@ const styles = theme => ({
 
 class EditableCell extends React.Component {
   state = {
-    value: this.props.value,
+    name: this.props.value,
     imagesrc: this.props.imagesrc,
     visible: false,
     password: '',
@@ -68,10 +69,11 @@ class EditableCell extends React.Component {
   };
 
   render() {
-    const {value, imagesrc} = this.state;
+    const {name, imagesrc} = this.state;
     return (
       <div className="editable-cell">
-        <img className={orderTableStyle.cell_image} alt="load false" src={imagesrc}/>{value}
+        <div style={{fontWeight: 'bold', marginBottom: '6px', color: 'black'}}>{name}</div>
+        <img className={style.cell_image} alt="load false" src={imagesrc}/>
       </div>
     );
   }
@@ -141,7 +143,7 @@ class OrderTable extends React.Component {
 
         if (record.state === 'Unpaid') {
           return (
-            <div>
+            <div style={{ textAlign: 'center'}}>
               <div>
                 <Button type="primary" style={{width: '75px', borderRadius:'0px'}} onClick={this.showPayInfo}>Pay</Button>
                 <Modal
@@ -290,7 +292,7 @@ class OrderTable extends React.Component {
               </div>
               <div>
                 <Popconfirm title="Sure to cancel?" onConfirm={() => this.onCancel(record.key)}>
-                  <Button ghost style={{marginTop: '2px', width: '75px', color: 'red', border: '0px', borderRadius:'0px'}}>Cancel</Button>
+                  <Button ghost style={{marginTop: '2px', width: '75px', color: 'grey', border: '0px', borderRadius:'0px'}}>Cancel</Button>
                 </Popconfirm>
                 <Dialog
                   fullScreen

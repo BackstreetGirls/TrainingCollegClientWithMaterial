@@ -6,15 +6,16 @@ import style from "../css/orderTable.css"
 
 class EditableCell extends React.Component {
   state = {
-    value: this.props.value,
+    name: this.props.value,
     imagesrc: this.props.imagesrc,
   };
 
   render() {
-    const {value, imagesrc} = this.state;
+    const {name, imagesrc} = this.state;
     return (
       <div className="editable-cell">
-        <img className={style.cell_image} alt="load false" src={imagesrc}/>{value}
+        <div style={{fontWeight: 'bold', marginBottom: '6px', color: 'black'}}>{name}</div>
+        <img className={style.cell_image} alt="load false" src={imagesrc}/>
       </div>
     );
   }
@@ -29,7 +30,7 @@ const LineItemRow = ({record, ...restProps}) => (
       <td colSpan="4" style={{background: "#fbfbfb"}}>
         Institution：{record.institute}
       </td>
-      <td colSpan="2" style={{background: "#fbfbfb"}}>
+      <td colSpan="3" style={{background: "#fbfbfb"}}>
         Date：{record.date}
       </td>
     </tr>
@@ -69,35 +70,40 @@ class OrderTable extends React.Component {
     }, {
       title: 'Way',
       dataIndex: 'way',
-    }, {
-      title: 'Operation',
-      dataIndex: 'operation',
+    },{
+      title: 'Rate',
+      dataIndex: 'rate',
       render: (text, record) => {
 
         if (record.state === 'Closed') {
           if(record.rate === -1) {
             return (
               <div>
-                <div>
-                  <Popconfirm title="Sure to delete?" onConfirm={() => this.onCancle(record.key)}>
-                    <Button type="danger" size="small">Delete</Button>
-                  </Popconfirm>
-                </div>
+                -
               </div>
             )
           }else{
             return(
-              <div>
+              <div style={{textAlign:'center'}}>
                 <Rate disabled value={record.rate} style={{display: "block", marginBottom:'10px'}}></Rate>
-                <div>
-                  <Popconfirm title="Sure to delete?" onConfirm={() => this.onCancle(record.key)}>
-                    <Button type="danger" size="small">Delete</Button>
-                  </Popconfirm>
-                </div>
               </div>
             )
           }
         }
+
+      }
+    }, {
+      title: 'Operation',
+      dataIndex: 'operation',
+      render: (text, record) => {
+
+        return(
+          <div>
+            <Popconfirm title="Sure to delete?" onConfirm={() => this.onCancle(record.key)}>
+              <Button type="danger" style={{borderRadius: '0'}}>Delete</Button>
+            </Popconfirm>
+          </div>
+        )
 
       },
     }];
