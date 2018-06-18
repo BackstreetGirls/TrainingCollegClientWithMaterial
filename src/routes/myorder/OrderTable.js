@@ -124,6 +124,7 @@ class OrderTable extends React.Component {
                 <Modal
                   title="Choose Pay Way"
                   visible={this.state.visible}
+                  record={this.record}
                   onOk={this.handleOk}
                   onCancel={this.handleCancel}
                 >
@@ -364,7 +365,8 @@ class OrderTable extends React.Component {
   };
 
   handleOk = (e) => {
-    console.log(e);
+    console.log(e.target.getAttribute('record'));
+
     message.config({
       top: 10,
       duration: 2,
@@ -374,6 +376,7 @@ class OrderTable extends React.Component {
     this.setState({
       visible: false,
     });
+
   };
 
   handleCancel = (e) => {

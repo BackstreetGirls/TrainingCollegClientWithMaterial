@@ -65,7 +65,7 @@ class EditableCell extends React.Component {
     password: '',
     showPassword: false,
     way:'bank',
-    open: false
+    dialogOpen: false
   };
 
   render() {
@@ -107,9 +107,6 @@ class OrderTable extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      open: false,
-    };
     this.columns = [{
       title: 'Name',
       dataIndex: 'name',
@@ -296,7 +293,7 @@ class OrderTable extends React.Component {
                 </Popconfirm>
                 <Dialog
                   fullScreen
-                  open={this.state.open}
+                  open={this.state.dialogOpen}
                   onClose={this.handleClose}
                   TransitionComponent={Transition}
                 >
@@ -369,6 +366,7 @@ class OrderTable extends React.Component {
     }];
 
     this.state = {
+      dialogOpen: false,
       dataSource: [
         {
           no: '2018052311328',
@@ -390,9 +388,11 @@ class OrderTable extends React.Component {
   }
 
   onCancel = (key) => {
+    console.log(this.state.dialogOpen);
     const dataSource = [...this.state.dataSource];
-    this.setState({dataSource: dataSource.filter(item => item.key !== key)});
-    this.handleOpen();
+    this.setState({dialogOpen: true});
+    // this.setState({dataSource: dataSource.filter(item => item.key !== key)});
+    console.log("第二遍："+this.state.dialogOpen);
   };
 
   showPayInfo = () => {
@@ -417,16 +417,16 @@ class OrderTable extends React.Component {
   handleCancel = (e) => {
     console.log(e);
     this.setState({
-      visible: true,
+      visible: false,
     });
   };
 
   handleOpen = () => {
-    this.setState({ open: true });
+    this.setState({ dialogOpen: true });
   };
 
   handleClose = () => {
-    this.setState({ open: false });
+    this.setState({ dialogOpen: false });
   };
 
 
