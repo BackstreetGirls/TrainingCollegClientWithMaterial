@@ -24,14 +24,14 @@ class EditableCell extends React.Component {
 
 const LineItemRow = ({record, ...restProps}) => (
   <Fragment>
-    <tr>
-      <td colSpan="1" style={{background: "#fbfbfb"}}>
+    <tr style={{fontSize: 'small', background: 'rgba(246,246,246)'}}>
+      <td colSpan="1">
         OrderId：{record.no}
       </td>
-      <td colSpan="4" style={{background: "#fbfbfb"}}>
+      <td colSpan="4">
         Institution：{record.institute}
       </td>
-      <td colSpan="3" style={{background: "#fbfbfb"}}>
+      <td colSpan="3">
         Date：{record.date}
       </td>
     </tr>

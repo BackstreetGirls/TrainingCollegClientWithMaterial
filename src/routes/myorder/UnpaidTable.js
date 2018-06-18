@@ -1,10 +1,10 @@
 import React, {Fragment} from 'react';
-import {Table, Popover, Popconfirm, Rate, Modal, message, Tabs, Button} from 'antd';
+import {Table, Popover, Popconfirm, Rate, Modal, message, Tabs} from 'antd';
 import {withStyles} from "material-ui/styles/index";
-import orderTableStyle from "../css/orderTable.css"
 import style from "../css/orderTable.css"
 
 import Divider from 'material-ui/Divider';
+import Button from 'material-ui/Button';
 import Input, {InputAdornment} from 'material-ui/Input';
 import {FormControl} from 'material-ui/Form';
 import TextField from 'material-ui/TextField';
@@ -81,14 +81,14 @@ class EditableCell extends React.Component {
 
 const LineItemRow = ({record, ...restProps}) => (
   <Fragment>
-    <tr>
-      <td colSpan="1" style={{background: "#fbfbfb"}}>
+    <tr style={{background: "#fbfbfb"}}>
+      <td colSpan="1" >
         OrderId：{record.no}
       </td>
-      <td colSpan="4" style={{background: "#fbfbfb"}}>
+      <td colSpan="4">
         Institution：{record.institute}
       </td>
-      <td colSpan="2" style={{background: "#fbfbfb"}}>
+      <td colSpan="2">
         Date：{record.date}
       </td>
     </tr>
@@ -140,9 +140,9 @@ class OrderTable extends React.Component {
 
         if (record.state === 'Unpaid') {
           return (
-            <div style={{ textAlign: 'center'}}>
+            <div>
               <div>
-                <Button type="primary" style={{width: '75px', borderRadius:'0px'}} onClick={this.showPayInfo}>Pay</Button>
+                <Button variant='raised' color='primary'  onClick={this.showPayInfo}>Pay</Button>
                 <Modal
                   title="Choose Pay Way"
                   visible={this.state.visible}
@@ -288,8 +288,8 @@ class OrderTable extends React.Component {
                 </Modal>
               </div>
               <div>
-                <Popconfirm title="Sure to cancel?" onConfirm={() => this.onCancel(record.key)}>
-                  <Button ghost style={{marginTop: '2px', width: '75px', color: 'grey', border: '0px', borderRadius:'0px'}}>Cancel</Button>
+                <Popconfirm title="Sure to cancel?" onConfirm={() => this.onCancel(record)}>
+                  <Button style={{marginTop: '2px', color: 'grey', border: '0px', borderRadius:'0px'}}>Cancel</Button>
                 </Popconfirm>
                 <Dialog
                   fullScreen
@@ -387,12 +387,10 @@ class OrderTable extends React.Component {
 
   }
 
-  onCancel = (key) => {
+  onCancel = (record) => {
     console.log(this.state.dialogOpen);
-    const dataSource = [...this.state.dataSource];
+    // record.state='Closed';
     this.setState({dialogOpen: true});
-    // this.setState({dataSource: dataSource.filter(item => item.key !== key)});
-    console.log("第二遍："+this.state.dialogOpen);
   };
 
   showPayInfo = () => {

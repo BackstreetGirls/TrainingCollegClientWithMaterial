@@ -287,7 +287,7 @@ class OrderTable extends React.Component {
             <div>
               <div>
                 <Popconfirm title="Sure to delete?" onConfirm={() => this.onDelete(record)}>
-                  <Button size="small" color="secondary" variant="raised">Delete</Button>
+                  <Button variant="raised">Delete</Button>
                 </Popconfirm>
               </div>
             </div>
@@ -298,7 +298,7 @@ class OrderTable extends React.Component {
               <Rate disabled value={record.rate} style={{display: "block"}}/>
               <div>
                 <Popconfirm title="Sure to delete?" onConfirm={() => this.onDelete(record)}>
-                  <Button size="small" color="secondary" variant="raised">Delete</Button>
+                  <Button variant="raised">Delete</Button>
                 </Popconfirm>
               </div>
             </div>
@@ -343,7 +343,8 @@ class OrderTable extends React.Component {
   }
 
   onCancel = (record) => {
-    record.state = 'Closed';
+    record.state ='Closed';
+    this.setState({});
   };
 
   onDelete = (record) => {
