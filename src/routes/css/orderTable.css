@@ -1,4 +1,4 @@
-.editable-cell {
+.editable_cell {
   position: relative;
 }
 
@@ -47,3 +47,7 @@
   margin-bottom: 8px;
 }
 
+.table{
+  border-collapse:separate;
+  border-spacing:10px;
+}

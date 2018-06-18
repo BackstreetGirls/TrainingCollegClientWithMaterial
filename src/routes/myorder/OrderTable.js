@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {Table, Popover, Popconfirm, Rate} from 'antd';
+import {Table,Popconfirm, Rate, message} from 'antd';
 import {withStyles} from "material-ui/styles/index";
 import style from "../css/orderTable.css"
 import Button from 'material-ui/Button';
@@ -84,7 +84,7 @@ class OrderTable extends React.Component {
               </div>
               <div>
                 <Popconfirm title="Sure to cancle?" onConfirm={() => this.onCancle(record)}>
-                  <Button style={{fontSize:"3px"}}>Cancle</Button>
+                  <Button>Cancle</Button>
                 </Popconfirm>
               </div>
             </div>
@@ -92,9 +92,7 @@ class OrderTable extends React.Component {
         } else if (record.state === 'Paid') {
           return (
             <div>
-              <Popover content={<Rate value={record.rate} onChange={()=>this.onRate({record})}> </Rate>}>
-                <Button color="primary">Rate</Button>
-              </Popover>
+              <Rate allowClear={false} onChange={this.onRate}></Rate>
             </div>
           )
         } else if (record.state === 'Closed') {
@@ -167,8 +165,13 @@ class OrderTable extends React.Component {
     this.setState({dataSource: dataSource.filter(item => item.key !== record.key)});
   }
 
-  onRate = (record) => {
-    record.state = 'Closed';
+  onRate = () => {
+    message.config({
+      top: 10,
+      duration: 2,
+      maxCount: 3,
+    });
+    message.success('Rate success!');
   };
 
   render() {
@@ -180,7 +183,9 @@ class OrderTable extends React.Component {
         row: LineItemRow
       }
     };
-    return <Table bordered components={components} onRow={this.handleRow} columns={columns} dataSource={dataSource}/>;
+    return <Table bordered components={components} onRow={this.handleRow} columns={columns} dataSource={dataSource}
+                  className={style.table}
+    />;
   }
 
 }

@@ -13,7 +13,7 @@ class EditableCell extends React.Component {
   render() {
     const {value, imagesrc} = this.state;
     return (
-      <div className="editable-cell">
+      <div className={style.editable_cell}>
         <img className={style.cell_image} alt="load false" src={imagesrc}/>{value}
       </div>
     );
@@ -23,7 +23,7 @@ class EditableCell extends React.Component {
 const LineItemRow = ({record, ...restProps}) => (
   <Fragment>
     <tr>
-      <td colSpan="1" style={{background: "#fbfbfb"}}>
+      <td colSpan="1" style={{background: '#fbfbfb'}}>
         orderId：{record.no}
       </td>
       <td colSpan="4" style={{background: "#fbfbfb"}}>
@@ -36,6 +36,7 @@ const LineItemRow = ({record, ...restProps}) => (
     <tr {...restProps} />
   </Fragment>
 );
+
 
 class OrderTable extends React.Component {
   handleRow = record => ({
@@ -77,9 +78,7 @@ class OrderTable extends React.Component {
         if (record.state === 'Paid') {
           return (
             <div>
-              <Popover content={<Rate onChange={() => this.onRate(record.key)}> </Rate>}>
-                <Button color="primary">Rate</Button>
-              </Popover>
+              <Rate onChange={() => this.onRate(record.key)}> </Rate>
             </div>
           )
         }
@@ -141,7 +140,9 @@ class OrderTable extends React.Component {
         row: LineItemRow
       }
     };
-    return <Table bordered components={components} onRow={this.handleRow} columns={columns} dataSource={dataSource}/>;
+    return <Table bordered components={components} onRow={this.handleRow} columns={columns} dataSource={dataSource}
+
+    />;
   }
 
 }

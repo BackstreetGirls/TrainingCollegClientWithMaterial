@@ -1,8 +1,8 @@
 import React, {Fragment} from 'react';
-import {Table, Popconfirm, Rate} from 'antd';
+import {Table, Popconfirm, Rate, Button} from 'antd';
 import {withStyles} from "material-ui/styles/index";
 import style from "../css/orderTable.css"
-import Button from 'material-ui/Button';
+
 
 class EditableCell extends React.Component {
   state = {
@@ -80,7 +80,7 @@ class OrderTable extends React.Component {
               <div>
                 <div>
                   <Popconfirm title="Sure to delete?" onConfirm={() => this.onCancle(record.key)}>
-                    <Button size="small" color="secondary" variant="raised">Delete</Button>
+                    <Button type="danger" size="small">Delete</Button>
                   </Popconfirm>
                 </div>
               </div>
@@ -88,10 +88,10 @@ class OrderTable extends React.Component {
           }else{
             return(
               <div>
-                <Rate disabled value={record.rate} style={{display: "block"}}></Rate>
+                <Rate disabled value={record.rate} style={{display: "block", marginBottom:'10px'}}></Rate>
                 <div>
                   <Popconfirm title="Sure to delete?" onConfirm={() => this.onCancle(record.key)}>
-                    <Button size="small" color="secondary" variant="raised">Delete</Button>
+                    <Button type="danger" size="small">Delete</Button>
                   </Popconfirm>
                 </div>
               </div>
