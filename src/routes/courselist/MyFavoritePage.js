@@ -5,6 +5,7 @@ import ClassesGrid from '../../components/ClassesGrid';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import { Tabs, Icon } from 'antd';
+import Footer from '../components/Footer';
 
 const TabPane = Tabs.TabPane;
 
@@ -40,6 +41,7 @@ class MyFavoritePage extends React.Component {
             </TabPane>
           </Tabs>
         </div>
+        <Footer/>
       </div>
     )
 
