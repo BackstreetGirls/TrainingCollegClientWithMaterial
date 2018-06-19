@@ -79,13 +79,13 @@ class ConfirmOrderInfo extends React.Component {
           />
           <CardContent>
             <Typography gutterBottom variant="headline">
-              Computer Application...
+              First Nights
             </Typography>
             <Typography component="p">
-              Date：2018/6/18
+              Date：2018/7/18
             </Typography>
             <Typography component="p">
-              Price：$99.00
+              Price：$49.00
             </Typography>
           </CardContent>
         </Card>
@@ -98,7 +98,7 @@ class ConfirmOrderInfo extends React.Component {
               }}
               id="name"
               label="Name"
-              placeholder="ChenLily"
+              placeholder="Chen Lily"
               className={classes.textField}
               margin="normal"
             />
@@ -129,7 +129,7 @@ class ConfirmOrderInfo extends React.Component {
             />
 
             <Typography className={classes.total}>
-              Price : $99.00
+              Price : $49.00
             </Typography>
 
 

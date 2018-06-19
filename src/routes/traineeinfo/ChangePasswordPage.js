@@ -10,7 +10,7 @@ import ChangePasswordForm from '../../components/ChangePasswordForm';
 import {Avatar} from 'antd';
 import avatar from '../../assets/avatar.png';
 import Typography from 'material-ui/Typography';
-
+import Footer from '../../components/Footer';
 
 class TraineeEditInfoForm extends React.Component {
 
