@@ -17,16 +17,16 @@ import styles from '../css/TraineeInfoPage.css';
 import Navigation from '../../components/Navigation';
 import {Avatar} from 'antd';
 import avatar from '../../assets/avatar.png';
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import Table, {TableBody, TableCell, TableHead, TableRow} from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 
 
 const {Meta} = Card;
 
 let id = 0;
-function createData(consumption,level) {
+function createData(consumption, level) {
   id += 1;
-  return { id, consumption,level};
+  return {id, consumption, level};
 }
 
 const data = [
@@ -43,9 +43,9 @@ const data = [
 ];
 
 let id2 = 0;
-function createData2(consumption,discount) {
+function createData2(consumption, discount) {
   id2 += 1;
-  return { id2, consumption,discount};
+  return {id2, consumption, discount};
 }
 
 const data2 = [
@@ -66,10 +66,10 @@ class TraineeInfoPage extends React.Component {
 
   state = {
     open: false,
-    level:false,
-    discount:false,
-    credit:false,
-    bp:2000,
+    level: false,
+    discount: false,
+    credit: false,
+    bp: 2000,
   };
 
   //兑换对话框
@@ -82,245 +82,265 @@ class TraineeInfoPage extends React.Component {
 
   };
 
-  exchange=()=>{
+  exchange = ()=> {
     this.setState({open: false});
-    this.setState({bp:3000});
+    this.setState({bp: 3000});
   };
 
   //等级规则
-  level_info_close=()=> {
+  level_info_close = ()=> {
     this.setState({level: false});
   };
 
-  level_info_open=()=>{
+  level_info_open = ()=> {
     this.setState({level: true});
   };
 
   //优惠规则
-  discount_info_close=()=> {
+  discount_info_close = ()=> {
     this.setState({discount: false});
   };
 
-  discount_info_open=()=>{
+  discount_info_open = ()=> {
     this.setState({discount: true});
   };
 
   //积分规则
-  credit_info_close=()=> {
+  credit_info_close = ()=> {
     this.setState({credit: false});
   };
 
-  credit_info_open=()=>{
+  credit_info_open = ()=> {
     this.setState({credit: true});
   };
 
 
-
   render() {
     return (
-      <div className={styles.wrapper}>
-        <Navigation/>
-        <div className={styles.inner_wrapper}>
-          <div className={styles.welcome}>
-            <div>
-              <Avatar src={avatar} style={{width: 100, height: 100,marginTop:'5%'}}/>
-
-            </div>
-          </div>
-          <Card
-            title="Vip Info"
-            className={styles.card}
-            // cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
-            actions={[
-              <Button color="primary" size="small" onClick={(index)=>{this.level_info_open(index)}}>
-                <Icon type="question-circle-o" style={{marginRight: 2}}/>
-                Vip Level Rule
-              </Button>,
-              <Button color="primary" size="small" onClick={(index)=>{this.discount_info_open(index)}}>
-                <Icon type="question-circle-o" style={{marginRight: 2}}/>
-                Discount Rule
-              </Button>,
-              <Button color="primary" size="small" onClick={(index)=>{this.credit_info_open(index)}}>
-                <Icon type="question-circle-o" style={{marginRight: 2}}/>
-                Vip BP Rule
-              </Button>
-            ]}
-            extra={
+        <div className={styles.wrapper}>
+          <Navigation/>
+          <div className={styles.inner_wrapper}>
+            <div className={styles.welcome}>
               <div>
-                <p>Chen Lily</p>
-                <p>1179028267@qq.com</p>
+                <Avatar src={avatar} style={{width: 100, height: 100, marginTop: '5%'}}/>
 
               </div>
+            </div>
+            <Card
+              title="Vip Info"
+              className={styles.card}
+              // cover={<img alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />}
+              actions={[
+                <Button color="primary" size="small" onClick={(index)=> {
+                  this.level_info_open(index)
+                }}>
+                  <Icon type="question-circle-o" style={{marginRight: 2}}/>
+                  Vip Level Rule
+                </Button>,
+                <Button color="primary" size="small" onClick={(index)=> {
+                  this.discount_info_open(index)
+                }}>
+                  <Icon type="question-circle-o" style={{marginRight: 2}}/>
+                  Discount Rule
+                </Button>,
+                <Button color="primary" size="small" onClick={(index)=> {
+                  this.credit_info_open(index)
+                }}>
+                  <Icon type="question-circle-o" style={{marginRight: 2}}/>
+                  Vip BP Rule
+                </Button>
+              ]}
+              extra={
+                <div>
+                  <p>Chen Lily</p>
+                  <p>1179028267@qq.com</p>
 
-            }
-          >
-            <Meta
-              title="Consumption(¥)"
-              description={3435}
-            /><br/>
-            <Meta
-              title="Vip Level"
-              description={5}
-            /><br/>
-            <Meta
-              title="Discount(% off)"
-              description={0.88 === 1 ? "No discount" : "12"}
-            /><br/>
-            <Meta
-              title="BP(point)"
-              description={this.state.bp}
-            />
-            <Button color="primary" variant="raised" onClick={this.handleClickOpen}
-                    style={{marginLeft: '80%'}}>EXCHANGE</Button>
-          </Card>
+                </div>
 
-          <Dialog
-            open={this.state.open}
-            onClose={this.handleClose}
-            aria-labelledby="form-dialog-title"
-          >
-            <DialogTitle id="form-dialog-title">Exchange BP</DialogTitle>
-            <DialogContent>
-              <DialogContentText>
-                To exchange more BP, please enter the amount of the BP you want to exchange and the bankID of your pay.
-              </DialogContentText>
-              <div style={{marginLeft:"33%"}}>
-                <TextField
-                  required
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  id="num"
-                  label="Amount"
-                  type="number"
-                  placeholder="1000"
-                  margin="normal"
-                />
-                <br/>
-                <TextField
-                  autoFocus
-                  required
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  margin="normal"
-                  id="name"
-                  label="BankId"
-                  placeholder="622888888123456789"
-                />
-              </div>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={this.handleClose} color="primary">
-                Cancel
-              </Button>
-              <Button onClick={this.exchange} color="primary">
-                Exchange
-              </Button>
-            </DialogActions>
-          </Dialog>
+              }
+            >
+              <Meta
+                title="Consumption(¥)"
+                description={3435}
+              /><br/>
+              <Meta
+                title="Vip Level"
+                description={5}
+              /><br/>
+              <Meta
+                title="Discount(% off)"
+                description={0.88 === 1 ? "No discount" : "12"}
+              /><br/>
+              <Meta
+                title="BP(point)"
+                description={this.state.bp}
+              />
+              <Button color="primary" variant="raised" onClick={this.handleClickOpen}
+                      style={{marginLeft: '80%'}}>EXCHANGE</Button>
+            </Card>
 
-          <Dialog
-            open={this.state.level}
-            onClose={(index)=>{this.level_info_close(index)}}
-            aria-labelledby="form-dialog-title"
-          >
-            <DialogTitle id="form-dialog-title1">Vip Level Rule</DialogTitle>
-            <DialogContent>
-              <DialogContentText>
-                The higher the amount of consumption, the higher the membership grade.
-              </DialogContentText>
-              <div style={{width:'60%',marginLeft:'20%',marginTop:'3%',maxHeight:260}}>
-                <Paper>
-                  <Table>
-                    <TableHead>
-                      <TableRow>
-                        <TableCell>Total Consumption(¥)</TableCell>
-                        <TableCell>Level</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {data.map(n => {
-                        return (
-                          <TableRow key={n.id}>
-                            <TableCell>{n.consumption}</TableCell>
-                            <TableCell>{n.level}</TableCell>
-                          </TableRow>
-                        );
-                      })}
-                    </TableBody>
-                  </Table>
-                </Paper>
-              </div>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={(index)=>{this.level_info_close(index)}} color="primary">
-                I KNOW
-              </Button>
-            </DialogActions>
-          </Dialog>
+            <Dialog
+              open={this.state.open}
+              onClose={this.handleClose}
+              aria-labelledby="form-dialog-title"
+            >
+              <DialogTitle id="form-dialog-title">Exchange BP</DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  To exchange more BP, please enter the amount of the BP you want to exchange and the bankID of your
+                  pay.
+                </DialogContentText>
+                <div style={{marginLeft: "33%"}}>
+                  <TextField
+                    required
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    id="num"
+                    label="Amount"
+                    type="number"
+                    placeholder="1000"
+                    margin="normal"
+                  />
+                  <br/>
+                  <TextField
+                    autoFocus
+                    required
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    margin="normal"
+                    id="name"
+                    label="BankId"
+                    placeholder="622888888123456789"
+                  />
+                </div>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={this.handleClose} color="primary">
+                  Cancel
+                </Button>
+                <Button onClick={this.exchange} color="primary">
+                  Exchange
+                </Button>
+              </DialogActions>
+            </Dialog>
 
-          <Dialog
-            open={this.state.discount}
-            onClose={(index)=>{this.discount_info_close(index)}}
-            aria-labelledby="form-dialog-title"
-          >
-            <DialogTitle id="form-dialog-title2">Discount Rule</DialogTitle>
-            <DialogContent>
-              <DialogContentText>
-                According to different cumulative consumption, give different discount. The higher the amount of consumption, the greater the discounts.
-              </DialogContentText>
-              <div style={{width:'60%',marginLeft:'20%',marginTop:'3%',maxHeight:260}}>
-                <Paper>
-                  <Table>
-                    <TableHead>
-                      <TableRow>
-                        <TableCell>Total Consumption(¥)</TableCell>
-                        <TableCell>Discount(off)</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {data2.map(n => {
-                        return (
-                          <TableRow key={n.id}>
-                            <TableCell>{n.consumption}</TableCell>
-                            <TableCell>{n.discount}</TableCell>
-                          </TableRow>
-                        );
-                      })}
-                    </TableBody>
-                  </Table>
-                </Paper>
-              </div>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={(index)=>{this.discount_info_close(index)}} color="primary">
-                I KNOW
-              </Button>
-            </DialogActions>
-          </Dialog>
+            <Dialog
+              open={this.state.level}
+              onClose={(index)=> {
+                this.level_info_close(index)
+              }}
+              aria-labelledby="form-dialog-title"
+            >
+              <DialogTitle id="form-dialog-title1">Vip Level Rule</DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  The higher the amount of consumption, the higher the membership grade.
+                </DialogContentText>
+                <div style={{width: '60%', marginLeft: '20%', marginTop: '3%', maxHeight: 260}}>
+                  <Paper>
+                    <Table>
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>Total Consumption(¥)</TableCell>
+                          <TableCell>Level</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {data.map(n => {
+                          return (
+                            <TableRow key={n.id}>
+                              <TableCell>{n.consumption}</TableCell>
+                              <TableCell>{n.level}</TableCell>
+                            </TableRow>
+                          );
+                        })}
+                      </TableBody>
+                    </Table>
+                  </Paper>
+                </div>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={(index)=> {
+                  this.level_info_close(index)
+                }} color="primary">
+                  I KNOW
+                </Button>
+              </DialogActions>
+            </Dialog>
 
-          <Dialog
-            open={this.state.credit}
-            onClose={(index)=>{this.credit_info_close(index)}}
-            aria-labelledby="form-dialog-title"
-          >
-            <DialogTitle id="form-dialog-title3">VIP BP Rule</DialogTitle>
-            <DialogContent>
-              <DialogContentText>
-                A single consumption of 100 yuan, can get 5 points.<br/>
-                1 points can deduct 1 yuan in the course of purchase.
-              </DialogContentText>
+            <Dialog
+              open={this.state.discount}
+              onClose={(index)=> {
+                this.discount_info_close(index)
+              }}
+              aria-labelledby="form-dialog-title"
+            >
+              <DialogTitle id="form-dialog-title2">Discount Rule</DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  According to different cumulative consumption, give different discount. The higher the amount of
+                  consumption, the greater the discounts.
+                </DialogContentText>
+                <div style={{width: '60%', marginLeft: '20%', marginTop: '3%', maxHeight: 260}}>
+                  <Paper>
+                    <Table>
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>Total Consumption(¥)</TableCell>
+                          <TableCell>Discount(off)</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {data2.map(n => {
+                          return (
+                            <TableRow key={n.id}>
+                              <TableCell>{n.consumption}</TableCell>
+                              <TableCell>{n.discount}</TableCell>
+                            </TableRow>
+                          );
+                        })}
+                      </TableBody>
+                    </Table>
+                  </Paper>
+                </div>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={(index)=> {
+                  this.discount_info_close(index)
+                }} color="primary">
+                  I KNOW
+                </Button>
+              </DialogActions>
+            </Dialog>
 
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={(index)=>{this.credit_info_close(index)}} color="primary">
-                I KNOW
-              </Button>
-            </DialogActions>
-          </Dialog>
+            <Dialog
+              open={this.state.credit}
+              onClose={(index)=> {
+                this.credit_info_close(index)
+              }}
+              aria-labelledby="form-dialog-title"
+            >
+              <DialogTitle id="form-dialog-title3">VIP BP Rule</DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  A single consumption of 100 yuan, can get 5 points.<br/>
+                  1 points can deduct 1 yuan in the course of purchase.
+                </DialogContentText>
+
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={(index)=> {
+                  this.credit_info_close(index)
+                }} color="primary">
+                  I KNOW
+                </Button>
+              </DialogActions>
+            </Dialog>
+          </div>
         </div>
-      </div>
+
     )
   }
 }

@@ -13,7 +13,7 @@ import Stepper, { Step, StepButton } from 'material-ui/Stepper';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import { message} from 'antd';
-
+import Footer from '../../components/Footer';
 const styles = ({
   root: {
     width: '80%',
@@ -247,7 +247,6 @@ class PlaceOrderMainPage extends React.Component {
             )}
           </div>
         </div>
-
       </div>
 
 
