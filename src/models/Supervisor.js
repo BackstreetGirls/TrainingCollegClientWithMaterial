@@ -151,6 +151,15 @@ export default {
         else if(pathToRegexp('/changepassword').exec(location.pathname)){
           document.title = '修改密码';
         }
+        else if(pathToRegexp('/detail&courseID=:0').exec(location.pathname)){
+          document.title='课程详情';
+        }
+        else if(pathToRegexp('/allcourses').exec(location.pathname)){
+          document.title='全部课程';
+        }
+        else if(pathToRegexp('/searchresult').exec(location.pathname)){
+          document.title='搜索结果';
+        }
         else {
           document.title = '页面不存在';
         }
