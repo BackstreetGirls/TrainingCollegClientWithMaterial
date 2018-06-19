@@ -74,7 +74,6 @@ class OrderListPage extends React.Component {
             </TabPane>
           </Tabs>
         </div>
-          <Footer/>
       </div>
     );
   }
