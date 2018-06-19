@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import {Menu, Layout} from 'antd';
 import {Link} from 'dva/router';
-import Footer from '../../components/Footer';
 
 
 const MenuItemGroup = Menu.ItemGroup;
@@ -81,7 +80,6 @@ class AllCoursesPage extends React.Component {
             </Content>
           </Layout>
         </div>
-        <Footer/>
       </div>
     )
 

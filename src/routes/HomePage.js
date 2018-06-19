@@ -64,8 +64,8 @@ class HomePage extends React.Component {
           <div>
             <img alt="load false" src={carousal1}/>
           </div>
-          <div><h3>3</h3></div>
-          <div><h3>4</h3></div>
+          <div><img alt="load false" src={carousal1}/></div>
+          <div><img alt="load false" src={carousal1}/></div>
         </Carousel>
 
         <div className={classes.margin}>

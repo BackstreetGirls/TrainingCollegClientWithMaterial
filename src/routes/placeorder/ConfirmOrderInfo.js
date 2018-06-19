@@ -9,7 +9,7 @@ import TextField from 'material-ui/TextField';
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 
-import courseImage from '../../assets/Recommendation/recommendation0.jpg'
+import courseImage from '../../assets/Recommendation/course6.PNG'
 
 const styles = theme => ({
   root: {
@@ -43,6 +43,7 @@ const styles = theme => ({
   },
   card: {
     maxWidth: 400,
+    minWidth:250
   },
   media: {
     height: 0,
@@ -79,7 +80,7 @@ class ConfirmOrderInfo extends React.Component {
           />
           <CardContent>
             <Typography gutterBottom variant="headline">
-              First Nights
+              First  Nights
             </Typography>
             <Typography component="p">
               Date：2018/7/18

@@ -154,6 +154,9 @@ export default {
         else if(pathToRegexp('/searchresult').exec(location.pathname)){
           document.title = '搜索结果';
         }
+        else if(pathToRegexp('/artcourses').exec(location.pathname)){
+          document.title = '搜索结果';
+        }
         else if(pathToRegexp('/myfavorite').exec(location.pathname)){
           document.title = '我的收藏';
         }

@@ -367,24 +367,23 @@ class OrderTable extends React.Component {
 
     this.state = {
       dialogOpen: false,
-      dataSource: [
-        {
-          no: '2018052211328',
-          institute: 'Nanjing University',
-          date: '2018-6-18',
-          key: '0',
-          imagesrc: 'src/assets/Recommendation/recommendation0.jpg',
-          name: 'Computer Application in Economic Management',
-          price: '99.00',
-          amount: '1',
-          payment: '99.00',
-          state: 'Unpaid',
-          way: '-',
-          rate: -1,
-          description: '2018-6-18',
-        }],
+      dataSource: [{
+        no: '201806190001',
+        institute: 'HCI Education',
+        date: '2018-06-19',
+        key: '1',
+        imagesrc: 'src/assets/Recommendation/course6.PNG',
+        name: 'First Nights',
+        price: '49.00',
+        amount: '1',
+        payment: '49.00',
+        state: 'Unpaid',
+        way: '-',
+        rate: -1,
+        description: '2018-08-01',
+      }],
       count: 1,
-        }
+    };
 
   }
 
