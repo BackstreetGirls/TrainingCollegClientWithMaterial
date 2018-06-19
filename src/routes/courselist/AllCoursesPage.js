@@ -4,11 +4,13 @@ import Navigation from '../../components/Navigation';
 import ClassesGridAll from '../../components/ClassesGridAll';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
-import { Menu, Layout } from 'antd';
+import {Menu, Layout} from 'antd';
 import {Link} from 'dva/router';
+import Footer from '../../components/Footer';
+
 
 const MenuItemGroup = Menu.ItemGroup;
-const { Content, Sider } = Layout;
+const {Content, Sider} = Layout;
 
 const styles = theme => ({
   root: {
@@ -27,18 +29,18 @@ class AllCoursesPage extends React.Component {
 
   render() {
 
-    const{classes} = this.props;
+    const {classes} = this.props;
 
-    return(
+    return (
       <div className={classes.root}>
         <Navigation/>
 
         <div className={classes.margin}>
           <Layout>
-            <Sider style={{ overflow: 'auto' }}>
+            <Sider style={{overflow: 'auto', backgroundColor: 'white'}}>
               <Menu
                 onClick={this.handleClick}
-                style={{ width: 200 }}
+                style={{width: 200, height: 'inherit'}}
                 defaultOpenKeys={['sub1']}
                 defaultSelectedKeys={['1']}
                 mode="inline"
@@ -74,12 +76,12 @@ class AllCoursesPage extends React.Component {
                 </MenuItemGroup>
               </Menu>
             </Sider>
-              <Content>
-                <ClassesGridAll tileData={tileData.courses}/>
-              </Content>
+            <Content>
+              <ClassesGridAll tileData={tileData.courses}/>
+            </Content>
           </Layout>
         </div>
-
+        <Footer/>
       </div>
     )
 
