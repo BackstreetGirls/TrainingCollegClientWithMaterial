@@ -569,7 +569,7 @@ const search_result1 = [
     'Le piattaforme di Federica offrono oltre 300 corsi blended e 75 MOOCs aperti a tutti e tenuti da prestigiosi docenti della Federico II e di altri Atenei nazionali e internazionali. Con oltre 5milioni di contatti, Federica presenta un design di straordinaria efficacia che integra in modalità seamless testi, video e link alle più autorevoli fonti online. Scopri di più su www.federica.eu.',
   },
   {
-    key: 0,
+    key: 15,
     img: recommendation0,
     title: 'Computer Application in Economic Management',
     rate: 5,

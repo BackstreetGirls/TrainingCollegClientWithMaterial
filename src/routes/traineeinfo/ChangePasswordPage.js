@@ -7,7 +7,7 @@ import {Form, message} from 'antd';
 import styles from '../css/ChangePasswordPage.css';
 import Navigation from '../../components/Navigation';
 import ChangePasswordForm from '../../components/ChangePasswordForm';
-import {Avatar } from 'antd';
+import {Avatar} from 'antd';
 import avatar from '../../assets/avatar.png';
 import Typography from 'material-ui/Typography';
 
@@ -41,7 +41,7 @@ class TraineeEditInfoForm extends React.Component {
         return
       }
 
-      if (password_new_repeat !==password_new) {
+      if (password_new_repeat !== password_new) {
         message.error("新密码输入不一致！");
         return
       }
@@ -58,7 +58,7 @@ class TraineeEditInfoForm extends React.Component {
         email: this.props.trainee.trainee_email,
         password_previous: password_previous,
         password_new: password_new,
-        password_new_repeat:password_new_repeat,
+        password_new_repeat: password_new_repeat,
         'trainee_id': this.props.trainee.trainee_id,
         'expenditure': this.props.trainee.expenditure,
         'credit': this.props.trainee.credit,
@@ -101,16 +101,15 @@ class TraineeEditInfoForm extends React.Component {
         <Navigation/>
         <div className={styles.welcome}>
           <div>
-            <Avatar src={avatar} style={{width:100,height:100}}/>
-            <Typography component="p" style={{marginLeft:'-2%',marginTop:'2%'}}>
+            <Avatar src={avatar} style={{width: 100, height: 100}}/>
+            <Typography component="p" style={{marginLeft: '-2%', marginTop: '2%'}}>
               1179028267@qq.com
             </Typography>
           </div>
         </div>
-        <div className={styles.edit_form} style={{marginTop:'3%'}}>
+        <div className={styles.edit_form} style={{marginTop: '3%'}}>
           <ChangePasswordForm/>
         </div>
-
       </div>
     );
   }

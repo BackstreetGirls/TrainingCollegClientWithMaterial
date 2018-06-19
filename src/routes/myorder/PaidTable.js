@@ -1,8 +1,7 @@
 import React, {Fragment} from 'react';
-import {Table, Popover, Rate, message} from 'antd';
+import {Table, Rate, message} from 'antd';
 import {withStyles} from "material-ui/styles/index";
 import style from "../css/orderTable.css"
-import Button from 'material-ui/Button';
 
 class EditableCell extends React.Component {
   state = {

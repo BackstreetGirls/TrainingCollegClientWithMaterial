@@ -4,75 +4,91 @@
 import React from 'react';
 import {message} from 'antd';
 import PropTypes from 'prop-types';
-import Downshift from 'downshift';
-import {withStyles} from 'material-ui/styles';
-import TextField from 'material-ui/TextField';
-import Paper from 'material-ui/Paper';
-import {MenuItem} from 'material-ui/Menu';
+import Autosuggest from 'react-autosuggest';
+import match from 'autosuggest-highlight/match';
+import parse from 'autosuggest-highlight/parse';
+import TextField from '@material-ui/core/TextField';
+import Paper from '@material-ui/core/Paper';
 import Grid from 'material-ui/Grid';
-import IconButton from 'material-ui/IconButton';
+import IconButton from '@material-ui/core/IconButton';
 import Search from '@material-ui/icons/Search';
+import MenuItem from '@material-ui/core/MenuItem';
+import { withStyles } from '@material-ui/core/styles';
 import {suggestions} from "../utils/SearchFieldSuggestion";
 
 
 function renderInput(inputProps) {
-  const {InputProps, classes, ref, ...other} = inputProps;
+  const { classes, ref, ...other } = inputProps;
 
   return (
     <TextField
+      fullWidth
+      id="searchField"
       InputProps={{
         inputRef: ref,
         classes: {
-          root: classes.inputRoot,
+          input: classes.input,
         },
-        ...InputProps,
+        ...other,
       }}
-      {...other}
     />
   );
 }
 
-function renderSuggestion({suggestion, index, itemProps, highlightedIndex, selectedItem}) {
-  const isHighlighted = highlightedIndex === index;
-  const isSelected = (selectedItem || '').indexOf(suggestion.label) > -1;
+function renderSuggestion(suggestion, { query, isHighlighted }) {
+  const matches = match(suggestion.label, query);
+  const parts = parse(suggestion.label, matches);
 
   return (
-    <MenuItem
-      {...itemProps}
-      key={suggestion.label}
-      selected={isHighlighted}
-      component="div"
-      style={{
-        fontWeight: isSelected ? 500 : 400,
-      }}
-    >
-      {suggestion.label}
+    <MenuItem selected={isHighlighted} component="div">
+      <div>
+        {parts.map((part, index) => {
+          return part.highlight ? (
+            <span key={String(index)} style={{ fontWeight: 300 }}>
+              {part.text}
+            </span>
+          ) : (
+            <strong key={String(index)} style={{ fontWeight: 500 }}>
+              {part.text}
+            </strong>
+          );
+        })}
+      </div>
     </MenuItem>
   );
 }
 
-renderSuggestion.propTypes = {
-  highlightedIndex: PropTypes.number,
-  index: PropTypes.number,
-  itemProps: PropTypes.object,
-  selectedItem: PropTypes.string,
-  suggestion: PropTypes.shape({label: PropTypes.string}).isRequired,
-};
+function renderSuggestionsContainer(options) {
+  const { containerProps, children } = options;
 
-function getSuggestions(inputValue) {
+  return (
+    <Paper {...containerProps} square>
+      {children}
+    </Paper>
+  );
+}
+
+function getSuggestionValue(suggestion) {
+  return suggestion.label;
+}
+
+function getSuggestions(value) {
+  const inputValue = value.trim().toLowerCase();
+  const inputLength = inputValue.length;
   let count = 0;
 
-  return suggestions.filter(suggestion => {
-    const keep =
-      (!inputValue || suggestion.label.toLowerCase().indexOf(inputValue.toLowerCase()) !== -1) &&
-      count < 5;
+  return inputLength === 0
+    ? []
+    : suggestions.filter(suggestion => {
+      const keep =
+        count < 5 && suggestion.label.toLowerCase().slice(0, inputLength) === inputValue;
 
-    if (keep) {
-      count += 1;
-    }
+      if (keep) {
+        count += 1;
+      }
 
-    return keep;
-  });
+      return keep;
+    });
 }
 
 const styles = theme => ({
@@ -84,34 +100,34 @@ const styles = theme => ({
     flexGrow: 1,
     position: 'relative',
   },
-  paper: {
+  suggestionsContainerOpen: {
     position: 'absolute',
     zIndex: 1,
     marginTop: theme.spacing.unit,
     left: 0,
     right: 0,
   },
-  chip: {
-    margin: `${theme.spacing.unit / 2}px ${theme.spacing.unit / 4}px`,
+  suggestion: {
+    display: 'block',
   },
-  inputRoot: {
-    flexWrap: 'wrap',
-  },
-  iconButton: {
+  suggestionsList: {
+    margin: 0,
     padding: 0,
-  }
+    listStyleType: 'none',
+  },
 });
-
 
 class SearchField extends React.Component {
 
   state = {
+    value: '',
+    suggestions: [],
     visibility: true,
     windowWidth: window.innerWidth
   };
 
   // 实现屏幕放大，抽屉自动合上
-  handleResize(e) {
+  handleResize() {
     this.setState({
       windowWidth: window.innerWidth
     });
@@ -135,6 +151,24 @@ class SearchField extends React.Component {
     window.removeEventListener('resize', ::this.handleResize)
   }
 
+  handleSuggestionsFetchRequested = ({ value }) => {
+    this.setState({
+      suggestions: getSuggestions(value),
+    });
+  };
+
+  handleSuggestionsClearRequested = () => {
+    this.setState({
+      suggestions: [],
+    });
+  };
+
+  handleChange = (event, { newValue }) => {
+    this.setState({
+      value: newValue,
+    });
+  };
+
   // 搜索方法
   handleSearch = () => {
     let search_content = document.getElementById("searchField").value;
@@ -156,33 +190,27 @@ class SearchField extends React.Component {
           this.state.visibility ?
             <Grid container spacing={0} alignItems="flex-end">
               <Grid item sm={9} xs={8}>
-                <Downshift style={{marginButton: 10}}>
-                  {({getInputProps, getItemProps, isOpen, inputValue, selectedItem, highlightedIndex}) => (
-                    <div className={classes.container}>
-                      {renderInput({
-                        fullWidth: true,
-                        classes,
-                        InputProps: getInputProps({
-                          placeholder: 'Search courses',
-                          id: 'searchField',
-                        }),
-                      })}
-                      {isOpen ? (
-                        <Paper className={classes.paper} square>
-                          {getSuggestions(inputValue).map((suggestion, index) =>
-                            renderSuggestion({
-                              suggestion,
-                              index,
-                              itemProps: getItemProps({item: suggestion.label}),
-                              highlightedIndex,
-                              selectedItem,
-                            }),
-                          )}
-                        </Paper>
-                      ) : null}
-                    </div>
-                  )}
-                </Downshift>
+                <Autosuggest
+                  theme={{
+                    container: classes.container,
+                    suggestionsContainerOpen: classes.suggestionsContainerOpen,
+                    suggestionsList: classes.suggestionsList,
+                    suggestion: classes.suggestion,
+                  }}
+                  renderInputComponent={renderInput}
+                  suggestions={this.state.suggestions}
+                  onSuggestionsFetchRequested={this.handleSuggestionsFetchRequested}
+                  onSuggestionsClearRequested={this.handleSuggestionsClearRequested}
+                  renderSuggestionsContainer={renderSuggestionsContainer}
+                  getSuggestionValue={getSuggestionValue}
+                  renderSuggestion={renderSuggestion}
+                  inputProps={{
+                    classes,
+                    placeholder: 'Search a country (start with a)',
+                    value: this.state.value,
+                    onChange: this.handleChange,
+                  }}
+                />
               </Grid>
               <Grid item sm={3} xs={4}>
                 <IconButton onClick={this.handleSearch}><Search/></IconButton>

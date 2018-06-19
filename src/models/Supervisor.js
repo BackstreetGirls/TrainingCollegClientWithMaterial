@@ -151,6 +151,18 @@ export default {
         else if(pathToRegexp('/changepassword').exec(location.pathname)){
           document.title = '修改密码';
         }
+        else if(pathToRegexp('/searchresult').exec(location.pathname)){
+          document.title = '搜索结果';
+        }
+        else if(pathToRegexp('/myfavorite').exec(location.pathname)){
+          document.title = '我的收藏';
+        }
+        else if(pathToRegexp('/currentcourses').exec(location.pathname)){
+          document.title = '当前课程';
+        }
+        else if(pathToRegexp('/detail&courseID=:key').exec(location.pathname)){
+          document.title = '课程详情';
+        }
         else {
           document.title = '页面不存在';
         }

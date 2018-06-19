@@ -23,7 +23,7 @@ class AllCoursesPage extends React.Component {
 
   handleClick = (e) => {
     console.log('click ', e);
-  }
+  };
 
   render() {
 
@@ -63,7 +63,7 @@ class AllCoursesPage extends React.Component {
                   <Menu.Item key="9">Chemistry</Menu.Item>
                   <Menu.Item key="10">Computer Science</Menu.Item>
                   <Menu.Item key="11">Design</Menu.Item>
-                  <Menu.Item key="12">Ecomomics & Finance</Menu.Item>
+                  <Menu.Item key="12">Economics & Finance</Menu.Item>
                   <Menu.Item key="13">Engineering</Menu.Item>
                   <Menu.Item key="14">History</Menu.Item>
                   <Menu.Item key="15">Language</Menu.Item>
