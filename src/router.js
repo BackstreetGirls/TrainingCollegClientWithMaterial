@@ -21,7 +21,6 @@ function RouterConfig({history}) {
         <Route path="/" exact component={HomePage} />
         <Route path="/homepage" exact component={HomePage}/>
         <Route path="/detail&courseID=:key" exact component={CourseDetailPage}/>
-        {/*<Route path="/detail" exact component={CourseDetailPage}/>*/}
         <Route path='/placeorder' exact component={PlaceOrderMainPage}/>
         <Route path='/traineecenter' exact component={TraineeInfoPage}/>
         <Route path='/changepassword' exact component={ChangePasswordPage}/>

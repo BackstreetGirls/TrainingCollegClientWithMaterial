@@ -206,7 +206,7 @@ class SearchField extends React.Component {
                   renderSuggestion={renderSuggestion}
                   inputProps={{
                     classes,
-                    placeholder: 'Search a country (start with a)',
+                    placeholder: 'Search courses',
                     value: this.state.value,
                     onChange: this.handleChange,
                   }}
