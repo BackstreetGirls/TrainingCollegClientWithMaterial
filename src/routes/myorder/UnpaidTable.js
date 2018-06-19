@@ -12,7 +12,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
-import alipay_pay from '../../assets/alipay.png';
+import alipay_pay from '../../assets/alipay_pay.jpg';
 import wechat_pay from '../../assets/wechat_pay.png';
 
 import Dialog from '@material-ui/core/Dialog';

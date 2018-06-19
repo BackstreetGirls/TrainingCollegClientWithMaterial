@@ -11,7 +11,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from 'material-ui/IconButton';
 import Typography from 'material-ui/Typography';
-import alipay_pay from '../../assets/alipay.png';
+import alipay_pay from '../../assets/alipay_pay.jpg';
 import wechat_pay from '../../assets/wechat_pay.png';
 
 
@@ -127,7 +127,7 @@ class OrderTable extends React.Component {
                   title="Choose Pay Way"
                   visible={this.state.visible}
                   record={this.record}
-                  onOk={this.handleOk}
+                  onOk={()=>this.handleOk(record)}
                   onCancel={this.handleCancel}
                 >
                   <div>
@@ -344,7 +344,7 @@ class OrderTable extends React.Component {
 
   onCancel = (record) => {
     record.state ='Closed';
-    this.setState({});
+    this.setState({open: true});
   };
 
   onDelete = (record) => {
@@ -368,17 +368,17 @@ class OrderTable extends React.Component {
   };
 
   handleOk = (e) => {
-    console.log(e.target.getAttribute('record'));
-
     message.config({
       top: 10,
       duration: 2,
       maxCount: 3,
     });
     message.success('Pay successfully!');
+    e.state='Paid';
     this.setState({
       visible: false,
     });
+
 
   };
 
