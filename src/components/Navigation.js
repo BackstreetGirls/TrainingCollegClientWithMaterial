@@ -36,6 +36,9 @@ const styles = theme => ({
   },
   flex: {
     flex: 1,
+    fontFamily: 'Baskerville',
+    fontStyle: 'italic',
+    fontWeight: 600,
   },
   menuButton: {
     marginLeft: -12,
