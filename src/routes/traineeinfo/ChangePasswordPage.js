@@ -12,6 +12,7 @@ import avatar from '../../assets/avatar.png';
 import Typography from 'material-ui/Typography';
 import Footer from '../../components/Footer';
 
+
 class TraineeEditInfoForm extends React.Component {
 
   handleSubmit = (e) => {
@@ -110,6 +111,16 @@ class TraineeEditInfoForm extends React.Component {
         <div className={styles.edit_form} style={{marginTop: '3%'}}>
           <ChangePasswordForm/>
         </div>
+        {
+          // 如果页面没有滚动条，则固定Footer到底部
+          document.documentElement.clientHeight >= document.documentElement.offsetHeight - 4
+            ?
+            <div style={{position: 'fixed', bottom: 0, height: 'auto', width: '100%'}}>
+              <Footer/>
+            </div>
+            :
+            <Footer/>
+        }
       </div>
     );
   }

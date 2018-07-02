@@ -5,6 +5,8 @@ import ClassesGrid from '../../components/ClassesGrid';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import { Tabs, Icon } from 'antd';
+import Footer from '../../components/Footer';
+
 
 const TabPane = Tabs.TabPane;
 
@@ -30,7 +32,6 @@ class MyFavoritePage extends React.Component {
     return(
       <div className={classes.root}>
         <Navigation/>
-
         <div className={classes.margin}>
           <Tabs defaultActiveKey="1" onChange={callback}>
             <TabPane tab={<span><Icon type="heart" />Favorites</span>} key="1">
@@ -40,6 +41,16 @@ class MyFavoritePage extends React.Component {
             </TabPane>
           </Tabs>
         </div>
+        {
+          // 如果页面没有滚动条，则固定Footer到底部
+          document.documentElement.clientHeight >= document.documentElement.offsetHeight - 4
+            ?
+            <div style={{position: 'fixed', bottom: 0, height: 'auto', width: '100%'}}>
+              <Footer/>
+            </div>
+            :
+            <Footer/>
+        }
       </div>
     )
 

@@ -74,7 +74,6 @@ class OrderListPage extends React.Component {
             </TabPane>
           </Tabs>
         </div>
-
         {
           // 如果页面没有滚动条，则固定Footer到底部
           document.documentElement.clientHeight >= document.documentElement.offsetHeight - 4
