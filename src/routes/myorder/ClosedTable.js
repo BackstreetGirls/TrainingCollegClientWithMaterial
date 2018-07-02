@@ -110,7 +110,36 @@ class OrderTable extends React.Component {
     }];
 
     this.state = {
-      dataSource: [],
+      dataSource: [{
+        no: '2018052211328',
+        institute: 'Nanjing University',
+        date: '2018-6-18',
+        key: '0',
+        imagesrc: 'src/assets/Recommendation/recommendation0.jpg',
+        name: 'Computer Application in Economic Management',
+        price: '99.00',
+        amount: '1',
+        payment: '99.00',
+        state: 'Closed',
+        way: '-',
+        rate: -1,
+        description: '2018-6-18',
+      }, {
+        no: '2018052311329',
+        institute: 'Sparks Education',
+        date: '2018-6-23',
+        key: '1',
+        imagesrc: 'src/assets/Recommendation/recommendation1.png',
+        name: 'Master Python',
+        price: '129.00',
+        amount: '1',
+        payment: '129.00',
+        state: 'Closed',
+        way: 'AliPay',
+        rate: 5,
+        description: '2018-5-10',
+      }],
+      count: 2,
     };
   }
 

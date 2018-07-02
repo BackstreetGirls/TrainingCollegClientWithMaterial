@@ -8,7 +8,7 @@ import TraineeInfoPage from './routes/traineeinfo/TraineeInfoPage';
 import ChangePasswordPage from './routes/traineeinfo/ChangePasswordPage';
 import OrderListPage from './routes/myorder/OrderListPage'
 import AllCoursesPage from './routes/courselist/AllCoursesPage';
-import SearchResultPage from './routes/courselist/SearchResultPage';
+// import SearchResultPage from './routes/courselist/SearchResultPage';
 import MyFavoritePage from './routes/courselist/MyFavoritePage'
 import PythonSearchPage from './routes/courselist/PythonSearchPage'
 import CurrentPage from './routes/courselist/CurrentPage'
