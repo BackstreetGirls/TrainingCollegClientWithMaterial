@@ -1,5 +1,4 @@
 import Navigation from '../../components/Navigation'
-import Footer from '../../components/Footer'
 import OrderTable from '../../routes/myorder/OrderTable'
 import UnpaidTable from '../../routes/myorder/UnpaidTable'
 import PaidTable from '../../routes/myorder/PaidTable'
