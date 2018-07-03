@@ -23,7 +23,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import PersonIcon from '@material-ui/icons/Person';
-import AddIcon from '@material-ui/icons/Add';
+import SendIcon from '@material-ui/icons/Launch';
 import blue from '@material-ui/core/colors/blue';
 import Avatar from '@material-ui/core/Avatar';
 import Input from '@material-ui/core/Input';
@@ -365,7 +365,7 @@ class CourseDetailPage extends React.Component {
               <ListItem>
                 <ListItemAvatar>
                   <Avatar button onClick={() => this.handleListItemClick('addAccount')}>
-                    <AddIcon/>
+                    <SendIcon/>
                   </Avatar>
                 </ListItemAvatar>
                 <Input

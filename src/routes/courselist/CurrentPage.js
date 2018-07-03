@@ -34,7 +34,6 @@ class CurrentPage extends React.Component {
     return (
       <div className={classes.root}>
         <Navigation/>
-
         <div className={classes.margin}>
           <Layout>
             <Sider style={{overflow: 'auto', backgroundColor: 'white'}}>

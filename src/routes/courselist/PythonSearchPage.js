@@ -9,7 +9,8 @@ import ClassesGrid from '../../components/ClassesGrid';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
 import { Tabs } from 'antd';
-import Footer from '../components/Footer';
+import Footer from '../../components/Footer';
+
 
 const TabPane = Tabs.TabPane;
 
@@ -58,7 +59,16 @@ class PythonSearchPage extends React.Component {
             </TabPane>
           </Tabs>
         </div>
-        <Footer/>
+        {
+          // 如果页面没有滚动条，则固定Footer到底部
+          document.documentElement.clientHeight >= document.documentElement.offsetHeight - 4
+            ?
+            <div style={{position: 'fixed', bottom: 0, height: 'auto', width: '100%'}}>
+              <Footer/>
+            </div>
+            :
+            <Footer/>
+        }
       </div>
     )
 

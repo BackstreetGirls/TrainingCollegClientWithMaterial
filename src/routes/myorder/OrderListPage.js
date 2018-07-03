@@ -5,7 +5,7 @@ import PaidTable from '../../routes/myorder/PaidTable'
 import ClosedTable from '../../routes/myorder/ClosedTable'
 
 import React from 'react';
-import { Tabs, Input } from 'antd';
+import {Tabs, Input} from 'antd';
 import {withStyles} from "material-ui/styles/index";
 
 
@@ -15,7 +15,7 @@ const Search = Input.Search;
 const operations = <Search
   placeholder="input CourseName/OrderId to search"
   onSearch={value => console.log(value)}
-  style={{ width: 400 }}
+  style={{width: 400}}
 />;
 
 const styles = theme => ({
@@ -73,6 +73,16 @@ class OrderListPage extends React.Component {
             </TabPane>
           </Tabs>
         </div>
+        {
+          // 如果页面没有滚动条，则固定Footer到底部
+          document.documentElement.clientHeight >= document.documentElement.offsetHeight - 4
+            ?
+            <div style={{position: 'fixed', bottom: 0, height: 'auto', width: '100%'}}>
+              <Footer/>
+            </div>
+            :
+            <Footer/>
+        }
       </div>
     );
   }

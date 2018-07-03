@@ -191,7 +191,6 @@ class PlaceOrderMainPage extends React.Component {
     return (
       <div>
         <Navigation/>
-
         <div className={classes.root}>
           <Stepper alternativeLabel nonLinear activeStep={activeStep}>
             {steps.map((label, index) => {
@@ -240,16 +239,22 @@ class PlaceOrderMainPage extends React.Component {
                   <Button variant="raised" color="primary" onClick={this.handleComplete}>
                     {this.completedSteps() === this.totalSteps() - 1 ? 'Finish' : 'Continue'}
                   </Button>
-
-
                 </div>
               </div>
             )}
           </div>
         </div>
+        {
+          // 如果页面没有滚动条，则固定Footer到底部
+          document.documentElement.clientHeight >= document.documentElement.offsetHeight - 4
+            ?
+            <div style={{position: 'fixed', bottom: 0, height: 'auto', width: '100%'}}>
+              <Footer/>
+            </div>
+            :
+            <Footer/>
+        }
       </div>
-
-
     )
   }
 }

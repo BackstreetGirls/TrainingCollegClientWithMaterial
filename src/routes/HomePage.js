@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import {connect} from 'dva';
+import {Link} from 'dva/router';
 import {Carousel} from 'antd';
 import PropTypes from 'prop-types';
 import {withStyles} from 'material-ui/styles';
@@ -16,8 +17,11 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
 import carousal1 from '../assets/Carousel/carousal1.jpg';
+import carousal2 from '../assets/Carousel/carousal2.jpg';
+import carousal3 from '../assets/Carousel/carousal3.jpg';
+import carousal4 from '../assets/Carousel/carousal4.jpg';
+
 
 const styles = theme => ({
   root: {
@@ -57,15 +61,36 @@ class HomePage extends React.Component {
         <Carousel autoplay>
           <div>
             <img alt="load false" src={carousal1}/>
-            <Button variant="raised" color="primary" className={classes.button} style={{marginTop: -1500}}>
-              Learn more
-            </Button>
+            <Link to="/detail&courseID=:2">
+              <Button variant="raised" color="primary" className={classes.button} style={{marginTop: -1500}}>
+                Learn more
+              </Button>
+            </Link>
           </div>
           <div>
-            <img alt="load false" src={carousal1}/>
+            <img alt="load false" src={carousal2}/>
+            <Link to="/detail&courseID=:7">
+              <Button variant="raised" color="primary" className={classes.button} style={{marginTop: -1750}}>
+                Learn more
+              </Button>
+            </Link>
           </div>
-          <div><h3>3</h3></div>
-          <div><h3>4</h3></div>
+          <div>
+            <img alt="load false" src={carousal3}/>
+            <Link to="/detail&courseID=:3">
+              <Button variant="raised" color="primary" className={classes.button} style={{marginTop: -1205}}>
+                Learn more
+              </Button>
+            </Link>
+          </div>
+          <div>
+            <img alt="load false" src={carousal4}/>
+            <Link to="/detail&courseID=:5">
+              <Button variant="raised" color="primary" className={classes.button} style={{marginTop: -752}}>
+                Learn more
+              </Button>
+            </Link>
+          </div>
         </Carousel>
 
         <div className={classes.margin}>
